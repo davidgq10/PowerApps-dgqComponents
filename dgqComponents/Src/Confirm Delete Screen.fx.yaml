@@ -1,0 +1,188 @@
+"'Confirm Delete Screen' As screen":
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+
+    "'co.DeleteMessage' As groupContainer.manualLayoutContainer":
+        BorderColor: =RGBA(237, 237, 237, 1)
+        Height: =349
+        Width: =If(App.ActiveScreen.Size<2,Parent.Width-20,600)
+        X: =(Parent.Width-Self.Width)/2
+        Y: =(Parent.Height-Self.Height)/2
+        ZIndex: =2
+
+        "'co.AcceptCancelBox_1' As groupContainer.manualLayoutContainer":
+            BorderColor: =vargStyle.Others.BorderComponentsColor
+            BorderStyle: =vargStyle.Others.BorderComponentsStyle
+            BorderThickness: =vargBorderComponent
+            Height: =55
+            PaddingTop: =30
+            Width: =273
+            X: =(Parent.Width-Self.Width)/2
+            Y: =lblDeleteMessage_1.Y + lblDeleteMessage_1.Height+20
+            ZIndex: =1
+
+            htmShadow_5 As htmlViewer:
+                Height: =55
+                HtmlText: |-
+                    ="<div style='margin-left:5px; margin-top:3px;width:120px;height:30px;background-color:#;box-shadow:"&vargStyle.Buttons.Midium.Accept.Shadow.BoxShadow &"; border-radius:"& vargStyle.Buttons.Midium.Accept.Shadow.BorderRadius &"'></div>"
+                Width: =140
+                ZIndex: =2
+
+            btnBack As button:
+                BorderColor: =vargStyle.Buttons.Midium.Accept.BackgroundColor
+                BorderStyle: =vargStyle.Buttons.Midium.Cancel.BorderStyle
+                BorderThickness: =vargStyle.Buttons.Midium.Cancel.BorderThickness
+                Color: =vargStyle.Buttons.Midium.Accept.BackgroundColor
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayMode: =vargStyle.Buttons.Midium.Cancel.DisplayMode
+                Fill: =White
+                FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                Font: =vargStyle.Buttons.Midium.Cancel.Font
+                FontWeight: =vargStyle.Buttons.Midium.Cancel.FontWeight
+                Height: =30
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =ColorFade(Self.Color,-20%)
+                OnSelect: =Back()
+                PressedBorderColor: =ColorFade(Self.Color, -50%)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =ColorFade(Self.Color, -50%)
+                RadiusBottomLeft: =vargStyle.Buttons.Midium.Cancel.BorderRadius
+                RadiusBottomRight: =vargStyle.Buttons.Midium.Cancel.BorderRadius
+                RadiusTopLeft: =vargStyle.Buttons.Midium.Cancel.BorderRadius
+                RadiusTopRight: =vargStyle.Buttons.Midium.Cancel.BorderRadius
+                Size: =vargStyle.Buttons.Midium.Cancel.FontHeight
+                Text: ="Regresar"
+                Tooltip: =Self.Text
+                Visible: =vargStyle.Buttons.Midium.Cancel.Visible
+                Width: =122
+                X: =150
+                Y: =8
+                ZIndex: =4
+
+            btnDelete As button:
+                BorderColor: =vargStyle.Buttons.Midium.Cancel.BorderColor
+                BorderStyle: =vargStyle.Buttons.Midium.Cancel.BorderStyle
+                BorderThickness: =vargStyle.Buttons.Midium.Cancel.BorderThickness
+                Color: =vargStyle.Buttons.Midium.Cancel.FontColor
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayMode: =vargStyle.Buttons.Midium.Cancel.DisplayMode
+                Fill: =vargStyle.Buttons.Midium.Cancel.BackgroundColor
+                FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                Font: =vargStyle.Buttons.Midium.Cancel.Font
+                FontWeight: =vargStyle.Buttons.Midium.Cancel.FontWeight
+                Height: =30
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =ColorFade(Self.Fill,-20%)
+                OnSelect: =Back()
+                PressedBorderColor: =ColorFade(Self.Fill, -50%)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =ColorFade(Self.Fill, -50%)
+                RadiusBottomLeft: =vargStyle.Buttons.Midium.Cancel.BorderRadius
+                RadiusBottomRight: =vargStyle.Buttons.Midium.Cancel.BorderRadius
+                RadiusTopLeft: =vargStyle.Buttons.Midium.Cancel.BorderRadius
+                RadiusTopRight: =vargStyle.Buttons.Midium.Cancel.BorderRadius
+                Size: =vargStyle.Buttons.Midium.Cancel.FontHeight
+                Text: ="Eliminar"
+                Tooltip: =Self.Text
+                Visible: =vargStyle.Buttons.Midium.Cancel.Visible
+                Width: =122
+                X: =8
+                Y: =8
+                ZIndex: =5
+
+        lblDeleteMessage_1 As label:
+            Align: =Align.Center
+            AutoHeight: =true
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisplayMode: =DisplayMode.View
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =53
+            LineHeight: =1.3
+            Overflow: =Overflow.Scroll
+            PaddingTop: =30
+            Size: =16
+            Text: ="¿Está seguro de continuar?"
+            Width: =Parent.Width-Self.X*2
+            X: =54
+            Y: =lblDeleteMessage.Y + lblDeleteMessage.Height
+            ZIndex: =2
+
+        lblDeleteMessage As label:
+            Align: =Align.Center
+            AutoHeight: =true
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisplayMode: =DisplayMode.View
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Lighter
+            Height: =53
+            LineHeight: =1.3
+            Overflow: =Overflow.Scroll
+            PaddingLeft: =10
+            PaddingRight: =10
+            Size: =16
+            Text: ="Está a punto de eliminar el registro seleccionado. Esta acción no se podrá reversar."
+            Width: =Parent.Width
+            Y: =imgIconAlert.Height+10
+            ZIndex: =3
+
+        imgIconAlert As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =47
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: |-
+                ="data:image/svg+xml," &
+                
+                        EncodeUrl(
+                            "    
+                            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+                            <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1,               Code:MIT License) -->" &
+                            // Get the definition of the icon fill from theme variable
+                            "<defs>
+                                <linearGradient id='myLinearGradient1'
+                                                    x1='0%' y1='0%'
+                                                    x2='50%' y2='50%'
+                                                    x3='50%' y3='100%'
+                                                    spreadMethod='pad'>
+                                    <stop offset='0%'   stop-color='yellow' stop-opacity='1'/>
+                                    <stop offset='50%'   stop-color='#F8F357' stop-opacity='1'/>
+                                    <stop offset='100%' stop-color='#F9F100' stop-opacity='1'/>
+                                </linearGradient>
+                            </defs>" &
+                                
+                            //Change the image in the "d" property
+                            "<path d='M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z'"
+                            
+                            &
+                            // Theme style
+                             " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.Sidebar.IconOpacity & ";'></path></svg>"
+                
+                        )
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =61
+            X: =(Parent.Width-Self.Width)/2
+            ZIndex: =4
+

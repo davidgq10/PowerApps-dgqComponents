@@ -1,0 +1,212 @@
+"'Settings Screen' As screen":
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+
+    Toggle1 As toggleSwitch:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(51, 51, 51, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        FalseFill: =RGBA(102, 102, 102, 1)
+        FalseHoverFill: =RGBA(33, 33, 33, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        HandleFill: =RGBA(255, 255, 255, 1)
+        Height: =33
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        OnCheck: =Set(vargBorderComponent, 1)
+        OnUncheck: =Set(vargBorderComponent, 0)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        Size: =13
+        TrueFill: =RGBA(0, 120, 212, 1)
+        TrueHoverFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+        Width: =195
+        X: =339
+        Y: =40
+        ZIndex: =1
+
+    Label7_6 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(51, 51, 51, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Size: =13
+        Text: |-
+            ="Ver lineas de borde de componentes simples: "
+        Width: =231
+        X: =40
+        Y: =40
+        ZIndex: =2
+
+    Button3 As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(0, 120, 212, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =29
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(0, 120, 212, 1), -10%)
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -50%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =15
+        Text: ="Cargar"
+        Width: =195
+        X: =339
+        Y: =81
+        ZIndex: =3
+
+    Label7_7 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(51, 51, 51, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Size: =13
+        Text: |-
+            ="Cargar variable vargTheme: "
+        Width: =231
+        X: =40
+        Y: =80
+        ZIndex: =4
+
+    Toggle1_1 As toggleSwitch:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(51, 51, 51, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        FalseFill: =RGBA(102, 102, 102, 1)
+        FalseHoverFill: =RGBA(33, 33, 33, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        HandleFill: =RGBA(255, 255, 255, 1)
+        Height: =33
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        OnCheck: =Set(vargWSide, true)
+        OnUncheck: =Set(vargWSide, false)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        Size: =13
+        TrueFill: =RGBA(0, 120, 212, 1)
+        TrueHoverFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+        Width: =195
+        X: =339
+        Y: =120
+        ZIndex: =5
+
+    Label7_8 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(51, 51, 51, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Size: =13
+        Text: |-
+            ="Mostrar Side ancho: "
+        Width: =231
+        X: =40
+        Y: =120
+        ZIndex: =6
+
+    Toggle1_2 As toggleSwitch:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(51, 51, 51, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        FalseFill: =RGBA(102, 102, 102, 1)
+        FalseHoverFill: =RGBA(33, 33, 33, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        HandleFill: =RGBA(255, 255, 255, 1)
+        Height: =33
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        OnCheck: =Set(vargOpMenu, true)
+        OnUncheck: =Set(vargOpMenu, false)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        Size: =13
+        TrueFill: =RGBA(0, 120, 212, 1)
+        TrueHoverFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+        Width: =195
+        X: =339
+        Y: =160
+        ZIndex: =7
+
+    Label7_9 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(51, 51, 51, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Size: =13
+        Text: |-
+            ="Mostrar OptionMenu alto: "
+        Width: =231
+        X: =40
+        Y: =160
+        ZIndex: =8
+
+    Toggle1_3 As toggleSwitch:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(51, 51, 51, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        FalseFill: =RGBA(102, 102, 102, 1)
+        FalseHoverFill: =RGBA(33, 33, 33, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        HandleFill: =RGBA(255, 255, 255, 1)
+        Height: =33
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        OnCheck: =Set(varcSeeTags, true)
+        OnSelect: =false 
+        OnUncheck: =Set(varcSeeTags, false)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        Size: =13
+        TrueFill: =RGBA(0, 120, 212, 1)
+        TrueHoverFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+        Width: =195
+        X: =339
+        Y: =231
+        ZIndex: =9
+
+    Label7_10 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(51, 51, 51, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Size: =13
+        Text: |-
+            ="Ver etiquetas:"
+        Width: =231
+        X: =40
+        Y: =231
+        ZIndex: =10
+

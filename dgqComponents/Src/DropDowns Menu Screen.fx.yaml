@@ -1,0 +1,864 @@
+"'DropDowns Menu Screen' As screen":
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+
+    "'co.DropDownGroupDynamicWidth' As groupContainer.verticalAutoLayoutContainer":
+        BorderColor: =vargStyle.CollapseDropDownMenu.ItemBorderColor
+        BorderThickness: |
+            =vargStyle.CollapseDropDownMenu.ItemBorderThickness
+        Fill: =vargStyle.CollapseDropDownMenu.BackgroundColor
+        Height: |-
+            =If(
+                "#" & Value(lblGroupIdentifier_18.Text) & "#" in varcDropDMenuExpandedGroup,
+                200, //This value is the subitems in the conteiner count * 50
+                50
+            )
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: |-
+            =If(
+                "#" & Value(lblGroupIdentifier_18.Text) & "#" in varcDropDMenuExpandedGroup,
+                vargStyle.CollapseDropDownMenu.BigWidth,
+                vargStyle.CollapseDropDownMenu.SmallWidth
+            )
+        X: |+
+            =If(
+                And(
+                    "#" & Value(lblGroupIdentifier_18.Text) & "#" in varcDropDMenuExpandedGroup,
+                    drpOrientation_18.Selected.Value = "Down-Left"
+                ),
+                200 - vargStyle.CollapseDropDownMenu.BigWidth + vargStyle.CollapseDropDownMenu.SmallWidth,
+                200 //This is Down-Right default value.
+            )
+            
+        Y: =432
+        ZIndex: =4
+
+        "'co.DropDownMain' As groupContainer.manualLayoutContainer":
+            AlignInContainer: =AlignInContainer.SetByContainer
+            BorderColor: =vargStyle.CollapseDropDownMenu.ItemBorderColor
+            BorderStyle: =vargStyle.CollapseDropDownMenu.ItemBorderStyle
+            BorderThickness: =vargStyle.CollapseDropDownMenu.ItemBorderThickness
+            Fill: =vargStyle.CollapseDropDownMenu.ItemBackgroundColor
+            FillPortions: =0
+            Height: =50
+            LayoutMinHeight: =100
+            LayoutMinWidth: =vargStyle.CollapseDropDownMenu.SmallWidth
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            Width: =vargStyle.CollapseDropDownMenu.BigWidth
+            ZIndex: =1
+
+            lblGroupIdentifier_18 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =vargStyle.CollapseDropDownMenu.FontColor
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Fill: =vargStyle.CollapseDropDownMenu.BackgroundColor
+                FocusedBorderThickness: =4
+                Font: =vargStyle.CollapseDropDownMenu.Font
+                FontWeight: =vargStyle.CollapseDropDownMenu.FontWeight
+                Height: =Parent.Height
+                Size: =vargStyle.CollapseDropDownMenu.FontHeight
+                Text: ="9"
+                Width: =0
+                ZIndex: =1
+
+            imgIcon_18 As image:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =vargStyle.CollapseDropDownMenu.IconSize
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Image: |-
+                    ="data:image/svg+xml," &
+                    
+                            EncodeUrl(
+                                "    
+                                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'>
+                                <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1,               Code:MIT License) -->" 
+                                // Get the definition of the icon fill from theme variable
+                                & vargStyle.CollapseDropDownMenu.IconColor & 
+                                    
+                                //Change the image in the "d" property
+                                "<path d='M288 144a110.94 110.94 0 0 0-31.24 5 55.4 55.4 0 0 1 7.24 27 56 56 0 0 1-56 56 55.4 55.4 0 0 1-27-7.24A111.71 111.71 0 1 0 288 144zm284.52 97.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400c-98.65 0-189.09-55-237.93-144C98.91 167 189.34 112 288 112s189.09 55 237.93 144C477.1 345 386.66 400 288 400z'"
+                                
+                                &
+                                // Theme style
+                                 " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.CollapseDropDownMenu.IconOpacity & ";'></path></svg>"
+                    
+                            )
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =5
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =vargStyle.CollapseDropDownMenu.IconSize
+                X: =vargStyle.CollapseDropDownMenu.AlignIconX
+                Y: =(Parent.Height-Self.Height)/2
+                ZIndex: =2
+
+            imgArrow_18 As image:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =vargStyle.CollapseDropDownMenu.IconSize
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Image: |-
+                    =If(Concatenate("#",Value(lblGroupIdentifier_18.Text),"#") in varcDropDMenuExpandedGroup, 
+                    
+                    "data:image/svg+xml," &
+                    
+                            EncodeUrl(
+                                "    
+                                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'>
+                                <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1,               Code:MIT License) -->" 
+                                // Get the definition of the icon fill from theme variable
+                                & vargStyle.CollapseDropDownMenu.IconColor & 
+                                    
+                                //Change the image in the "d" property
+                                "<path d='M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z'"
+                                
+                                &
+                                // Theme style
+                                 " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.CollapseDropDownMenu.IconOpacity & ";'></path></svg>"
+                    
+                            )
+                    ,
+                    
+                    
+                    "data:image/svg+xml," &
+                    
+                            EncodeUrl(
+                                "    
+                                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'>
+                                <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1,               Code:MIT License) -->" 
+                                // Get the definition of the icon fill from theme variable
+                                & vargStyle.CollapseDropDownMenu.IconColor & 
+                                    
+                                //Change the image in the "d" property
+                                "<path d='M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z'"
+                                
+                                &
+                                // Theme style
+                                 " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.CollapseDropDownMenu.IconOpacity & ";'></path></svg>"
+                    
+                            ))
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =5
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Visible: |-
+                    =If(
+                        "#" & Value(lblGroupIdentifier_18.Text) & "#" in varcDropDMenuExpandedGroup,
+                        true,
+                        false
+                    )
+                Width: =vargStyle.CollapseDropDownMenu.IconSize
+                X: =Parent.Width-Self.Width-10
+                Y: =(Parent.Height-Self.Height)/2
+                ZIndex: =3
+
+            btnHoverText_18 As button:
+                Align: =Align.Left
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Color: =vargStyle.CollapseDropDownMenu.FontColor
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                Font: =vargStyle.CollapseDropDownMenu.Font
+                FontWeight: =vargStyle.CollapseDropDownMenu.FontWeight
+                Height: =Parent.Height
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =ColorFade(Self.Color,90%)
+                HoverFill: =vargStyle.CollapseDropDownMenu.HoverSideItem
+                OnSelect: |-
+                    =UpdateContext({varcDropDNav: Value(lblGroupIdentifier_18.Text)}) && If(
+                        "#" & varcDropDNav & "#" in varcDropDMenuExpandedGroup,
+                        UpdateContext(
+                            {
+                                varcDropDMenuExpandedGroup: Substitute(
+                                    varcDropDMenuExpandedGroup,
+                                    Concatenate(
+                                        "#",
+                                        varcDropDNav,
+                                        "#"
+                                    ),
+                                    ""
+                                )
+                            }
+                        ) && UpdateContext({varcDropDNav: 0}),
+                        UpdateContext(
+                            {
+                                varcDropDMenuExpandedGroup: Concatenate(
+                                    varcDropDMenuExpandedGroup,
+                                    "#" & varcDropDNav & "#"
+                                )
+                            }
+                        )
+                    )
+                PaddingLeft: =vargStyle.CollapseDropDownMenu.SmallWidth
+                PressedBorderColor: =ColorFade(RGBA(135, 100, 184, 0.5), -50%)
+                PressedColor: =ColorFade(Self.Color,50%)
+                PressedFill: =ColorFade(Self.HoverFill, -30%)
+                RadiusBottomLeft: =vargStyle.CollapseDropDownMenu.ItemBorderRadius
+                RadiusBottomRight: =vargStyle.CollapseDropDownMenu.ItemBorderRadius
+                RadiusTopLeft: =vargStyle.CollapseDropDownMenu.ItemBorderRadius
+                RadiusTopRight: =vargStyle.CollapseDropDownMenu.ItemBorderRadius
+                Size: =vargStyle.CollapseDropDownMenu.FontHeight
+                Text: ="DropDownMenu"
+                Tooltip: =Self.Text
+                Width: =Parent.Width-Self.X
+                ZIndex: =4
+
+            drpOrientation_18 As dropdown:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderThickness: =0
+                ChevronBackground: =RGBA(255, 255, 255, 1)
+                ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                ChevronFill: =RGBA(33, 33, 33, 1)
+                ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                Color: =RGBA(51, 51, 51, 1)
+                Default: ="Down-Left"
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Font: =Font.'Segoe UI'
+                HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(212, 212, 212, 1)
+                Items: =["Down-Left","Down-Right"]
+                PaddingBottom: =5
+                PaddingLeft: =12
+                PaddingRight: =5
+                PaddingTop: =5
+                PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(0, 120, 212, 1)
+                SelectionFill: =RGBA(0, 120, 212, 1)
+                Size: =13
+                Visible: =false
+                Width: =Parent.Width
+                Y: =10
+                ZIndex: =5
+
+        "'co.DropDownOption' As groupContainer.manualLayoutContainer":
+            AlignInContainer: =AlignInContainer.SetByContainer
+            BorderColor: =vargStyle.CollapseDropDownMenu.ItemBorderColor
+            BorderStyle: =vargStyle.CollapseDropDownMenu.ItemBorderStyle
+            BorderThickness: =vargStyle.CollapseDropDownMenu.ItemBorderThickness
+            Fill: =vargStyle.CollapseDropDownMenu.SubItemBackgroundColor
+            FillPortions: =0
+            Height: =50
+            LayoutMinHeight: =100
+            LayoutMinWidth: =vargStyle.CollapseDropDownMenu.SmallWidth
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            Width: =Parent.Width
+            ZIndex: =3
+
+            imgIcon_19 As image:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =vargStyle.CollapseDropDownMenu.IconSize
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Image: |-
+                    ="data:image/svg+xml," &
+                    
+                            EncodeUrl(
+                                "    
+                                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 496 512'>
+                                <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1,               Code:MIT License) -->" 
+                                // Get the definition of the icon fill from theme variable
+                                & vargStyle.CollapseDropDownMenu.SubIconColor & 
+                                    
+                                //Change the image in the "d" property
+                                "<path d='M347.94 129.86L203.6 195.83a31.938 31.938 0 0 0-15.77 15.77l-65.97 144.34c-7.61 16.65 9.54 33.81 26.2 26.2l144.34-65.97a31.938 31.938 0 0 0 15.77-15.77l65.97-144.34c7.61-16.66-9.54-33.81-26.2-26.2zm-77.36 148.72c-12.47 12.47-32.69 12.47-45.16 0-12.47-12.47-12.47-32.69 0-45.16 12.47-12.47 32.69-12.47 45.16 0 12.47 12.47 12.47 32.69 0 45.16zM248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 448c-110.28 0-200-89.72-200-200S137.72 56 248 56s200 89.72 200 200-89.72 200-200 200z'"
+                                
+                                &
+                                // Theme style
+                                 " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.CollapseDropDownMenu.SubIconOpacity & ";'></path></svg>"
+                    
+                            )
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =5
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =vargStyle.Sidebar.IconSize
+                X: =vargStyle.CollapseDropDownMenu.SubItemAlignX
+                Y: =(Parent.Height-Self.Height)/2
+                ZIndex: =2
+
+            btnHoverText_19 As button:
+                Align: =Align.Left
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Color: =vargStyle.CollapseDropDownMenu.SubItemFontColor
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                Font: =vargStyle.CollapseDropDownMenu.SubItemFont
+                FontWeight: =vargStyle.CollapseDropDownMenu.SubItemFontWeight
+                Height: =Parent.Height
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =vargStyle.CollapseDropDownMenu.SubItemHoverColor
+                HoverFill: =ColorFade(vargStyle.CollapseDropDownMenu.SubItemHoverColor,70%)
+                OnSelect: |-
+                    =UpdateContext({varcDropDNav:7})
+                PaddingLeft: =vargStyle.CollapseDropDownMenu.SmallWidth+20
+                PressedBorderColor: =ColorFade(RGBA(135, 100, 184, 0.5), -50%)
+                PressedColor: =ColorFade(Self.Color,50%)
+                PressedFill: =ColorFade(Self.HoverFill, -30%)
+                RadiusBottomLeft: =vargStyle.CollapseDropDownMenu.ItemBorderRadius
+                RadiusBottomRight: =vargStyle.CollapseDropDownMenu.ItemBorderRadius
+                RadiusTopLeft: =vargStyle.CollapseDropDownMenu.ItemBorderRadius
+                RadiusTopRight: =vargStyle.CollapseDropDownMenu.ItemBorderRadius
+                Size: =vargStyle.CollapseDropDownMenu.SubItemFontHeight
+                Text: ="Opción 1"
+                Tooltip: =Self.Text
+                Width: =Parent.Width-Self.X
+                ZIndex: =3
+
+    "'co.DropDownGroupFixWidth' As groupContainer.verticalAutoLayoutContainer":
+        BorderColor: =vargStyle.CollapseDropDownMenu.ItemBorderColor
+        BorderThickness: |
+            =vargStyle.CollapseDropDownMenu.ItemBorderThickness
+        Fill: =vargStyle.CollapseDropDownMenu.BackgroundColor
+        Height: |-
+            =If(
+                "#" & Value(lbIdentifier_17.Text) & "#" in varcDropDMenuExpandedGroup,
+                200, //This value is the subitems in the conteiner count * 50
+                50
+            )
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: =vargStyle.CollapseDropDownMenu.BigWidth
+        X: =32
+        Y: =36
+        ZIndex: =6
+
+        "'co.DropDGroupName' As groupContainer.manualLayoutContainer":
+            AlignInContainer: =AlignInContainer.SetByContainer
+            BorderColor: =vargStyle.CollapseDropDownMenu.ItemBorderColor
+            BorderStyle: =vargStyle.CollapseDropDownMenu.ItemBorderStyle
+            BorderThickness: =vargStyle.CollapseDropDownMenu.ItemBorderThickness
+            Fill: =vargStyle.CollapseDropDownMenu.ItemBackgroundColor
+            FillPortions: =0
+            Height: =50
+            LayoutMinHeight: =100
+            LayoutMinWidth: =vargStyle.CollapseDropDownMenu.SmallWidth
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            Width: =vargStyle.CollapseDropDownMenu.BigWidth
+            ZIndex: =1
+
+            lbIdentifier_17 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =vargStyle.CollapseDropDownMenu.FontColor
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Fill: =vargStyle.CollapseDropDownMenu.BackgroundColor
+                FocusedBorderThickness: =4
+                Font: =vargStyle.CollapseDropDownMenu.Font
+                FontWeight: =vargStyle.CollapseDropDownMenu.FontWeight
+                Height: =Parent.Height
+                Size: =vargStyle.CollapseDropDownMenu.FontHeight
+                Text: ="7"
+                Width: =0
+                ZIndex: =1
+
+            ImageIcon_4 As image:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =vargStyle.Sidebar.IconSize
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Image: |-
+                    ="data:image/svg+xml," &
+                    
+                            EncodeUrl(
+                                "    
+                                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'>
+                                <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1,               Code:MIT License) -->" 
+                                // Get the definition of the icon fill from theme variable
+                                & vargStyle.CollapseDropDownMenu.IconColor & 
+                                    
+                                //Change the image in the "d" property
+                                "<path d='M288 144a110.94 110.94 0 0 0-31.24 5 55.4 55.4 0 0 1 7.24 27 56 56 0 0 1-56 56 55.4 55.4 0 0 1-27-7.24A111.71 111.71 0 1 0 288 144zm284.52 97.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400c-98.65 0-189.09-55-237.93-144C98.91 167 189.34 112 288 112s189.09 55 237.93 144C477.1 345 386.66 400 288 400z'"
+                                
+                                &
+                                // Theme style
+                                 " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.CollapseDropDownMenu.IconOpacity & ";'></path></svg>"
+                    
+                            )
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =5
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =vargStyle.Sidebar.IconSize
+                X: =vargStyle.Sidebar.AlignIconX
+                Y: =(Parent.Height-Self.Height)/2
+                ZIndex: =3
+
+            ImageArrow_4 As image:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =vargStyle.CollapseDropDownMenu.IconSize
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Image: |-
+                    =If(Concatenate("#",Value(lbIdentifier_17.Text),"#") in varcDropDMenuExpandedGroup, 
+                    
+                    "data:image/svg+xml," &
+                    
+                            EncodeUrl(
+                                "    
+                                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'>
+                                <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1,               Code:MIT License) -->" 
+                                // Get the definition of the icon fill from theme variable
+                                & vargStyle.CollapseDropDownMenu.IconColor & 
+                                    
+                                //Change the image in the "d" property
+                                "<path d='M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z'"
+                                
+                                &
+                                // Theme style
+                                 " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.CollapseDropDownMenu.IconOpacity & ";'></path></svg>"
+                    
+                            )
+                    ,
+                    
+                    
+                    "data:image/svg+xml," &
+                    
+                            EncodeUrl(
+                                "    
+                                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'>
+                                <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1,               Code:MIT License) -->" 
+                                // Get the definition of the icon fill from theme variable
+                                & vargStyle.CollapseDropDownMenu.IconColor & 
+                                    
+                                //Change the image in the "d" property
+                                "<path d='M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z'"
+                                
+                                &
+                                // Theme style
+                                 " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.CollapseDropDownMenu.IconOpacity & ";'></path></svg>"
+                    
+                            ))
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =5
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =vargStyle.CollapseDropDownMenu.IconSize
+                X: =Parent.Width-Self.Width-10
+                Y: =(Parent.Height-Self.Height)/2
+                ZIndex: =4
+
+            Button1_51 As button:
+                Align: =Align.Left
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Color: =vargStyle.CollapseDropDownMenu.FontColor
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                Font: =vargStyle.CollapseDropDownMenu.Font
+                FontWeight: =vargStyle.CollapseDropDownMenu.FontWeight
+                Height: =Parent.Height
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =ColorFade(Self.Color,90%)
+                HoverFill: =vargStyle.CollapseDropDownMenu.HoverSideItem
+                OnSelect: |-
+                    =UpdateContext({varcDropDNav: Value(lbIdentifier_17.Text)}) && If(
+                        "#" & varcDropDNav & "#" in varcDropDMenuExpandedGroup,
+                        UpdateContext(
+                            {
+                                varcDropDMenuExpandedGroup: Substitute(
+                                    varcDropDMenuExpandedGroup,
+                                    Concatenate(
+                                        "#",
+                                        varcDropDNav,
+                                        "#"
+                                    ),
+                                    ""
+                                )
+                            }
+                        ) && UpdateContext({varcDropDNav: 0}),
+                        UpdateContext(
+                            {
+                                varcDropDMenuExpandedGroup: Concatenate(
+                                    varcDropDMenuExpandedGroup,
+                                    "#" & varcDropDNav & "#"
+                                )
+                            }
+                        )
+                    )
+                PaddingLeft: =vargStyle.CollapseDropDownMenu.SmallWidth
+                PressedBorderColor: =ColorFade(RGBA(135, 100, 184, 0.5), -50%)
+                PressedColor: =ColorFade(Self.Color,50%)
+                PressedFill: =ColorFade(Self.HoverFill, -30%)
+                RadiusBottomLeft: =vargStyle.CollapseDropDownMenu.ItemBorderRadius
+                RadiusBottomRight: =vargStyle.CollapseDropDownMenu.ItemBorderRadius
+                RadiusTopLeft: =vargStyle.CollapseDropDownMenu.ItemBorderRadius
+                RadiusTopRight: =vargStyle.CollapseDropDownMenu.ItemBorderRadius
+                Size: =vargStyle.CollapseDropDownMenu.FontHeight
+                Text: ="DropDownMenu"
+                Tooltip: =Self.Text
+                Width: =Parent.Width-Self.X
+                ZIndex: =5
+
+        "'co.DropDMenuItem_1' As groupContainer.manualLayoutContainer":
+            AlignInContainer: =AlignInContainer.SetByContainer
+            BorderColor: =vargStyle.CollapseDropDownMenu.ItemBorderColor
+            BorderStyle: =vargStyle.CollapseDropDownMenu.ItemBorderStyle
+            BorderThickness: =vargStyle.CollapseDropDownMenu.ItemBorderThickness
+            Fill: =vargStyle.CollapseDropDownMenu.SubItemBackgroundColor
+            FillPortions: =0
+            Height: =50
+            LayoutMinHeight: =100
+            LayoutMinWidth: =vargStyle.CollapseDropDownMenu.SmallWidth
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            Width: =Parent.Width
+            ZIndex: =3
+
+            Image1_55 As image:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =vargStyle.CollapseDropDownMenu.IconSize
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Image: |-
+                    ="data:image/svg+xml," &
+                    
+                            EncodeUrl(
+                                "    
+                                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 496 512'>
+                                <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1,               Code:MIT License) -->" 
+                                // Get the definition of the icon fill from theme variable
+                                & vargStyle.CollapseDropDownMenu.SubIconColor & 
+                                    
+                                //Change the image in the "d" property
+                                "<path d='M347.94 129.86L203.6 195.83a31.938 31.938 0 0 0-15.77 15.77l-65.97 144.34c-7.61 16.65 9.54 33.81 26.2 26.2l144.34-65.97a31.938 31.938 0 0 0 15.77-15.77l65.97-144.34c7.61-16.66-9.54-33.81-26.2-26.2zm-77.36 148.72c-12.47 12.47-32.69 12.47-45.16 0-12.47-12.47-12.47-32.69 0-45.16 12.47-12.47 32.69-12.47 45.16 0 12.47 12.47 12.47 32.69 0 45.16zM248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 448c-110.28 0-200-89.72-200-200S137.72 56 248 56s200 89.72 200 200-89.72 200-200 200z'"
+                                
+                                &
+                                // Theme style
+                                 " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.CollapseDropDownMenu.SubIconOpacity & ";'></path></svg>"
+                    
+                            )
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =5
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =vargStyle.Sidebar.IconSize
+                X: =vargStyle.CollapseDropDownMenu.SubItemAlignX
+                Y: =(Parent.Height-Self.Height)/2
+                ZIndex: =2
+
+            Button1_53 As button:
+                Align: =Align.Left
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Color: =vargStyle.CollapseDropDownMenu.SubItemFontColor
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                Font: =vargStyle.CollapseDropDownMenu.SubItemFont
+                FontWeight: =vargStyle.CollapseDropDownMenu.SubItemFontWeight
+                Height: =Parent.Height
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =vargStyle.CollapseDropDownMenu.SubItemHoverColor
+                HoverFill: =ColorFade(vargStyle.CollapseDropDownMenu.SubItemHoverColor,70%)
+                OnSelect: |-
+                    =UpdateContext({varcDropDNav:7})
+                PaddingLeft: =vargStyle.CollapseDropDownMenu.SmallWidth+20
+                PressedBorderColor: =ColorFade(RGBA(135, 100, 184, 0.5), -50%)
+                PressedColor: =ColorFade(Self.Color,50%)
+                PressedFill: =ColorFade(Self.HoverFill, -30%)
+                RadiusBottomLeft: =vargStyle.CollapseDropDownMenu.ItemBorderRadius
+                RadiusBottomRight: =vargStyle.CollapseDropDownMenu.ItemBorderRadius
+                RadiusTopLeft: =vargStyle.CollapseDropDownMenu.ItemBorderRadius
+                RadiusTopRight: =vargStyle.CollapseDropDownMenu.ItemBorderRadius
+                Size: =vargStyle.CollapseDropDownMenu.SubItemFontHeight
+                Text: ="Opción 1"
+                Tooltip: =Self.Text
+                Width: =Parent.Width-Self.X
+                ZIndex: =3
+
+        "'co.DropDMenuItem_2' As groupContainer.manualLayoutContainer":
+            AlignInContainer: =AlignInContainer.SetByContainer
+            BorderColor: =vargStyle.CollapseDropDownMenu.ItemBorderColor
+            BorderStyle: =vargStyle.CollapseDropDownMenu.ItemBorderStyle
+            BorderThickness: =vargStyle.CollapseDropDownMenu.ItemBorderThickness
+            Fill: =vargStyle.CollapseDropDownMenu.SubItemBackgroundColor
+            FillPortions: =0
+            Height: =50
+            LayoutMinHeight: =100
+            LayoutMinWidth: =vargStyle.CollapseDropDownMenu.SmallWidth
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            Width: =Parent.Width
+            ZIndex: =4
+
+            Image1_56 As image:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =vargStyle.CollapseDropDownMenu.IconSize
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Image: |-
+                    ="data:image/svg+xml," &
+                    
+                            EncodeUrl(
+                                "    
+                                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 496 512'>
+                                <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1,               Code:MIT License) -->" 
+                                // Get the definition of the icon fill from theme variable
+                                & vargStyle.CollapseDropDownMenu.SubIconColor & 
+                                    
+                                //Change the image in the "d" property
+                                "<path d='M347.94 129.86L203.6 195.83a31.938 31.938 0 0 0-15.77 15.77l-65.97 144.34c-7.61 16.65 9.54 33.81 26.2 26.2l144.34-65.97a31.938 31.938 0 0 0 15.77-15.77l65.97-144.34c7.61-16.66-9.54-33.81-26.2-26.2zm-77.36 148.72c-12.47 12.47-32.69 12.47-45.16 0-12.47-12.47-12.47-32.69 0-45.16 12.47-12.47 32.69-12.47 45.16 0 12.47 12.47 12.47 32.69 0 45.16zM248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 448c-110.28 0-200-89.72-200-200S137.72 56 248 56s200 89.72 200 200-89.72 200-200 200z'"
+                                
+                                &
+                                // Theme style
+                                 " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.CollapseDropDownMenu.SubIconOpacity & ";'></path></svg>"
+                    
+                            )
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =5
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =vargStyle.Sidebar.IconSize
+                X: =vargStyle.CollapseDropDownMenu.SubItemAlignX
+                Y: =(Parent.Height-Self.Height)/2
+                ZIndex: =2
+
+            Button1_54 As button:
+                Align: =Align.Left
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Color: =vargStyle.CollapseDropDownMenu.SubItemFontColor
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                Font: =vargStyle.CollapseDropDownMenu.SubItemFont
+                FontWeight: =vargStyle.CollapseDropDownMenu.SubItemFontWeight
+                Height: =Parent.Height
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =vargStyle.CollapseDropDownMenu.SubItemHoverColor
+                HoverFill: =ColorFade(vargStyle.CollapseDropDownMenu.SubItemHoverColor,70%)
+                OnSelect: |-
+                    =UpdateContext({varcDropDNav:7})
+                PaddingLeft: =vargStyle.CollapseDropDownMenu.SmallWidth+20
+                PressedBorderColor: =ColorFade(RGBA(135, 100, 184, 0.5), -50%)
+                PressedColor: =ColorFade(Self.Color,50%)
+                PressedFill: =ColorFade(Self.HoverFill, -30%)
+                RadiusBottomLeft: =vargStyle.CollapseDropDownMenu.ItemBorderRadius
+                RadiusBottomRight: =vargStyle.CollapseDropDownMenu.ItemBorderRadius
+                RadiusTopLeft: =vargStyle.CollapseDropDownMenu.ItemBorderRadius
+                RadiusTopRight: =vargStyle.CollapseDropDownMenu.ItemBorderRadius
+                Size: =vargStyle.CollapseDropDownMenu.SubItemFontHeight
+                Text: ="Opción 2"
+                Tooltip: =Self.Text
+                Width: =Parent.Width-Self.X
+                ZIndex: =3
+
+        "'co.DropDMenuItem_4' As groupContainer.manualLayoutContainer":
+            AlignInContainer: =AlignInContainer.SetByContainer
+            BorderColor: =vargStyle.CollapseDropDownMenu.ItemBorderColor
+            BorderStyle: =vargStyle.CollapseDropDownMenu.ItemBorderStyle
+            BorderThickness: =vargStyle.CollapseDropDownMenu.ItemBorderThickness
+            Fill: =vargStyle.CollapseDropDownMenu.SubItemBackgroundColor
+            FillPortions: =0
+            Height: =50
+            LayoutMinHeight: =100
+            LayoutMinWidth: =vargStyle.CollapseDropDownMenu.SmallWidth
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            Width: =Parent.Width
+            ZIndex: =5
+
+            Image1_58 As image:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =vargStyle.CollapseDropDownMenu.IconSize
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Image: |-
+                    ="data:image/svg+xml," &
+                    
+                            EncodeUrl(
+                                "    
+                                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 496 512'>
+                                <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1,               Code:MIT License) -->" 
+                                // Get the definition of the icon fill from theme variable
+                                & vargStyle.CollapseDropDownMenu.SubIconColor & 
+                                    
+                                //Change the image in the "d" property
+                                "<path d='M347.94 129.86L203.6 195.83a31.938 31.938 0 0 0-15.77 15.77l-65.97 144.34c-7.61 16.65 9.54 33.81 26.2 26.2l144.34-65.97a31.938 31.938 0 0 0 15.77-15.77l65.97-144.34c7.61-16.66-9.54-33.81-26.2-26.2zm-77.36 148.72c-12.47 12.47-32.69 12.47-45.16 0-12.47-12.47-12.47-32.69 0-45.16 12.47-12.47 32.69-12.47 45.16 0 12.47 12.47 12.47 32.69 0 45.16zM248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 448c-110.28 0-200-89.72-200-200S137.72 56 248 56s200 89.72 200 200-89.72 200-200 200z'"
+                                
+                                &
+                                // Theme style
+                                 " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.CollapseDropDownMenu.SubIconOpacity & ";'></path></svg>"
+                    
+                            )
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =5
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =vargStyle.Sidebar.IconSize
+                X: =vargStyle.CollapseDropDownMenu.SubItemAlignX
+                Y: =(Parent.Height-Self.Height)/2
+                ZIndex: =2
+
+            Button1_57 As button:
+                Align: =Align.Left
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Color: =vargStyle.CollapseDropDownMenu.SubItemFontColor
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                Font: =vargStyle.CollapseDropDownMenu.SubItemFont
+                FontWeight: =vargStyle.CollapseDropDownMenu.SubItemFontWeight
+                Height: =Parent.Height
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =vargStyle.CollapseDropDownMenu.SubItemHoverColor
+                HoverFill: =ColorFade(vargStyle.CollapseDropDownMenu.SubItemHoverColor,70%)
+                OnSelect: |-
+                    =UpdateContext({varcDropDNav:7})
+                PaddingLeft: =vargStyle.CollapseDropDownMenu.SmallWidth+20
+                PressedBorderColor: =ColorFade(RGBA(135, 100, 184, 0.5), -50%)
+                PressedColor: =ColorFade(Self.Color,50%)
+                PressedFill: =ColorFade(Self.HoverFill, -30%)
+                RadiusBottomLeft: =vargStyle.CollapseDropDownMenu.ItemBorderRadius
+                RadiusBottomRight: =vargStyle.CollapseDropDownMenu.ItemBorderRadius
+                RadiusTopLeft: =vargStyle.CollapseDropDownMenu.ItemBorderRadius
+                RadiusTopRight: =vargStyle.CollapseDropDownMenu.ItemBorderRadius
+                Size: =vargStyle.CollapseDropDownMenu.SubItemFontHeight
+                Text: ="Opción 3"
+                Tooltip: =Self.Text
+                Width: =Parent.Width-Self.X
+                ZIndex: =3
+
+    Group2 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =7
+
+        Label3 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Size: =13
+            Text: =varcDropDMenuExpandedGroup
+            X: =285
+            Y: =36
+            ZIndex: =1
+
+        Arrow1_4 As arrow.backArrow:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 120, 212, 1)
+            OnSelect: =Navigate('Home Screen')
+            X: =App.Width-Self.Width
+            ZIndex: =2
+
+        Label4 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(151, 0, 0, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =48
+            Size: =13
+            Text: ="This component use formulas in X property"
+            Width: =278
+            X: =32
+            Y: =362
+            ZIndex: =3
+

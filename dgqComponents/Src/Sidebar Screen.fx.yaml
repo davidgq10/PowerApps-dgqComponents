@@ -1,0 +1,951 @@
+"'Sidebar Screen' As screen":
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+
+    Arrow1_2 As arrow.backArrow:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 120, 212, 1)
+        OnSelect: =Navigate('Home Screen')
+        X: =App.Width-Self.Width
+        ZIndex: =1
+
+    "'co.Sidebar' As groupContainer.verticalAutoLayoutContainer":
+        BorderColor: =vargStyle.Others.BorderComponentsColor
+        BorderStyle: =vargStyle.Others.BorderComponentsStyle
+        BorderThickness: =vargBorderComponent
+        Fill: =vargStyle.Sidebar.BackgroundColor
+        Height: |-
+            =If(vargWSide=true,App.Height-Self.Y,If(App.ActiveScreen.Size=1,50,App.Height-Self.Y))
+            
+            
+            //If(vargWSide=true;vargTheme.Sidebar.BigWidth;vargTheme.Sidebar.SmallWidth)
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        LayoutOverflowY: =LayoutOverflow.Scroll
+        PaddingBottom: =20
+        PaddingTop: =10
+        Width: =If(vargWSide=true,vargStyle.Sidebar.BigWidth,vargStyle.Sidebar.SmallWidth)
+        Y: =40
+        ZIndex: =2
+
+        "'co.PrincipalSideItem' As groupContainer.manualLayoutContainer":
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0
+            Height: =50
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            Width: =Parent.Width
+            ZIndex: =1
+
+            imgIcon_9 As image:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =35
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Image: |-
+                    ="data:image/svg+xml," &
+                    
+                            EncodeUrl(
+                                "    
+                                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'>
+                                <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1,               Code:MIT License) -->" 
+                                // Get the definition of the icon fill from theme variable
+                                & vargStyle.Sidebar.IconColor & 
+                                    
+                                //Change the image in the "d" property
+                                "<path d='M432 416H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-128H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16                      16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-128H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-128H16A16 16 0               0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z'"
+                                
+                                &
+                                // Theme style
+                                 " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.Sidebar.IconOpacity & ";'></path></svg>"
+                    
+                            )
+                OnSelect: =Set(vargWSide,!vargWSide)
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =5
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Transparency: =0.5
+                Width: =40
+                X: =vargStyle.Sidebar.AlignIconX
+                ZIndex: =1
+
+        "'co.SideItem' As groupContainer.manualLayoutContainer":
+            AlignInContainer: =AlignInContainer.SetByContainer
+            BorderColor: =vargStyle.Sidebar.ItemBorderColor
+            BorderStyle: =vargStyle.Sidebar.ItemBorderStyle
+            BorderThickness: =vargStyle.Sidebar.ItemBorderThickness
+            FillPortions: =0
+            Height: =50
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            Width: =Parent.Width
+            ZIndex: =2
+
+            shpActiveSideItem_10 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledFill: =RGBA(166, 166, 166, 1)
+                Fill: =vargStyle.Sidebar.NavigationIconColor
+                FocusedBorderThickness: =4
+                Height: =Parent.Height-10
+                HoverFill: =RGBA(0, 120, 212, 1)
+                PressedFill: =RGBA(0, 120, 212, 1)
+                Visible: =varcSidebarNavPlain=1
+                Width: =5
+                Y: =5
+                ZIndex: =1
+
+            imgIcon_10 As image:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =vargStyle.Sidebar.IconSize
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Image: |-
+                    ="data:image/svg+xml," &
+                    
+                            EncodeUrl(
+                                "    
+                                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 616 512'>
+                                <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1,               Code:MIT License) -->" 
+                                // Get the definition of the icon fill from theme variable
+                                & vargStyle.Sidebar.IconColor & 
+                                    
+                                //Change the image in the "d" property
+                                "<path d='M602 118.6L537.1 15C531.3 5.7 521 0 510 0H106C95 0 84.7 5.7 78.9 15L14 118.6c-33.5 53.5-3.8 127.9 58.8 136.4 4.5.6 9.1.9 13.7.9 29.6 0 55.8-13 73.8-33.1 18 20.1 44.3 33.1 73.8 33.1 29.6 0 55.8-13 73.8-33.1 18 20.1 44.3 33.1 73.8 33.1 29.6 0 55.8-13 73.8-33.1 18.1 20.1 44.3 33.1 73.8 33.1 4.7 0 9.2-.3 13.7-.9 62.8-8.4 92.6-82.8 59-136.4zM529.5 288c-10 0-19.9-1.5-29.5-3.8V384H116v-99.8c-9.6 2.2-19.5 3.8-29.5 3.8-6 0-12.1-.4-18-1.2-5.6-.8-11.1-2.1-16.4-3.6V480c0 17.7 14.3 32 32 32h448c17.7 0 32-14.3 32-32V283.2c-5.4 1.6-10.8 2.9-16.4 3.6-6.1.8-12.1 1.2-18.2 1.2z'"
+                                
+                                &
+                                // Theme style
+                                 " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.Sidebar.IconOpacity & ";'></path></svg>"
+                    
+                            )
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =5
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =vargStyle.Sidebar.IconSize
+                X: =vargStyle.Sidebar.AlignIconX
+                Y: =(Parent.Height-Self.Height)/2
+                ZIndex: =2
+
+            btnHoverText_10 As button:
+                Align: =Align.Left
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Color: =vargStyle.Sidebar.FontColor
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                Font: =vargStyle.Sidebar.Font
+                FontWeight: =vargStyle.Sidebar.FontWeight
+                Height: =Parent.Height
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =ColorFade(Self.Color,90%)
+                HoverFill: =vargStyle.Sidebar.HoverSideItem
+                OnSelect: |-
+                    =UpdateContext({varcSidebarNavPlain:1})
+                PaddingLeft: =vargStyle.Sidebar.SmallWidth
+                PressedBorderColor: =ColorFade(RGBA(135, 100, 184, 0.5), -50%)
+                PressedColor: =ColorFade(Self.Color,50%)
+                PressedFill: =ColorFade(Self.HoverFill, -30%)
+                RadiusBottomLeft: =vargStyle.Sidebar.ItemBorderRadius
+                RadiusBottomRight: =vargStyle.Sidebar.ItemBorderRadius
+                RadiusTopLeft: =vargStyle.Sidebar.ItemBorderRadius
+                RadiusTopRight: =vargStyle.Sidebar.ItemBorderRadius
+                Size: =vargStyle.Sidebar.FontHeight
+                Text: ="Locales"
+                Tooltip: =Self.Text
+                Width: =Parent.Width-Self.X
+                ZIndex: =3
+
+    "'co.SidebarWithGroups' As groupContainer.verticalAutoLayoutContainer":
+        BorderColor: =vargStyle.Others.BorderComponentsColor
+        BorderStyle: =vargStyle.Others.BorderComponentsStyle
+        BorderThickness: =vargBorderComponent
+        Fill: =vargStyle.Sidebar.BackgroundColor
+        Height: |-
+            =If(vargWSide=true,App.Height-Self.Y,If(App.ActiveScreen.Size=1,0,App.Height-Self.Y))
+            
+            
+            //If(vargWSide=true;vargTheme.Sidebar.BigWidth;vargTheme.Sidebar.SmallWidth)
+        LayoutDirection: |-
+            =LayoutDirection.Vertical
+            
+            //In this container we have to define order of the elements manually to show the navigation and expand or collapse status, you have to modify the label called --- lbIdentifier ---
+        LayoutMode: =LayoutMode.Auto
+        LayoutOverflowY: =LayoutOverflow.Scroll
+        PaddingBottom: =20
+        PaddingTop: =10
+        Width: =vargStyle.Sidebar.StaticBigWidth
+        X: =230
+        Y: =40
+        ZIndex: =3
+
+        "'co.SideItem_1' As groupContainer.manualLayoutContainer":
+            AlignInContainer: =AlignInContainer.SetByContainer
+            BorderColor: =vargStyle.Sidebar.ItemBorderColor
+            BorderStyle: =vargStyle.Sidebar.ItemBorderStyle
+            BorderThickness: =vargStyle.Sidebar.ItemBorderThickness
+            FillPortions: =0
+            Height: =50
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            Width: =Parent.Width
+            ZIndex: =2
+
+            lbIText_8 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =vargStyle.Sidebar.FontColor
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Fill: =vargStyle.Sidebar.BackgroundColor
+                FocusedBorderThickness: =4
+                Font: =vargStyle.Sidebar.Font
+                FontWeight: =vargStyle.Sidebar.FontWeight
+                Height: =Parent.Height
+                Size: =vargStyle.Sidebar.FontHeight
+                Text: |-
+                    =//This label is used to identifier the SideItem, define expand or collapte status and height of the container.
+                    "1"
+                Width: =0
+                X: =40
+                ZIndex: =1
+
+            shpActiveSideItem_8 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledFill: =RGBA(166, 166, 166, 1)
+                Fill: =vargStyle.Sidebar.NavigationIconColor
+                FocusedBorderThickness: =4
+                Height: =Parent.Height-10
+                HoverFill: =RGBA(0, 120, 212, 1)
+                PressedFill: =RGBA(0, 120, 212, 1)
+                Visible: =varcSidebarNav=Value(lbIText_8.Text)
+                Width: =5
+                Y: =5
+                ZIndex: =2
+
+            imgIcon_8 As image:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =vargStyle.Sidebar.IconSize
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Image: |-
+                    ="data:image/svg+xml," &
+                    
+                            EncodeUrl(
+                                "    
+                                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 616 512'>
+                                <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1,               Code:MIT License) -->" 
+                                // Get the definition of the icon fill from theme variable
+                                & vargStyle.Sidebar.IconColor & 
+                                    
+                                //Change the image in the "d" property
+                                "<path d='M602 118.6L537.1 15C531.3 5.7 521 0 510 0H106C95 0 84.7 5.7 78.9 15L14 118.6c-33.5 53.5-3.8 127.9 58.8 136.4 4.5.6 9.1.9 13.7.9 29.6 0 55.8-13 73.8-33.1 18 20.1 44.3 33.1 73.8 33.1 29.6 0 55.8-13 73.8-33.1 18 20.1 44.3 33.1 73.8 33.1 29.6 0 55.8-13 73.8-33.1 18.1 20.1 44.3 33.1 73.8 33.1 4.7 0 9.2-.3 13.7-.9 62.8-8.4 92.6-82.8 59-136.4zM529.5 288c-10 0-19.9-1.5-29.5-3.8V384H116v-99.8c-9.6 2.2-19.5 3.8-29.5 3.8-6 0-12.1-.4-18-1.2-5.6-.8-11.1-2.1-16.4-3.6V480c0 17.7 14.3 32 32 32h448c17.7 0 32-14.3 32-32V283.2c-5.4 1.6-10.8 2.9-16.4 3.6-6.1.8-12.1 1.2-18.2 1.2z'"
+                                
+                                &
+                                // Theme style
+                                 " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.Sidebar.IconOpacity & ";'></path></svg>"
+                    
+                            )
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =5
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =vargStyle.Sidebar.IconSize
+                X: =vargStyle.Sidebar.AlignIconX
+                Y: =(Parent.Height-Self.Height)/2
+                ZIndex: =3
+
+            btnHoverText_8 As button:
+                Align: =Align.Left
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Color: =vargStyle.Sidebar.FontColor
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                Font: =vargStyle.Sidebar.Font
+                FontWeight: =vargStyle.Sidebar.FontWeight
+                Height: =Parent.Height
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =ColorFade(Self.Color,90%)
+                HoverFill: =vargStyle.Sidebar.HoverSideItem
+                OnSelect: |-
+                    =UpdateContext({vacSidebarNav:7}); Set(vargWSide,!vargWSide)
+                PaddingLeft: =vargStyle.Sidebar.SmallWidth
+                PressedBorderColor: =ColorFade(RGBA(135, 100, 184, 0.5), -50%)
+                PressedColor: =ColorFade(Self.Color,50%)
+                PressedFill: =ColorFade(Self.HoverFill, -30%)
+                RadiusBottomLeft: =vargStyle.Sidebar.ItemBorderRadius
+                RadiusBottomRight: =vargStyle.Sidebar.ItemBorderRadius
+                RadiusTopLeft: =vargStyle.Sidebar.ItemBorderRadius
+                RadiusTopRight: =vargStyle.Sidebar.ItemBorderRadius
+                Size: =vargStyle.Sidebar.FontHeight
+                TabIndex: =1
+                Text: ="Locales"
+                Tooltip: =Self.Text
+                Width: =Parent.Width-Self.X
+                ZIndex: =4
+
+        "'co.SideItemGroupManualRetractable' As groupContainer.verticalAutoLayoutContainer":
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0
+            Height: |-
+                =If(
+                    "#" & Value(lblGroupIdentifier_11.Text) & "#" in varcSidebarExpandedGroup,
+                    50*2, //This value is the subitems in the conteiner count *50
+                    50
+                )
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =Parent.Width
+            LayoutMode: =LayoutMode.Auto
+            Width: =Parent.Width
+            ZIndex: =8
+
+            "'co.SideGroupName' As groupContainer.manualLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                BorderColor: =vargStyle.Sidebar.ItemBorderColor
+                BorderStyle: =vargStyle.Sidebar.ItemBorderStyle
+                BorderThickness: =vargStyle.Sidebar.ItemBorderThickness
+                FillPortions: =0
+                Height: =50
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =5
+                Width: =Parent.Width
+                ZIndex: =1
+
+                lblGroupIdentifier_11 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =vargStyle.Sidebar.FontColor
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =vargStyle.Sidebar.BackgroundColor
+                    FocusedBorderThickness: =4
+                    Font: =vargStyle.Sidebar.Font
+                    FontWeight: =vargStyle.Sidebar.FontWeight
+                    Height: =Parent.Height
+                    Size: =vargStyle.Sidebar.FontHeight
+                    Text: ="7"
+                    Width: =0
+                    ZIndex: =1
+
+                shpActiveSideItem_11 As rectangle:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    DisabledFill: =RGBA(166, 166, 166, 1)
+                    Fill: =vargStyle.Sidebar.NavigationIconColor
+                    FocusedBorderThickness: =4
+                    Height: =Parent.Height-10
+                    HoverFill: =RGBA(0, 120, 212, 1)
+                    PressedFill: =RGBA(0, 120, 212, 1)
+                    Visible: =varcSidebarNav=Value(lblGroupIdentifier_11.Text)
+                    Width: =5
+                    Y: =5
+                    ZIndex: =2
+
+                imgIcon_11 As image:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =vargStyle.Sidebar.IconSize
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Image: |-
+                        ="data:image/svg+xml," &
+                        
+                                EncodeUrl(
+                                    "    
+                                    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'>
+                                    <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1,               Code:MIT License) -->" 
+                                    // Get the definition of the icon fill from theme variable
+                                    & vargStyle.Sidebar.IconColor & 
+                                        
+                                    //Change the image in the "d" property
+                                    "<path d='M288 144a110.94 110.94 0 0 0-31.24 5 55.4 55.4 0 0 1 7.24 27 56 56 0 0 1-56 56 55.4 55.4 0 0 1-27-7.24A111.71 111.71 0 1 0 288 144zm284.52 97.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400c-98.65 0-189.09-55-237.93-144C98.91 167 189.34 112 288 112s189.09 55 237.93 144C477.1 345 386.66 400 288 400z'"
+                                    
+                                    &
+                                    // Theme style
+                                     " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.Sidebar.IconOpacity & ";'></path></svg>"
+                        
+                                )
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =vargStyle.Sidebar.IconSize
+                    X: =vargStyle.Sidebar.AlignIconX
+                    Y: =(Parent.Height-Self.Height)/2
+                    ZIndex: =3
+
+                imgArrow_11 As image:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =vargStyle.Sidebar.IconSize
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Image: |-
+                        =If(Concatenate("#",Value(lblGroupIdentifier_11.Text),"#") in varcSidebarExpandedGroup, 
+                        
+                        "data:image/svg+xml," &
+                        
+                                EncodeUrl(
+                                    "    
+                                    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'>
+                                    <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1,               Code:MIT License) -->" 
+                                    // Get the definition of the icon fill from theme variable
+                                    & vargStyle.Sidebar.IconColor & 
+                                        
+                                    //Change the image in the "d" property
+                                    "<path d='M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z'"
+                                    
+                                    &
+                                    // Theme style
+                                     " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.Sidebar.IconOpacity & ";'></path></svg>"
+                        
+                                )
+                        ,
+                        
+                        
+                        "data:image/svg+xml," &
+                        
+                                EncodeUrl(
+                                    "    
+                                    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'>
+                                    <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1,               Code:MIT License) -->" 
+                                    // Get the definition of the icon fill from theme variable
+                                    & vargStyle.Sidebar.IconColor & 
+                                        
+                                    //Change the image in the "d" property
+                                    "<path d='M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z'"
+                                    
+                                    &
+                                    // Theme style
+                                     " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.Sidebar.IconOpacity & ";'></path></svg>"
+                        
+                                ))
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =vargStyle.Sidebar.IconSize
+                    X: =Parent.Width-Self.Width-10
+                    Y: =(Parent.Height-Self.Height)/2
+                    ZIndex: =4
+
+                btnHoverText_11 As button:
+                    Align: =Align.Left
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =vargStyle.Sidebar.FontColor
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                    Font: =vargStyle.Sidebar.Font
+                    FontWeight: =vargStyle.Sidebar.FontWeight
+                    Height: =Parent.Height
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =ColorFade(Self.Color,90%)
+                    HoverFill: =vargStyle.Sidebar.HoverSideItem
+                    OnSelect: |-
+                        =UpdateContext({varcSidebarNav: Value(lblGroupIdentifier_11.Text)}) && If(
+                            "#" & varcSidebarNav & "#" in varcSidebarExpandedGroup,
+                            UpdateContext(
+                                {
+                                    varcSidebarExpandedGroup: Substitute(
+                                        varcSidebarExpandedGroup,
+                                        Concatenate(
+                                            "#",
+                                            varcSidebarNav, "#"
+                                        ),
+                                        ""
+                                    )
+                                }
+                            ) && UpdateContext({varcSidebarNav: 0}),
+                            UpdateContext(
+                                {
+                                    varcSidebarExpandedGroup: Concatenate(
+                                        varcSidebarExpandedGroup,
+                                        "#" & varcSidebarNav & "#"
+                                    )
+                                }
+                            )
+                        )
+                    PaddingLeft: =vargStyle.Sidebar.SmallWidth
+                    PressedBorderColor: =ColorFade(RGBA(135, 100, 184, 0.5), -50%)
+                    PressedColor: =ColorFade(Self.Color,50%)
+                    PressedFill: =ColorFade(Self.HoverFill, -30%)
+                    RadiusBottomLeft: =vargStyle.Sidebar.ItemBorderRadius
+                    RadiusBottomRight: =vargStyle.Sidebar.ItemBorderRadius
+                    RadiusTopLeft: =vargStyle.Sidebar.ItemBorderRadius
+                    RadiusTopRight: =vargStyle.Sidebar.ItemBorderRadius
+                    Size: =vargStyle.Sidebar.FontHeight
+                    Text: ="Vista 1"
+                    Tooltip: =Self.Text
+                    Width: =Parent.Width-Self.X
+                    ZIndex: =5
+
+            "'co.SideItemSubItem' As groupContainer.manualLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                BorderColor: =vargStyle.Sidebar.ItemBorderColor
+                BorderStyle: =vargStyle.Sidebar.ItemBorderStyle
+                BorderThickness: =vargStyle.Sidebar.ItemBorderThickness
+                Fill: =RGBA(0,0,0,0)
+                FillPortions: =0
+                Height: =50
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =5
+                Width: =Parent.Width
+                ZIndex: =2
+
+                shpActiveSideItem_12 As rectangle:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    DisabledFill: =RGBA(166, 166, 166, 1)
+                    Fill: =vargStyle.Sidebar.NavigationIconColor
+                    FocusedBorderThickness: =4
+                    Height: =Parent.Height-10
+                    HoverFill: =RGBA(0, 120, 212, 1)
+                    PressedFill: =RGBA(0, 120, 212, 1)
+                    Visible: =false
+                    Width: =5
+                    Y: =5
+                    ZIndex: =1
+
+                imgIcon_12 As image:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =vargStyle.Sidebar.IconSize
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Image: |-
+                        ="data:image/svg+xml," &
+                        
+                                EncodeUrl(
+                                    "    
+                                    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 496 512'>
+                                    <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1,               Code:MIT License) -->" 
+                                    // Get the definition of the icon fill from theme variable
+                                    & vargStyle.Sidebar.IconColor & 
+                                        
+                                    //Change the image in the "d" property
+                                    "<path d='M347.94 129.86L203.6 195.83a31.938 31.938 0 0 0-15.77 15.77l-65.97 144.34c-7.61 16.65 9.54 33.81 26.2 26.2l144.34-65.97a31.938 31.938 0 0 0 15.77-15.77l65.97-144.34c7.61-16.66-9.54-33.81-26.2-26.2zm-77.36 148.72c-12.47 12.47-32.69 12.47-45.16 0-12.47-12.47-12.47-32.69 0-45.16 12.47-12.47 32.69-12.47 45.16 0 12.47 12.47 12.47 32.69 0 45.16zM248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 448c-110.28 0-200-89.72-200-200S137.72 56 248 56s200 89.72 200 200-89.72 200-200 200z'"
+                                    
+                                    &
+                                    // Theme style
+                                     " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.Sidebar.IconOpacity & ";'></path></svg>"
+                        
+                                )
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =vargStyle.Sidebar.IconSize
+                    X: =vargStyle.Sidebar.SubItemAlignX
+                    Y: =(Parent.Height-Self.Height)/2
+                    ZIndex: =2
+
+                btnHoverText_12 As button:
+                    Align: =Align.Left
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =vargStyle.Sidebar.SubItemFontColor
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                    Font: =vargStyle.Sidebar.SubItemFont
+                    FontWeight: =vargStyle.Sidebar.SubItemFontWeight
+                    Height: =Parent.Height
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =ColorFade(Self.Color,30%)
+                    HoverFill: =ColorFade(vargStyle.Sidebar.HoverSideItem,70%)
+                    OnSelect: |-
+                        =UpdateContext({vacSidebarNav:7}); Set(vargWSide,!vargWSide)
+                    PaddingLeft: =vargStyle.Sidebar.SmallWidth+20
+                    PressedBorderColor: =ColorFade(RGBA(135, 100, 184, 0.5), -50%)
+                    PressedColor: =ColorFade(Self.Color,10%)
+                    PressedFill: =ColorFade(Self.HoverFill, -30%)
+                    RadiusBottomLeft: =vargStyle.Sidebar.ItemBorderRadius
+                    RadiusBottomRight: =vargStyle.Sidebar.ItemBorderRadius
+                    RadiusTopLeft: =vargStyle.Sidebar.ItemBorderRadius
+                    RadiusTopRight: =vargStyle.Sidebar.ItemBorderRadius
+                    Size: =vargStyle.Sidebar.SubItemFontHeight
+                    Text: ="Vistas"
+                    Tooltip: =Self.Text
+                    Width: =Parent.Width-Self.X
+                    ZIndex: =3
+
+        "'co.SideItemGroupAutoRetractable_1' As groupContainer.verticalAutoLayoutContainer":
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0
+            Height: |-
+                =If(
+                    varcSidebarNav = 8,
+                    50*2, //This value is the subitems in the conteiner count *50
+                    50
+                )
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =Parent.Width
+            LayoutMode: =LayoutMode.Auto
+            Width: =Parent.Width
+            ZIndex: =9
+
+            "'co.SideGroupName_1' As groupContainer.manualLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                BorderColor: =vargStyle.Sidebar.ItemBorderColor
+                BorderStyle: =vargStyle.Sidebar.ItemBorderStyle
+                BorderThickness: =vargStyle.Sidebar.ItemBorderThickness
+                FillPortions: =0
+                Height: =50
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =5
+                Width: =Parent.Width
+                ZIndex: =1
+
+                lblGroupIdentifier_13 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =vargStyle.Sidebar.FontColor
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =vargStyle.Sidebar.BackgroundColor
+                    FocusedBorderThickness: =4
+                    Font: =vargStyle.Sidebar.Font
+                    FontWeight: =vargStyle.Sidebar.FontWeight
+                    Height: =Parent.Height
+                    Size: =vargStyle.Sidebar.FontHeight
+                    Text: ="8"
+                    Width: =0
+                    X: =40
+                    ZIndex: =1
+
+                shpActiveSideItem_13 As rectangle:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    DisabledFill: =RGBA(166, 166, 166, 1)
+                    Fill: =vargStyle.Sidebar.NavigationIconColor
+                    FocusedBorderThickness: =4
+                    Height: =Parent.Height-10
+                    HoverFill: =RGBA(0, 120, 212, 1)
+                    PressedFill: =RGBA(0, 120, 212, 1)
+                    Visible: =varcSidebarNav=Value(lblGroupIdentifier_13.Text)
+                    Width: =5
+                    Y: =5
+                    ZIndex: =2
+
+                imgIcon_13 As image:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =vargStyle.Sidebar.IconSize
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Image: |-
+                        ="data:image/svg+xml," &
+                        
+                                EncodeUrl(
+                                    "    
+                                    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'>
+                                    <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1,               Code:MIT License) -->" 
+                                    // Get the definition of the icon fill from theme variable
+                                    & vargStyle.Sidebar.IconColor & 
+                                        
+                                    //Change the image in the "d" property
+                                    "<path d='M288 144a110.94 110.94 0 0 0-31.24 5 55.4 55.4 0 0 1 7.24 27 56 56 0 0 1-56 56 55.4 55.4 0 0 1-27-7.24A111.71 111.71 0 1 0 288 144zm284.52 97.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400c-98.65 0-189.09-55-237.93-144C98.91 167 189.34 112 288 112s189.09 55 237.93 144C477.1 345 386.66 400 288 400z'"
+                                    
+                                    &
+                                    // Theme style
+                                     " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.Sidebar.IconOpacity & ";'></path></svg>"
+                        
+                                )
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =vargStyle.Sidebar.IconSize
+                    X: =vargStyle.Sidebar.AlignIconX
+                    Y: =(Parent.Height-Self.Height)/2
+                    ZIndex: =3
+
+                imgArrow_13 As image:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =vargStyle.Sidebar.IconSize
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Image: |-
+                        =If(varcSidebarNav=8, 
+                        
+                        ""
+                        ,
+                        
+                        
+                        "data:image/svg+xml," &
+                        
+                                EncodeUrl(
+                                    "    
+                                    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'>
+                                    <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1,               Code:MIT License) -->" 
+                                    // Get the definition of the icon fill from theme variable
+                                    & vargStyle.Sidebar.IconColor & 
+                                        
+                                    //Change the image in the "d" property
+                                    "<path d='M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z'"
+                                    
+                                    &
+                                    // Theme style
+                                     " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.Sidebar.IconOpacity & ";'></path></svg>"
+                        
+                                ))
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =vargStyle.Sidebar.IconSize
+                    X: =Parent.Width-Self.Width-10
+                    Y: =(Parent.Height-Self.Height)/2
+                    ZIndex: =4
+
+                btnHoverText_13 As button:
+                    Align: =Align.Left
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =vargStyle.Sidebar.FontColor
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                    Font: =vargStyle.Sidebar.Font
+                    FontWeight: =vargStyle.Sidebar.FontWeight
+                    Height: =Parent.Height
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =ColorFade(Self.Color,90%)
+                    HoverFill: =vargStyle.Sidebar.HoverSideItem
+                    OnSelect: |-
+                        =UpdateContext({varcSidebarNav: 8})
+                    PaddingLeft: =vargStyle.Sidebar.SmallWidth
+                    PressedBorderColor: =ColorFade(RGBA(135, 100, 184, 0.5), -50%)
+                    PressedColor: =ColorFade(Self.Color,50%)
+                    PressedFill: =ColorFade(Self.HoverFill, -30%)
+                    RadiusBottomLeft: =vargStyle.Sidebar.ItemBorderRadius
+                    RadiusBottomRight: =vargStyle.Sidebar.ItemBorderRadius
+                    RadiusTopLeft: =vargStyle.Sidebar.ItemBorderRadius
+                    RadiusTopRight: =vargStyle.Sidebar.ItemBorderRadius
+                    Size: =vargStyle.Sidebar.FontHeight
+                    Text: ="Vista 1"
+                    Tooltip: =Self.Text
+                    Width: =Parent.Width-Self.X
+                    ZIndex: =5
+
+            "'co.SideItemSubItem_1' As groupContainer.manualLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                BorderColor: =vargStyle.Sidebar.ItemBorderColor
+                BorderStyle: =vargStyle.Sidebar.ItemBorderStyle
+                BorderThickness: =vargStyle.Sidebar.ItemBorderThickness
+                Fill: =RGBA(0,0,0,0)
+                FillPortions: =0
+                Height: =50
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =5
+                Width: =Parent.Width
+                ZIndex: =6
+
+                shpActiveSideItem_14 As rectangle:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    DisabledFill: =RGBA(166, 166, 166, 1)
+                    Fill: =vargStyle.Sidebar.NavigationIconColor
+                    FocusedBorderThickness: =4
+                    Height: =Parent.Height-10
+                    HoverFill: =RGBA(0, 120, 212, 1)
+                    PressedFill: =RGBA(0, 120, 212, 1)
+                    Visible: =false
+                    Width: =5
+                    Y: =5
+                    ZIndex: =1
+
+                imgIcon_14 As image:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =vargStyle.Sidebar.IconSize
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Image: |-
+                        ="data:image/svg+xml," &
+                        
+                                EncodeUrl(
+                                    "    
+                                    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 496 512'>
+                                    <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1,               Code:MIT License) -->" 
+                                    // Get the definition of the icon fill from theme variable
+                                    & vargStyle.Sidebar.IconColor & 
+                                        
+                                    //Change the image in the "d" property
+                                    "<path d='M347.94 129.86L203.6 195.83a31.938 31.938 0 0 0-15.77 15.77l-65.97 144.34c-7.61 16.65 9.54 33.81 26.2 26.2l144.34-65.97a31.938 31.938 0 0 0 15.77-15.77l65.97-144.34c7.61-16.66-9.54-33.81-26.2-26.2zm-77.36 148.72c-12.47 12.47-32.69 12.47-45.16 0-12.47-12.47-12.47-32.69 0-45.16 12.47-12.47 32.69-12.47 45.16 0 12.47 12.47 12.47 32.69 0 45.16zM248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 448c-110.28 0-200-89.72-200-200S137.72 56 248 56s200 89.72 200 200-89.72 200-200 200z'"
+                                    
+                                    &
+                                    // Theme style
+                                     " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.Sidebar.IconOpacity & ";'></path></svg>"
+                        
+                                )
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =vargStyle.Sidebar.IconSize
+                    X: =vargStyle.Sidebar.SubItemAlignX
+                    Y: =(Parent.Height-Self.Height)/2
+                    ZIndex: =2
+
+                btnHoverText_14 As button:
+                    Align: =Align.Left
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =vargStyle.Sidebar.SubItemFontColor
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                    Font: =vargStyle.Sidebar.SubItemFont
+                    FontWeight: =vargStyle.Sidebar.SubItemFontWeight
+                    Height: =Parent.Height
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =ColorFade(Self.Color,30%)
+                    HoverFill: =ColorFade(vargStyle.Sidebar.HoverSideItem,70%)
+                    OnSelect: |-
+                        =UpdateContext({vacSidebarNav:7}); Set(vargWSide,!vargWSide)
+                    PaddingLeft: =vargStyle.Sidebar.SmallWidth+20
+                    PressedBorderColor: =ColorFade(RGBA(135, 100, 184, 0.5), -50%)
+                    PressedColor: =ColorFade(Self.Color,50%)
+                    PressedFill: =ColorFade(Self.HoverFill, -30%)
+                    RadiusBottomLeft: =vargStyle.Sidebar.ItemBorderRadius
+                    RadiusBottomRight: =vargStyle.Sidebar.ItemBorderRadius
+                    RadiusTopLeft: =vargStyle.Sidebar.ItemBorderRadius
+                    RadiusTopRight: =vargStyle.Sidebar.ItemBorderRadius
+                    Size: =vargStyle.Sidebar.SubItemFontHeight
+                    Text: ="Vistas"
+                    Tooltip: =Self.Text
+                    Width: =Parent.Width-Self.X
+                    ZIndex: =3
+
+        Icon3 As icon.CollapseView:
+            AlignInContainer: =AlignInContainer.Center
+            BorderColor: =RGBA(166, 166, 166, 1)
+            Color: =RGBA(0, 120, 212, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =20
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.CollapseView
+            OnSelect: |-
+                =UpdateContext({varcSidebarExpandedGroup:""});UpdateContext({varcSidebarNav:0})
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =20
+            ZIndex: =12
+

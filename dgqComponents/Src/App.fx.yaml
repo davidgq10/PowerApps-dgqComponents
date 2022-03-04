@@ -1,0 +1,638 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |-
+        =//Get user profile
+        
+        Set (vargUserProfile, {
+        
+            DisplayName:UsuariosdeOffice365.MyProfile().DisplayName,
+            Id: UsuariosdeOffice365.MyProfile().Id,
+            Mail: UsuariosdeOffice365.MyProfile().Mail,
+            AccountEnabled: UsuariosdeOffice365.MyProfile().AccountEnabled
+            });
+        
+        
+        
+        Set(
+            //This variable define the theme style
+            vargStyle,
+            {
+                Inputs: {
+                    DropDown: {
+                        //Text
+                        Font: Font.Lato,
+                        FontColor: DarkSlateGray,
+                        FontHeight: 11,
+                        FontWeight: FontWeight.Normal,
+                        //Component
+                        Shadow: {
+                            BorderRadius: "5px",
+                            BoxShadow: "0 3px 6px 1px  gray",
+                            Background: "#ffffff"
+                        },
+                        Background: White,
+                        HoverColor: DarkSlateGray,
+                        HoverFill: SkyBlue,
+                        ChevronFill: White,
+                        ChevronBackground: SkyBlue,
+                        SelectionFill: SkyBlue,
+                        SelectionColor: White,
+                        ChevronHoverBackground: SkyBlue,
+                        BorderColor: SkyBlue,
+                        BorderThickness: 0,
+                        FocusedBorderColor: SkyBlue,
+                        FocusedBorderThickness: 0,
+                        BorderStyle: BorderStyle.None
+                    }
+                },
+                Header: {
+                    BackgroundColor: WhiteSmoke,
+                    FontColor: DarkViolet,
+                    IconColor: "          
+                    <defs>
+                        <linearGradient id='myLinearGradient1'
+                                            x1='0%' y1='0%'
+                                            x2='0%' y2='50%'
+                                            x3='0%' y3='100%'
+                                            spreadMethod='pad'>
+                            <stop offset='0%'   stop-color='darkgray' stop-opacity='1'/>
+                            <stop offset='0%'   stop-color='darkgray' stop-opacity='1'/>
+                            <stop offset='100%' stop-color='darkgray' stop-opacity='1'/>
+                        </linearGradient>
+                    </defs>",
+                    IconOpacity: 1,
+                    Title: {
+                        BackgroundColor: RGBA(0,0,0,0),
+                        FontColor: Black,
+                        BorderColor: DarkCyan,
+                        BorderStyle: BorderStyle.None,
+                        Font: Font.'Open Sans Condensed',
+                        FontHeight: 16,
+                        FontWeight: FontWeight.Semibold
+                    },
+                    SearchBar: {
+                        BackgroundColor: White,
+                        FontColor: Black,
+                        BorderColor: DarkCyan,
+                        BorderStyle: BorderStyle.None
+                    },
+                    IconLabel: {
+                        Font: Font.'Open Sans Condensed',
+                        FontColor: DarkOrange,
+                        HoverColor: RGBA(
+                            100,
+                            100,
+                            100,
+                            0.3
+                        ),
+                        BackgroundColor: RGBA(
+                            0,
+                            0,
+                            0,
+                            0
+                        ),
+                        BorderColor: RGBA(
+                            0,
+                            0,
+                            0,
+                            0
+                        ),
+                        FontHeight: 13,
+                        FontWeight: FontWeight.Semibold,
+                        BorderRadius: 5,
+                        BorderStyle: BorderStyle.Solid,
+                        BorderThickness: 0,
+                        IconColor: "          
+                            <defs>
+                                <linearGradient id='myLinearGradient1'
+                                                    x1='0%' y1='0%'
+                                                    x2='10%' y2='50%'
+                                                    x3='30%' y3='100%'
+                                                    spreadMethod='pad'>
+                                    <stop offset='0%'   stop-color='#3d3d3d' stop-opacity='1'/>
+                                    <stop offset='0%'   stop-color='#3d3d3d' stop-opacity='1'/>
+                                    <stop offset='100%' stop-color='#3d3d3d' stop-opacity='1'/>
+                                </linearGradient>
+                            </defs>",
+                        IconOpacity: 1
+                    }
+                },
+                //Formato de botones
+                Buttons: {
+                    //Botones medianos
+                    Midium: {
+                        //Accept Button
+                        Accept: {
+                            Text: "Aceptar",
+                            Font: Font.'Open Sans Condensed',
+                            FontColor: White,
+                            BackgroundColor: Green,
+                            BorderColor: Green,
+                            FontHeight: 15,
+                            FontWeight: FontWeight.Semibold,
+                            BorderRadius: 5,
+                            Visible: true,
+                            DisplayMode: DisplayMode.Edit,
+                            BorderStyle: BorderStyle.Solid,
+                            BorderThickness: 1,
+                            Shadow: {
+                                BorderRadius: "5px",
+                                BoxShadow: "0 3px 6px 1px  gray"
+                            }
+                        },
+                        //Calcel Button
+                        Cancel: {
+                            Text: "Cancelar",
+                            Font: Font.'Open Sans Condensed',
+                            FontColor: White,
+                            BackgroundColor: Red,
+                            BorderColor: Red,
+                            FontHeight: 15,
+                            FontWeight: FontWeight.Normal,
+                            BorderRadius: 5,
+                            Visible: true,
+                            DisplayMode: DisplayMode.Edit,
+                            BorderStyle: BorderStyle.Solid,
+                            BorderThickness: 1,
+                            Shadow: {
+                                BorderRadius: "5px",
+                                BoxShadow: "0 3px 6px 1px  gray"
+                            }
+                        },
+                        Toggle: {
+                            HandleFill: White,
+                            FalseFill: RGBA(
+                                128,
+                                130,
+                                133,
+                                1
+                            ),
+                            TrueFill: Green,
+                            Font: Font.'Open Sans Condensed',
+                            FontHeight: 15,
+                            FontColor: White,
+                            Shadow: {
+                                BorderRadius: "20px",
+                                BoxShadow: "0 3px 6px 1px  gray"
+                            }
+                        },
+                        PlusCircle: {
+                            IconColor: "          
+                                <defs>
+                                     <linearGradient id='myLinearGradient1'
+                                            x1='0%' y1='0%'
+                                            x2='100%' y2='100%'
+                                            spreadMethod='pad'>
+                                     <stop offset='0%'   stop-color='#fc3abc' stop-opacity='1'/>
+                                     <stop offset='100%' stop-color='#630043' stop-opacity='1'/>
+                                    </linearGradient>
+                                </defs>",
+                            IconOpacity: 1
+                        },
+                        ResponsiveIconLabel: {
+                            Font: Font.'Open Sans Condensed',
+                            FontColor: DarkOrange,
+                            HoverFill: RGBA(
+                                100,
+                                100,
+                                100,
+                                0.3
+                            ),
+                            BackgroundColor: RGBA(
+                                0,
+                                0,
+                                0,
+                                0
+                            ),
+                            BorderColor: RGBA(
+                                0,
+                                0,
+                                0,
+                                0
+                            ),
+                            FontHeight: 13,
+                            FontWeight: FontWeight.Semibold,
+                            BorderRadius: 20,
+                            BorderStyle: BorderStyle.Solid,
+                            BorderThickness: 0,
+                            IconColor: "          
+                            <defs>
+                                <linearGradient id='myLinearGradient1'
+                                                    x1='0%' y1='0%'
+                                                    x2='10%' y2='50%'
+                                                    x3='30%' y3='100%'
+                                                    spreadMethod='pad'>
+                                    <stop offset='0%'   stop-color='#3d3d3d' stop-opacity='1'/>
+                                    <stop offset='0%'   stop-color='#3d3d3d' stop-opacity='1'/>
+                                    <stop offset='100%' stop-color='#3d3d3d' stop-opacity='1'/>
+                                </linearGradient>
+                            </defs>",
+                            IconOpacity: 1
+                        }
+                    }
+                },
+                CollapseDropDownMenu: {
+                    //CollapseDropDownMenu style
+                    //Flexible Dropdown (without group items)
+        BigWidth: 210,
+                    SmallWidth: 55,
+                    //Static width  (with group items)
+                    StaticBigWidth: 230,
+                    //Style
+                    BackgroundColor: WhiteSmoke,
+                    Visible: true,
+                    IconSize: 35,
+                    NavigationIconColor: DarkCyan,
+                    AlignIconX: 10,
+                    HoverSideItem: RGBA(
+                        0,
+                        121,
+                        187,
+                        0.5
+                    ),
+                    ItemBorderRadius: 0.5,
+                    //Font style
+                    Font: Font.Lato,
+                    FontColor: White,
+                    FontHeight: 11,
+                    FontWeight: FontWeight.Normal,
+                    //This variable has to be a text type, and the "id" can't change.
+                    IconColor: "          
+                    <defs>
+                        <linearGradient id='myLinearGradient1'
+                                            x1='0%' y1='0%'
+                                            x2='50%' y2='50%'
+                                            x3='100%' y3='100%'
+                                            spreadMethod='pad'>
+                            <stop offset='0%'   stop-color='white' stop-opacity='1'/>
+                            <stop offset='30%'   stop-color='white' stop-opacity='1'/>
+                            <stop offset='100%' stop-color='white' stop-opacity='1'/>
+                        </linearGradient>
+                    </defs>",
+                    IconOpacity: 1,
+                    SubIconColor: "          
+                    <defs>
+                        <linearGradient id='myLinearGradient1'
+                                            x1='0%' y1='0%'
+                                            x2='50%' y2='50%'
+                                            x3='100%' y3='100%'
+                                            spreadMethod='pad'>
+                            <stop offset='0%'   stop-color='white' stop-opacity='1'/>
+                            <stop offset='30%'   stop-color='blue' stop-opacity='1'/>
+                            <stop offset='100%' stop-color='black' stop-opacity='1'/>
+                        </linearGradient>
+                    </defs>",
+                    SubIconOpacity: 1,
+                    HoverColor: RGBA(
+                        100,
+                        100,
+                        100,
+                        0.3
+                    ),
+                    //Item style
+                    ItemBorderThickness: 0,
+                    ItemBorderColor: LightGray,
+                    ItemBorderStyle: BorderStyle.Solid,
+                    ItemBackgroundColor: RGBA(
+                        0,
+                        121,
+                        187,
+                        1
+                    ),
+                    SubItemFont: Font.Lato,
+                    SubItemAlignX: 20,
+                    SubItemFontColor: DarkCyan,
+                    SubItemFontHeight: 11,
+                    SubItemFontWeight: FontWeight.Lighter,
+                    SubItemBackgroundColor: WhiteSmoke,
+                    SubItemHoverColor: RGBA(
+                        0,
+                        121,
+                        187,
+                        0.5
+                    )
+                },
+                Sidebar: {
+                    //Side style
+                    //Flexible side (without group items)
+        BigWidth: 230,
+                    SmallWidth: 55,
+                    //Side Static width  (with group items)
+                    StaticBigWidth: 230,
+                    //Side
+                    BackgroundColor: WhiteSmoke,
+                    Height: App.Height - 50,
+                    Visible: true,
+                    IconSize: 35,
+                    NavigationIconColor: DarkCyan,
+                    AlignIconX: 7.5,
+                    HoverSideItem: RGBA(
+                        0,
+                        121,
+                        187,
+                        0.5
+                    ),
+                    ItemBorderRadius: 0.5,
+                    //Font style
+                    Font: Font.Lato,
+                    FontColor: DarkSlateGray,
+                    FontHeight: 11,
+                    FontWeight: FontWeight.Normal,
+                    //This variable has to be a text type, and the "id" can't change.
+                    IconColor: "          
+                    <defs>
+                        <linearGradient id='myLinearGradient1'
+                                            x1='0%' y1='0%'
+                                            x2='50%' y2='50%'
+                                            x3='100%' y3='100%'
+                                            spreadMethod='pad'>
+                            <stop offset='0%'   stop-color='lightgray' stop-opacity='1'/>
+                            <stop offset='30%'   stop-color='#28dada' stop-opacity='1'/>
+                            <stop offset='100%' stop-color='#0079BB' stop-opacity='1'/>
+                        </linearGradient>
+                    </defs>",
+                    IconOpacity: 1,
+                    HoverColor: RGBA(
+                        100,
+                        100,
+                        100,
+                        0.3
+                    ),
+                    //Item style
+                    ItemBorderThickness: 0,
+                    ItemBorderColor: LightGray,
+                    ItemBorderStyle: BorderStyle.Solid,
+                    SubItemFont: Font.Lato,
+                    SubItemAlignX: 20,
+                    SubItemFontColor: Gray,
+                    SubItemFontHeight: 11,
+                    SubItemFontWeight: FontWeight.Lighter
+                },
+                OptionsMenu: {
+                    Font: Font.'Open Sans Condensed',
+                    FontSub: Font.'Open Sans Condensed',
+                    FontColor: White,
+                    FontSubColor: RGBA(
+                        0,
+                        121,
+                        187,
+                        1
+                    ),
+                    FontHeight: 15,
+                    FontWeight: FontWeight.Semibold,
+                    FontBackground: LightGray,
+                    ImportantOptionBackground: RGBA(
+                        0,
+                        121,
+                        187,
+                        1
+                    ),
+                    ImportantOptionColor: White,
+                    ImportantOptionBorderRadius: 5,
+                    ImportantOptionBorderColor: RGBA(
+                        0,
+                        121,
+                        187,
+                        1
+                    ),
+                    ImportantOptionBorderThickness: 3,
+                    Background: White,
+                    //This variable has to be a text type, and the "id" can't change.
+                    IconColor: "          
+                    <defs>
+                        <linearGradient id='myLinearGradient1'
+                                            x1='0%' y1='0%'
+                                            x2='100%' y2='100%'
+                                            spreadMethod='reflect'>
+                            <stop offset='0%'   stop-color='#00d4ff' stop-opacity='1'/>
+                            <stop offset='100%' stop-color='#073a99' stop-opacity='1'/>
+                        </linearGradient>
+                    </defs>",
+                    IconOpacity: 1,
+                    HoverColor: RGBA(
+                        100,
+                        100,
+                        100,
+                        0.3
+                    ),
+                    HoverFill: RGBA(
+                        0,
+                        176,
+                        255,
+                        0.23
+                    ),
+                    BorderStyle: BorderStyle.Solid,
+                    BorderThickness: 0,
+                    BorderColor: Gray
+                },
+                ItemsList: {
+                    //Title list
+                    TitleFont: Font.'Segoe UI',
+                    TitleFontColor: DarkSlateGray,
+                    TitleFontHeight: 16,
+                    TitleFontWeight: FontWeight.Lighter,
+                    //Label style
+                    ToggleActiveItem: {
+                        OnCheckBackground: Green,
+                        OnUncheckBackground: LightGray,
+                        ToggleWidth: 150,
+                        ToggleHeight: 20
+                    },
+                    CheckBox: {
+                        CheckmarkFill: Green,
+                        CheckboxBorderColor: WhiteSmoke,
+                        CheckboxBorderThickness: 1,
+                        CheckboxSize: 30,
+                        CheckboxFill: White
+                    },
+                    FontLabel: Font.'Open Sans Condensed',
+                    FontColorLabel: Black,
+                    FontColorLabelSelected: Black,
+                    FontHeightLabel: 11,
+                    FontWeightLabel: FontWeight.Lighter,
+                    BackgroundLabel: RGBA(
+                        0,
+                        0,
+                        0,
+                        0
+                    ),
+                    BackgroundLabelSelected: RGBA(
+                        0,
+                        0,
+                        0,
+                        0
+                    ),
+                    //Data style
+                    FontData: Font.'Segoe UI',
+                    FontColorData: Gray,
+                    FontColorDataSelected: DarkCyan,
+                    FontHeightData: 11,
+                    FontWeightData: FontWeight.Normal,
+                    FontBackground: RGBA(
+                        0,
+                        0,
+                        0,
+                        0
+                    ),
+                    BackgroundData: RGBA(
+                        0,
+                        0,
+                        0,
+                        0
+                    ),
+                    BackgroundDataSelected: RGBA(
+                        0,
+                        0,
+                        0,
+                        0
+                    ),
+                    Wrap: true,
+                    ShowNavigation: false,
+                    NavigationStep: 1,
+                    NavigationTransition: Transition.None,
+                    //Items and fill
+                    Background: White,
+                    SelectedColor: ColorFade(
+                        LightSeaGreen,
+                        90%
+                    ),
+                    RowBackground: White,
+                    BorderColor: WhiteSmoke,
+                    BorderThickness: 1,
+                    BorderStyle: BorderStyle.Solid,
+                    //_____________________________
+                    FormActionsButtons: {
+                        Font: Font.'Open Sans Condensed',
+                        FontColor: RGBA(
+                            0,
+                            121,
+                            187,
+                            1
+                        ),
+                        FontHeight: 15,
+                        FontWeight: FontWeight.Semibold,
+                        FontBackground: LightGray,
+                        Background: White,
+                        //This variable has to be a text type, and the "id" can't change.
+                        IconColor: "          
+                    <defs>
+                        <linearGradient id='myLinearGradient1'
+                                            x1='0%' y1='0%'
+                                            x2='100%' y2='100%'
+                                            spreadMethod='reflect'>
+                            <stop offset='0%'   stop-color='#00d4ff' stop-opacity='1'/>
+                            <stop offset='100%' stop-color='#073a99' stop-opacity='1'/>
+                        </linearGradient>
+                    </defs>",
+                        IconOpacity: 1,
+                        HoverColor: RGBA(
+                            100,
+                            100,
+                            100,
+                            0.3
+                        ),
+                        HoverPositiveFill: RGBA(
+                            0,
+                            176,
+                            255,
+                            0.23
+                        ),
+                        HoverNegativeFill: RGBA(
+                            250,
+                            56,
+                            66,
+                            0.4
+                        ),
+                        BorderStyle: BorderStyle.Solid,
+                        BorderThickness: 0,
+                        BorderColor: Gray
+                    },
+                    //_______________________________________
+                    LoadingIcon: "data:image/svg+xml," & EncodeUrl(
+                        "<?xml version='1.0' encoding='utf-8'?>
+                    <svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='margin: auto; background: none; display: block; shape-rendering: auto;' width='200px' height='200px' viewBox='0               0 100 100' preserveAspectRatio='xMidYMid'>
+                        <circle cx='84' cy='50' r='10' fill='#e15b64'>
+                        <animate attributeName='r' repeatCount='indefinite' dur='0.25s' calcMode='spline' keyTimes='0;1' values='10;0' keySplines='0 0.5 0.5 1' begin='0s'></animate>
+                        <animate attributeName='fill' repeatCount='indefinite' dur='1s' calcMode='discrete' keyTimes='0;0.25;0.5;0.75;1' values='#e15b64;#abbd81;#f8b26a;#f47e60;#e15b64' begin='0s'></animate>
+                        </circle><circle cx='16' cy='50' r='10' fill='#e15b64'>
+                        <animate attributeName='r' repeatCount='indefinite' dur='1s' calcMode='spline' keyTimes='0;0.25;0.5;0.75;1' values='0;0;10;10;10' keySplines='0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1'                          begin='0s'></animate>
+                        <animate attributeName='cx' repeatCount='indefinite' dur='1s' calcMode='spline' keyTimes='0;0.25;0.5;0.75;1' values='16;16;16;50;84' keySplines='0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1'                       begin='0s'></animate>
+                        </circle><circle cx='50' cy='50' r='10' fill='#f47e60'>
+                        <animate attributeName='r' repeatCount='indefinite' dur='1s' calcMode='spline' keyTimes='0;0.25;0.5;0.75;1' values='0;0;10;10;10' keySplines='0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1'                          begin='-0.25s'></animate>
+                        <animate attributeName='cx' repeatCount='indefinite' dur='1s' calcMode='spline' keyTimes='0;0.25;0.5;0.75;1' values='16;16;16;50;84' keySplines='0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1'                       begin='-0.25s'></animate>
+                        </circle><circle cx='84' cy='50' r='10' fill='#f8b26a'>
+                        <animate attributeName='r' repeatCount='indefinite' dur='1s' calcMode='spline' keyTimes='0;0.25;0.5;0.75;1' values='0;0;10;10;10' keySplines='0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1'                          begin='-0.5s'></animate>
+                        <animate attributeName='cx' repeatCount='indefinite' dur='1s' calcMode='spline' keyTimes='0;0.25;0.5;0.75;1' values='16;16;16;50;84' keySplines='0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1'                       begin='-0.5s'></animate>
+                        </circle><circle cx='16' cy='50' r='10' fill='#abbd81'>
+                        <animate attributeName='r' repeatCount='indefinite' dur='1s' calcMode='spline' keyTimes='0;0.25;0.5;0.75;1' values='0;0;10;10;10' keySplines='0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1'                          begin='-0.75s'></animate>
+                        <animate attributeName='cx' repeatCount='indefinite' dur='1s' calcMode='spline' keyTimes='0;0.25;0.5;0.75;1' values='16;16;16;50;84' keySplines='0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1'                       begin='-0.75s'></animate>
+                        </circle>
+                        <!-- [ldio] generated by https://loading.io/ -->
+                    </svg>"
+                    )
+                },
+                StartMenu: {
+                    //StartMenu style
+                    BackgroundColor: WhiteSmoke,
+                    Height: App.Height - 50,
+                    BigWidth: 230,
+                    SmallWidth: 55,
+                    Visible: true,
+                    IconSize: 35,
+                    NavigationIconColor: DarkCyan,
+                    AlignIconX: 7.5,
+                    HoverSideItem: RGBA(
+                        0,
+                        121,
+                        187,
+                        0.5
+                    ),
+                    ItemBorderRadius: 0.5,
+                    //Font style
+                    Font: Font.Lato,
+                    FontColor: DarkSlateGray,
+                    FontHeight: 11,
+                    FontWeight: FontWeight.Normal,
+                    //This variable has to be a text type, and the "id" can't change.
+                    IconColor: "          
+                    <defs>
+                        <linearGradient id='myLinearGradient1'
+                                            x1='0%' y1='0%'
+                                            x2='50%' y2='50%'
+                                            x3='100%' y3='100%'
+                                            spreadMethod='pad'>
+                            <stop offset='0%'   stop-color='black' stop-opacity='1'/>
+                            <stop offset='30%'   stop-color='#28dada' stop-opacity='1'/>
+                            <stop offset='100%' stop-color='#0079BB' stop-opacity='1'/>
+                        </linearGradient>
+                    </defs>",
+                    IconOpacity: 1,
+                    HoverColor: RGBA(
+                        100,
+                        100,
+                        100,
+                        0.3
+                    ),
+                    ItemBorderThickness: 0.5,
+                    ItemBorderColor: LightGray,
+                    ItemBorderStyle: BorderStyle.Solid,
+                    SubItemFont: Font.Lato,
+                    SubItemFontColor: Gray,
+                    SubItemFontHeight: 11,
+                    SubItemFontWeight: FontWeight.Lighter,
+                    SubItemHoverColor: RGBA(
+                        150,
+                        150,
+                        150,
+                        0.3
+                    )
+                },
+                Others: {
+                    AppBackground: White,
+                    BorderComponentsStyle: BorderStyle.Solid,
+                    BorderComponentsColor: Black
+                }
+            }
+        )
+    StartScreen: =
+

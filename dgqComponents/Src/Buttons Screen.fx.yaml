@@ -1,0 +1,578 @@
+"'Buttons Screen' As screen":
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+
+    "'co.ResponsiveButtonIconAndLabel' As groupContainer.manualLayoutContainer":
+        BorderColor: =vargStyle.Buttons.Midium.ResponsiveIconLabel.BorderColor
+        BorderStyle: =vargStyle.Buttons.Midium.ResponsiveIconLabel.BorderStyle
+        BorderThickness: =vargStyle.Buttons.Midium.ResponsiveIconLabel.BorderThickness
+        Fill: =vargStyle.Buttons.Midium.ResponsiveIconLabel.BackgroundColor
+        Height: =99
+        Width: =123
+        X: =47
+        Y: =516
+        ZIndex: =4
+
+        lblText As label:
+            Align: =Align.Center
+            AutoHeight: =true
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =vargStyle.Buttons.Midium.ResponsiveIconLabel.FontColor
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =vargStyle.Buttons.Midium.ResponsiveIconLabel.Font
+            FontWeight: =vargStyle.Buttons.Midium.ResponsiveIconLabel.FontWeight
+            Size: =If(Parent.Height>100,Parent.Height/10,Parent.Height/8) //vargStyle.Buttons.Small.IconLabel.FontHeight
+            Text: ="Soy un botón"
+            Width: =Parent.Width
+            X: =(Parent.Width-Self.Width)/2
+            Y: =imgIcon.Y+imgIcon.Height
+            ZIndex: =2
+
+        imgIcon As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =If(Parent.Height>150,Parent.Width*(2/3),Parent.Width*(1.5/3))
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: |-
+                ="data:image/svg+xml," &
+                
+                        EncodeUrl(
+                            "    
+                            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 586 512'>
+                            <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1,               Code:MIT License) -->" 
+                            // Get the definition of the icon fill from theme variable
+                            & vargStyle.Buttons.Midium.ResponsiveIconLabel.IconColor & 
+                                
+                            //Change the image in the "d" property
+                            "<path d='M532 386.2c27.5-27.1 44-61.1 44-98.2 0-80-76.5-146.1-176.2-157.9C368.3 72.5 294.3 32 208 32 93.1 32 0 103.6 0 192c0 37 16.5 71 44 98.2-15.3 30.7-37.3 54.5-37.7 54.9-6.3 6.7-8.1 16.5-4.4 25 3.6 8.5 12 14 21.2 14 53.5 0 96.7-20.2 125.2-38.8 9.2 2.1 18.7 3.7 28.4 4.9C208.1 407.6 281.8 448 368 448c20.8 0 40.8-2.4 59.8-6.8C456.3 459.7 499.4 480 553 480c9.2 0 17.5-5.5 21.2-14 3.6-8.5 1.9-18.3-4.4-25-.4-.3-22.5-24.1-37.8-54.8zm-392.8-92.3L122.1 305c-14.1 9.1-28.5 16.3-43.1 21.4 2.7-4.7 5.4-9.7 8-14.8l15.5-31.1L77.7 256C64.2 242.6 48 220.7 48 192c0-60.7 73.3-112 160-112s160 51.3 160 112-73.3 112-160 112c-16.5 0-33-1.9-49-5.6l-19.8-4.5zM498.3 352l-24.7 24.4 15.5 31.1c2.6 5.1 5.3 10.1 8 14.8-14.6-5.1-29-12.3-43.1-21.4l-17.1-11.1-19.9 4.6c-16 3.7-32.5 5.6-49 5.6-54 0-102.2-20.1-131.3-49.7C338 339.5 416 272.9 416 192c0-3.4-.4-6.7-.7-10C479.7 196.5 528 238.8 528 288c0 28.7-16.2 50.6-29.7 64z'"
+                            
+                            &
+                            // Theme style
+                             " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.Buttons.Midium.ResponsiveIconLabel.IconOpacity & ";'></path></svg>"
+                
+                        )
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =If(Parent.Height>150,Parent.Width*(2/3),Parent.Width*(1.5/3))
+            X: =(Parent.Width-Self.Width)/2
+            Y: =2
+            ZIndex: =3
+
+        btnHover_1 As button:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(181, 159, 159, 0)
+            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =Parent.Height
+            HoverBorderColor: =RGBA(255, 255, 255, 1)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(0, 208, 255, 0.14)
+            OnSelect: =Navigate('Home Screen')
+            PressedBorderColor: =
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =ColorFade(Self.HoverFill, 40%)
+            RadiusBottomLeft: =vargStyle.Buttons.Midium.ResponsiveIconLabel.BorderRadius
+            RadiusBottomRight: =vargStyle.Buttons.Midium.ResponsiveIconLabel.BorderRadius
+            RadiusTopLeft: =vargStyle.Buttons.Midium.ResponsiveIconLabel.BorderRadius
+            RadiusTopRight: =vargStyle.Buttons.Midium.ResponsiveIconLabel.BorderRadius
+            Size: =15
+            Text: =""
+            Width: =Parent.Width
+            ZIndex: =4
+
+    "'co.Shadow' As groupContainer.manualLayoutContainer":
+        BorderThickness: =vargBorderComponent
+        Height: =116
+        Width: =273
+        Y: =192
+        ZIndex: =5
+
+        htmShadow_3 As htmlViewer:
+            BorderStyle: =BorderStyle.Dotted
+            Height: =Parent.Height
+            HoverBorderColor: =Red
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:3px;width:"&Parent.Width-25&"px;height:"&Parent.Height-25&"px;background-color:#;box-shadow:"&vargStyle.Buttons.Midium.Cancel.Shadow.BoxShadow &"; border-radius:5px'></div>"
+            Width: =Parent.Width
+            ZIndex: =1
+
+    "'co.AcceptCancelBox' As groupContainer.manualLayoutContainer":
+        BorderColor: =vargStyle.Others.BorderComponentsColor
+        BorderStyle: =vargStyle.Others.BorderComponentsStyle
+        BorderThickness: =vargBorderComponent
+        Height: =55
+        Width: =273
+        Y: =89
+        ZIndex: =6
+
+        htmShadow_2 As htmlViewer:
+            BorderStyle: =BorderStyle.Dotted
+            Height: =55
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:3px;width:119px;height:30px;background-color:#;box-shadow:"&vargStyle.Buttons.Midium.Cancel.Shadow.BoxShadow &"; border-radius:"& vargStyle.Buttons.Midium.Cancel.Shadow.BorderRadius &"'></div>"
+            Width: =140
+            X: =133
+            ZIndex: =1
+
+        htmShadow_1 As htmlViewer:
+            Height: =55
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:3px;width:120px;height:30px;background-color:#;box-shadow:"&vargStyle.Buttons.Midium.Accept.Shadow.BoxShadow &"; border-radius:"& vargStyle.Buttons.Midium.Accept.Shadow.BorderRadius &"'></div>"
+            Width: =140
+            ZIndex: =2
+
+        btnAccept_1 As button:
+            BorderColor: =vargStyle.Buttons.Midium.Accept.BorderColor
+            BorderStyle: =vargStyle.Buttons.Midium.Accept.BorderStyle
+            BorderThickness: =vargStyle.Buttons.Midium.Accept.BorderThickness
+            Color: =vargStyle.Buttons.Midium.Accept.FontColor
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            DisplayMode: =vargStyle.Buttons.Midium.Accept.DisplayMode
+            Fill: =vargStyle.Buttons.Midium.Accept.BackgroundColor
+            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+            Font: =vargStyle.Buttons.Midium.Accept.Font
+            FontWeight: =vargStyle.Buttons.Midium.Accept.FontWeight
+            Height: =30
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(Self.Fill,-20%)
+            PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -50%)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =ColorFade(Self.Fill, -50%)
+            RadiusBottomLeft: =vargStyle.Buttons.Midium.Accept.BorderRadius
+            RadiusBottomRight: =vargStyle.Buttons.Midium.Accept.BorderRadius
+            RadiusTopLeft: =vargStyle.Buttons.Midium.Accept.BorderRadius
+            RadiusTopRight: =vargStyle.Buttons.Midium.Accept.BorderRadius
+            Size: =vargStyle.Buttons.Midium.Accept.FontHeight
+            Text: =vargStyle.Buttons.Midium.Accept.Text
+            Tooltip: =Self.Text
+            Visible: =vargStyle.Buttons.Midium.Accept.Visible
+            Width: =122
+            X: =8
+            Y: =8
+            ZIndex: =3
+
+        btnCancel As button:
+            BorderColor: =vargStyle.Buttons.Midium.Cancel.BorderColor
+            BorderStyle: =vargStyle.Buttons.Midium.Cancel.BorderStyle
+            BorderThickness: =vargStyle.Buttons.Midium.Cancel.BorderThickness
+            Color: =vargStyle.Buttons.Midium.Cancel.FontColor
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            DisplayMode: =vargStyle.Buttons.Midium.Cancel.DisplayMode
+            Fill: =vargStyle.Buttons.Midium.Cancel.BackgroundColor
+            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+            Font: =vargStyle.Buttons.Midium.Cancel.Font
+            FontWeight: =vargStyle.Buttons.Midium.Cancel.FontWeight
+            Height: =30
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(Self.Fill,-20%)
+            PressedBorderColor: =ColorFade(Self.Fill, -50%)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =ColorFade(Self.Fill, -50%)
+            RadiusBottomLeft: =vargStyle.Buttons.Midium.Cancel.BorderRadius
+            RadiusBottomRight: =vargStyle.Buttons.Midium.Cancel.BorderRadius
+            RadiusTopLeft: =vargStyle.Buttons.Midium.Cancel.BorderRadius
+            RadiusTopRight: =vargStyle.Buttons.Midium.Cancel.BorderRadius
+            Size: =vargStyle.Buttons.Midium.Cancel.FontHeight
+            Text: =vargStyle.Buttons.Midium.Cancel.Text
+            Tooltip: =Self.Text
+            Visible: =vargStyle.Buttons.Midium.Cancel.Visible
+            Width: =122
+            X: =140
+            Y: =8
+            ZIndex: =4
+
+    "'co.NewButton' As groupContainer.manualLayoutContainer":
+        BorderThickness: =vargBorderComponent
+        Height: =55
+        Width: =If(App.ActiveScreen.Size>1,143,100)
+        ZIndex: =7
+
+        htmShadow As htmlViewer:
+            BorderStyle: =BorderStyle.Dotted
+            Height: =Parent.Height
+            HtmlText: |-
+                ="<div style='margin-left:5px; margin-top:3px;width:"&Parent.Width-25&"px;height:"&Parent.Height-25&"px;background-color:#;box-shadow:"&vargStyle.Buttons.Midium.Cancel.Shadow.BoxShadow &"; border-radius:5px'></div>"
+            Width: =Parent.Width
+            ZIndex: =1
+
+        btnAccept As button:
+            BorderColor: =vargStyle.OptionsMenu.ImportantOptionBorderColor
+            BorderStyle: =vargStyle.OptionsMenu.BorderStyle
+            BorderThickness: =vargStyle.OptionsMenu.ImportantOptionBorderThickness
+            Color: =vargStyle.OptionsMenu.FontColor
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =vargStyle.OptionsMenu.ImportantOptionBackground
+            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+            Font: =vargStyle.OptionsMenu.Font
+            FontWeight: =vargStyle.OptionsMenu.FontWeight
+            Height: =30
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(Self.Fill,-20%)
+            PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -50%)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =ColorFade(Self.Fill, -50%)
+            RadiusBottomLeft: =vargStyle.Buttons.Midium.Accept.BorderRadius
+            RadiusBottomRight: =vargStyle.Buttons.Midium.Accept.BorderRadius
+            RadiusTopLeft: =vargStyle.OptionsMenu.ImportantOptionBorderRadius
+            RadiusTopRight: =vargStyle.Buttons.Midium.Accept.BorderRadius
+            Size: =vargStyle.OptionsMenu.FontHeight
+            Text: ="Nuevo"
+            Tooltip: =Self.Text
+            Width: =Parent.Width-20
+            X: =7
+            Y: =8
+            ZIndex: =2
+
+    "'co.ActionsButtons' As groupContainer.horizontalAutoLayoutContainer":
+        BorderThickness: =vargBorderComponent
+        Height: =40
+        LayoutMode: =LayoutMode.Auto
+        LayoutOverflowX: =LayoutOverflow.Scroll
+        X: ='co.NewButton'.Width
+        Y: =7
+        ZIndex: =8
+
+        "'co.ActionButton' As groupContainer.manualLayoutContainer":
+            AlignInContainer: =AlignInContainer.SetByContainer
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =BorderStyle.None
+            Fill: =vargStyle.OptionsMenu.Background
+            FillPortions: =0
+            Height: =40
+            LayoutMinHeight: =40
+            LayoutMinWidth: =250
+            Width: =lblText_1.Width+imgIcon_1.Width+30
+            X: =222
+            Y: =190
+            ZIndex: =1
+
+            imgIcon_1 As image:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =If(App.ActiveScreen.Size>1,15,25)
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Image: |-
+                    ="data:image/svg+xml," & EncodeUrl(
+                        "    
+                        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 572 512'><!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License -         https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->" 
+                        // Get the definition of the icon fill
+                        & vargStyle.OptionsMenu.IconColor & 
+                    
+                        //Icon
+                           "<path d='M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z' style='fill: url(#myLinearGradient1);        fill-opacity:"      
+                        
+                        & vargStyle.OptionsMenu.IconOpacity & " '/></svg>"
+                    )
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =If(App.ActiveScreen.Size>1,15,25)
+                X: =(Parent.Width-imgIcon_1.Width-lblText_1.Width)/2
+                Y: =If(App.ActiveScreen.Size>1,12.5,6)
+                ZIndex: =1
+
+            lblText_1 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                Color: =Gray //vargStyle.OptionsMenu.FontSubColor
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =vargStyle.OptionsMenu.FontSub
+                FontWeight: =vargStyle.OptionsMenu.FontWeight
+                Height: =30
+                Size: =vargStyle.OptionsMenu.FontHeight
+                Text: ="Editar"
+                Width: =If(App.ActiveScreen.Size>1,Len(Self.Text)*10,0)
+                X: =imgIcon_1.X+imgIcon_1.Width+5
+                Y: =5
+                ZIndex: =2
+
+            btnHover_4 As button:
+                BorderColor: =vargStyle.OptionsMenu.BorderColor
+                BorderStyle: =vargStyle.OptionsMenu.BorderStyle
+                BorderThickness: =vargStyle.OptionsMenu.BorderThickness
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayMode: =DisplayMode.View
+                Fill: =If(Self.DisplayMode = DisplayMode.View,RGBA(181, 159, 159, 0.3),RGBA(181, 159, 159, 0))
+                FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =Parent.Height
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =vargStyle.OptionsMenu.HoverFill
+                OnSelect: |-
+                    =//EditForm(FormStore);UpdateContext({varcViewFormStore:true})
+                PressedBorderColor: =ColorFade(Self.HoverFill, -50%)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =ColorFade(Self.HoverFill, -20%)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =15
+                Text: =""
+                Width: =Parent.Width
+                Y: =1
+                ZIndex: =4
+
+        "'co.ActionButton_3' As groupContainer.manualLayoutContainer":
+            AlignInContainer: =AlignInContainer.SetByContainer
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =BorderStyle.None
+            Fill: =vargStyle.OptionsMenu.Background
+            FillPortions: =0
+            Height: =40
+            LayoutMinHeight: =40
+            LayoutMinWidth: =250
+            Width: =lblText_5.Width+imgIcon_5.Width+30
+            X: =222
+            Y: =190
+            ZIndex: =2
+
+            imgIcon_5 As image:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =If(App.ActiveScreen.Size>1,15,25)
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Image: |-
+                    ="data:image/svg+xml," & EncodeUrl(
+                        "    
+                        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 572 512'><!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License -         https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->" 
+                        // Get the definition of the icon fill
+                        & vargStyle.OptionsMenu.IconColor & 
+                    
+                        //Icon
+                           "<path d='M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z' style='fill: url(#myLinearGradient1);        fill-opacity:"      
+                        
+                        & vargStyle.OptionsMenu.IconOpacity & " '/></svg>"
+                    )
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =If(App.ActiveScreen.Size>1,15,25)
+                X: =(Parent.Width-imgIcon_5.Width-lblText_5.Width)/2
+                Y: =If(App.ActiveScreen.Size>1,12.5,6)
+                ZIndex: =1
+
+            lblText_5 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                Color: =vargStyle.OptionsMenu.FontSubColor
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =vargStyle.OptionsMenu.FontSub
+                FontWeight: =vargStyle.OptionsMenu.FontWeight
+                Height: =30
+                Size: =vargStyle.OptionsMenu.FontHeight
+                Text: ="Editar"
+                Width: =If(App.ActiveScreen.Size>1,Len(Self.Text)*10,0)
+                X: =imgIcon_5.X+imgIcon_5.Width+5
+                Y: =5
+                ZIndex: =2
+
+            btnHover_5 As button:
+                BorderColor: =vargStyle.OptionsMenu.BorderColor
+                BorderStyle: =vargStyle.OptionsMenu.BorderStyle
+                BorderThickness: =vargStyle.OptionsMenu.BorderThickness
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Fill: =If(Self.DisplayMode = DisplayMode.View,RGBA(181, 159, 159, 0.3),RGBA(181, 159, 159, 0))
+                FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =Parent.Height
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =vargStyle.OptionsMenu.HoverFill
+                OnSelect: |-
+                    =//EditForm(FormStore);UpdateContext({varcViewFormStore:true})
+                PressedBorderColor: =ColorFade(Self.HoverFill, -50%)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =ColorFade(Self.HoverFill, -20%)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =15
+                Text: =""
+                Width: =Parent.Width
+                Y: =1
+                ZIndex: =4
+
+        "'co.ActionButton_4' As groupContainer.manualLayoutContainer":
+            AlignInContainer: =AlignInContainer.SetByContainer
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =BorderStyle.None
+            Fill: =vargStyle.OptionsMenu.Background
+            FillPortions: =0
+            Height: =40
+            LayoutMinHeight: =40
+            LayoutMinWidth: =250
+            Width: =lblText_6.Width+imgIcon_6.Width+30
+            X: =222
+            Y: =190
+            ZIndex: =3
+
+            imgIcon_6 As image:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =If(App.ActiveScreen.Size>1,15,25)
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Image: |-
+                    ="data:image/svg+xml," & EncodeUrl(
+                        "    
+                        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 572 512'><!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License -         https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->" 
+                        // Get the definition of the icon fill
+                        & vargStyle.OptionsMenu.IconColor & 
+                    
+                        //Icon
+                           "<path d='M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z' style='fill: url(#myLinearGradient1);        fill-opacity:"      
+                        
+                        & vargStyle.OptionsMenu.IconOpacity & " '/></svg>"
+                    )
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =If(App.ActiveScreen.Size>1,15,25)
+                X: =(Parent.Width-imgIcon_6.Width-lblText_6.Width)/2
+                Y: =If(App.ActiveScreen.Size>1,12.5,6)
+                ZIndex: =1
+
+            lblText_6 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                Color: =vargStyle.OptionsMenu.FontSubColor
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =vargStyle.OptionsMenu.FontSub
+                FontWeight: =vargStyle.OptionsMenu.FontWeight
+                Height: =30
+                Size: =vargStyle.OptionsMenu.FontHeight
+                Text: ="Editar"
+                Width: =If(App.ActiveScreen.Size>1,Len(Self.Text)*10,0)
+                X: =imgIcon_6.X+imgIcon_6.Width+5
+                Y: =5
+                ZIndex: =2
+
+            btnHover_6 As button:
+                BorderColor: =vargStyle.OptionsMenu.BorderColor
+                BorderStyle: =vargStyle.OptionsMenu.BorderStyle
+                BorderThickness: =vargStyle.OptionsMenu.BorderThickness
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Fill: =If(Self.DisplayMode = DisplayMode.View,RGBA(181, 159, 159, 0.3),RGBA(181, 159, 159, 0))
+                FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =Parent.Height
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =vargStyle.OptionsMenu.HoverFill
+                OnSelect: |-
+                    =//EditForm(FormStore);UpdateContext({varcViewFormStore:true})
+                PressedBorderColor: =ColorFade(Self.HoverFill, -50%)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =ColorFade(Self.HoverFill, -20%)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =15
+                Text: =""
+                Width: =Parent.Width
+                Y: =1
+                ZIndex: =4
+
+    "'XXX-1' As group":
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =9
+
+        Arrow1 As arrow.backArrow:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 120, 212, 1)
+            OnSelect: =Navigate('Home Screen')
+            X: =App.Width-Self.Width
+            ZIndex: =1
+
+        Label5 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =92
+            Size: =13
+            Text: ="These are responsive buttons (Vertically), be careful and don't modify Width an Height of subcontrols, modify only the container. Set manually top padding into iconImage for vertical align."
+            Width: =942
+            X: =47
+            Y: =384
+            ZIndex: =2
+
+        Label6_1 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(230, 230, 230, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =51
+            Size: =13
+            Text: ="My style is defined by vargStyle.Buttons.Small.IconLabel"
+            Width: =321
+            X: =486
+            Y: =465
+            ZIndex: =3
+

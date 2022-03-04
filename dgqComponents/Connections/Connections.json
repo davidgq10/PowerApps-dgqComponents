@@ -1,0 +1,73 @@
+{
+  "364d5a3e-3174-420d-a218-f9b65edf917f": {
+    "connectionInstanceId": "/providers/microsoft.powerapps/apis/shared_office365/connections/b0281bc6a1636bc0be11bba6cfbc36a2",
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office\u00A0365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1538/1.0.1538.2621/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "364d5a3e-3174-420d-a218-f9b65edf917f"
+  },
+  "482309cd-658f-4c23-a45a-1b327ec6a1ac": {
+    "connectionInstanceId": "/providers/microsoft.powerapps/apis/shared_office365users/connections/shared-office365user-f7673a3d-e0f6-4d43-a10d-f524aaf6364e",
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Usuarios de Office 365",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1551/1.0.1551.2693/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "UsuariosdeOffice365"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "482309cd-658f-4c23-a45a-1b327ec6a1ac"
+  },
+  "7f7e384d-1261-4d65-86b9-4f22a5b03a50": {
+    "connectionInstanceId": "/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/c5200e1ee8ef4dadbac57d6d0feddb8e",
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1550/1.0.1550.2686/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://spooncr.sharepoint.com/sites/GCIdatos": {
+        "dataSources": {
+          "Locales Spoon": {
+            "tableName": "f8286d12-eecd-432c-84e2-b3ad892779fd"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Locales Spoon"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "7f7e384d-1261-4d65-86b9-4f22a5b03a50"
+  }
+}

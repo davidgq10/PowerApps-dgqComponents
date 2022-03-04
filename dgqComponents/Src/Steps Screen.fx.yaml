@@ -1,0 +1,194 @@
+"'Steps Screen' As screen":
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+
+    Arrow1_5 As arrow.backArrow:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 120, 212, 1)
+        OnSelect: =Navigate('Home Screen')
+        X: =App.Width-Self.Width
+        ZIndex: =1
+
+    "'co.StepTracking' As groupContainer.manualLayoutContainer":
+        Height: =50
+        Width: =363
+        ZIndex: =2
+
+        "'co.StepsGroup' As groupContainer.horizontalAutoLayoutContainer":
+            Height: =50
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutGap: =10
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowX: =LayoutOverflow.Scroll
+            LayoutWrap: =true
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            Width: =Parent.Width
+            ZIndex: =2
+
+            icoSubtratcStep As icon.ChevronLeft:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Color: =RGBA(0, 120, 212, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(220, 220, 220, 1)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =27
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Icon: =Icon.ChevronLeft
+                OnSelect: |-
+                    =If(varcStep=0,"",UpdateContext({varcStep:varcStep-1}))
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =28
+                X: =428
+                Y: =30
+                ZIndex: =1
+
+            shpStep1 As circle:
+                BorderColor: =RGBA(0, 134, 208, 1)
+                BorderThickness: =1
+                DisabledFill: =RGBA(0, 120, 212, 1)
+                Fill: =If(varcStep>=1,RGBA(0, 120, 212, 1),RGBA(0,0,0,0))
+                Height: =20
+                HoverFill: =RGBA(0, 120, 212, 1)
+                LayoutMinWidth: =20
+                OnSelect: |-
+                    =UpdateContext({varcStep:1})
+                PressedFill: =RGBA(0, 120, 212, 1)
+                TabIndex: =0
+                Width: =20
+                ZIndex: =2
+
+            shpStep2 As circle:
+                BorderColor: =RGBA(0, 134, 208, 1)
+                BorderThickness: =1
+                DisabledFill: =RGBA(0, 120, 212, 1)
+                Fill: =If(varcStep>=2,RGBA(0, 120, 212, 1),RGBA(0,0,0,0))
+                Height: =20
+                HoverFill: =RGBA(0, 120, 212, 1)
+                LayoutMinWidth: =20
+                OnSelect: |-
+                    =UpdateContext({varcStep:2})
+                PressedFill: =RGBA(0, 120, 212, 1)
+                TabIndex: =0
+                Width: =20
+                ZIndex: =3
+
+            shpStep3 As circle:
+                BorderColor: =RGBA(0, 134, 208, 1)
+                BorderThickness: =1
+                DisabledFill: =RGBA(0, 120, 212, 1)
+                Fill: =If(varcStep>=3,RGBA(0, 120, 212, 1),RGBA(0,0,0,0))
+                Height: =20
+                HoverFill: =RGBA(0, 120, 212, 1)
+                LayoutMinWidth: =20
+                OnSelect: |-
+                    =UpdateContext({varcStep:3})
+                PressedFill: =RGBA(0, 120, 212, 1)
+                TabIndex: =0
+                Width: =20
+                ZIndex: =4
+
+            shpStep4 As circle:
+                BorderColor: =RGBA(0, 134, 208, 1)
+                BorderThickness: =1
+                DisabledFill: =RGBA(0, 120, 212, 1)
+                Fill: =If(varcStep>=4,RGBA(0, 120, 212, 1),RGBA(0,0,0,0))
+                Height: =20
+                HoverFill: =RGBA(0, 120, 212, 1)
+                LayoutMinWidth: =20
+                OnSelect: |-
+                    =UpdateContext({varcStep:4})
+                PressedFill: =RGBA(0, 120, 212, 1)
+                TabIndex: =0
+                Width: =20
+                ZIndex: =5
+
+            shpStep5 As circle:
+                BorderColor: =RGBA(0, 134, 208, 1)
+                BorderThickness: =1
+                DisabledFill: =RGBA(0, 120, 212, 1)
+                Fill: =If(varcStep>=5,RGBA(0, 120, 212, 1),RGBA(0,0,0,0))
+                Height: =20
+                HoverFill: =RGBA(0, 120, 212, 1)
+                LayoutMinWidth: =20
+                OnSelect: |-
+                    =UpdateContext({varcStep:5})
+                PressedFill: =RGBA(0, 120, 212, 1)
+                TabIndex: =0
+                Width: =20
+                ZIndex: =6
+
+            shpStep6 As circle:
+                BorderColor: =RGBA(0, 134, 208, 1)
+                BorderThickness: =1
+                DisabledFill: =RGBA(0, 120, 212, 1)
+                Fill: =If(varcStep>=6,RGBA(0, 120, 212, 1),RGBA(0,0,0,0))
+                Height: =20
+                HoverFill: =RGBA(0, 120, 212, 1)
+                LayoutMinWidth: =20
+                OnSelect: |-
+                    =UpdateContext({varcStep:6})
+                PressedFill: =RGBA(0, 120, 212, 1)
+                TabIndex: =0
+                Width: =20
+                ZIndex: =7
+
+            shpStep7 As circle:
+                BorderColor: =RGBA(0, 134, 208, 1)
+                BorderThickness: =1
+                DisabledFill: =RGBA(0, 120, 212, 1)
+                Fill: =If(varcStep>=7,RGBA(0, 120, 212, 1),RGBA(0,0,0,0))
+                Height: =20
+                HoverFill: =RGBA(0, 120, 212, 1)
+                LayoutMinWidth: =20
+                OnSelect: |-
+                    =UpdateContext({varcStep:7})
+                PressedFill: =RGBA(0, 120, 212, 1)
+                TabIndex: =0
+                Width: =20
+                ZIndex: =8
+
+            shpStep8 As circle:
+                BorderColor: =RGBA(0, 134, 208, 1)
+                BorderThickness: =1
+                DisabledFill: =RGBA(0, 120, 212, 1)
+                Fill: =If(varcStep>=8,RGBA(0, 120, 212, 1),RGBA(0,0,0,0))
+                Height: =20
+                HoverFill: =RGBA(0, 120, 212, 1)
+                LayoutMinWidth: =20
+                OnSelect: |-
+                    =UpdateContext({varcStep:8})
+                PressedFill: =RGBA(0, 120, 212, 1)
+                TabIndex: =0
+                Width: =20
+                ZIndex: =9
+
+            icoAddStep As icon.ChevronLeft:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Color: =RGBA(0, 120, 212, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(220, 220, 220, 1)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =27
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Icon: =Icon.ChevronRight
+                OnSelect: |-
+                    =If(varcStep=8,"",UpdateContext({varcStep:varcStep+1}))
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =28
+                X: =749
+                Y: =30
+                ZIndex: =10
+
