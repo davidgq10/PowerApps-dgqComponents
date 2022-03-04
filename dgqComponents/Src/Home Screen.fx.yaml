@@ -670,7 +670,7 @@
                 HoverBorderColor: =RGBA(255, 255, 255, 1)
                 HoverColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(0, 208, 255, 0.14)
-                OnSelect: =Navigate('Confirm Delete Screen')
+                OnSelect: =Navigate('DataMenu',ScreenTransition.Fade)
                 PressedBorderColor: =
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =ColorFade(Self.HoverFill, 40%)
