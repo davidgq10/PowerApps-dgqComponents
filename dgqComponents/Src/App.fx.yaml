@@ -2,17 +2,10 @@ App As appinfo:
     BackEnabled: =false
     OnStart: |-
         =//Get user profile
-        
-        Set (vargUserProfile, {
-        
-            DisplayName:UsuariosdeOffice365.MyProfile().DisplayName,
-            Id: UsuariosdeOffice365.MyProfile().Id,
-            Mail: UsuariosdeOffice365.MyProfile().Mail,
-            AccountEnabled: UsuariosdeOffice365.MyProfile().AccountEnabled
-            });
-        
-        
-        
+        Set(
+            vargUserProfile,
+            UsuariosdeOffice365.MyProfile()
+        );
         Set(
             //This variable define the theme style
             vargStyle,
@@ -62,7 +55,12 @@ App As appinfo:
                     </defs>",
                     IconOpacity: 1,
                     Title: {
-                        BackgroundColor: RGBA(0,0,0,0),
+                        BackgroundColor: RGBA(
+                            0,
+                            0,
+                            0,
+                            0
+                        ),
                         FontColor: Black,
                         BorderColor: DarkCyan,
                         BorderStyle: BorderStyle.None,
@@ -426,6 +424,27 @@ App As appinfo:
                     BorderColor: Gray
                 },
                 ItemsList: {
+                    //Filter and search config
+                    FilterAndSearchBar: {
+                        BackgroundColor: WhiteSmoke,
+                        SearchBar: {
+                            BackgroundColor: White,
+                            FontColor: Black,
+                            BorderColor: DarkCyan,
+                            BorderStyle: BorderStyle.None
+                        },
+                        IconColor: "          
+                                    <defs>
+                                        <linearGradient id='myLinearGradient1'
+                                                            x1='0%' y1='0%'
+                                                            x2='100%' y2='100%'
+                                                            spreadMethod='reflect'>
+                                            <stop offset='0%'   stop-color='#00d4ff' stop-opacity='1'/>
+                                            <stop offset='100%' stop-color='#073a99' stop-opacity='1'/>
+                                        </linearGradient>
+                                    </defs>",
+                        IconOpacity:1
+                    },
                     //Title list
                     TitleFont: Font.'Segoe UI',
                     TitleFontColor: DarkSlateGray,
