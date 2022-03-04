@@ -3,7 +3,17 @@ DataMenu As screen:
 
     "'co.DataFilter' As groupContainer.manualLayoutContainer":
         Fill: =vargStyle.ItemsList.FilterAndSearchBar.BackgroundColor
-        Height: =If(App.ActiveScreen.Size=1,100,50)
+        Height: |-
+            =If(
+                And(App.ActiveScreen.Size > 1),
+                50,
+                And(
+                    App.ActiveScreen.Size = 1,
+                    varcShowSearchBar
+                ),
+                100,
+                50
+            )
         Width: =Parent.Width-Self.X*2
         Y: =50
         ZIndex: =2
@@ -184,6 +194,75 @@ DataMenu As screen:
                 Width: =vargStyle.StartMenu.IconSize
                 Y: =lblDescriptionData.Height
                 ZIndex: =4
+
+            imgIcon_Tags As image:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =vargStyle.StartMenu.IconSize
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Image: |
+                    =// SVG
+                    "data:image/svg+xml," & EncodeUrl(
+                        "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+                                <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code:MIT License) -->" 
+                                // Get the definition of the icon fill from theme variable
+                    & vargStyle.ItemsList.FilterAndSearchBar.IconColor &
+                                //Change the image in the "d" property
+                     "<path d='M472.8 168.4C525.1 221.4 525.1 306.6 472.8 359.6L360.8 472.9C351.5 482.3 336.3 482.4 326.9 473.1C317.4 463.8 317.4 448.6 326.7 439.1L438.6 325.9C472.5 291.6 472.5 236.4 438.6 202.1L310.9 72.87C301.5 63.44 301.6 48.25 311.1 38.93C320.5 29.61 335.7 29.7 344.1 39.13L472.8 168.4zM.0003 229.5V80C.0003 53.49 21.49 32 48 32H197.5C214.5 32 230.7 38.74 242.7 50.75L410.7 218.7C435.7 243.7 435.7 284.3 410.7 309.3L277.3 442.7C252.3 467.7 211.7 467.7 186.7 442.7L18.75 274.7C6.743 262.7 0 246.5 0 229.5L.0003 229.5zM112 112C94.33 112 80 126.3 80 144C80 161.7 94.33 176 112 176C129.7 176 144 161.7 144 144C144 126.3 129.7 112 112 112z'" &
+                                // Theme style
+                     " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.ItemsList.FilterAndSearchBar.IconOpacity & ";'></path></svg>"
+                    )
+                OnSelect: |-
+                    =UpdateContext({varcSeeTags:!varcSeeTags})
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =5
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =vargStyle.StartMenu.IconSize
+                Y: =lblDescriptionData.Height
+                ZIndex: =5
+
+            imgIcon_Search As image:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =vargStyle.StartMenu.IconSize
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Image: |-
+                    =// SVG
+                    "data:image/svg+xml," & EncodeUrl(
+                        "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+                                <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code:MIT License) -->" 
+                                // Get the definition of the icon fill from theme variable
+                    & vargStyle.ItemsList.FilterAndSearchBar.IconColor &
+                                //Change the image in the "d" property
+                     "<path d='M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z'" &
+                                // Theme style
+                     " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.ItemsList.FilterAndSearchBar.IconOpacity & ";'></path></svg>"
+                    )
+                OnSelect: |-
+                    =UpdateContext({varcShowSearchBar:!varcShowSearchBar})
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =5
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Visible: =App.ActiveScreen.Size=1
+                Width: =vargStyle.StartMenu.IconSize
+                Y: =lblDescriptionData.Height
+                ZIndex: =6
 
         "'co.SearchFilter' As groupContainer.manualLayoutContainer":
             Height: =50
