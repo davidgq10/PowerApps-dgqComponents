@@ -823,7 +823,7 @@
                 LayoutMinHeight: =55
                 LayoutMinWidth: =250
                 PaddingTop: =5
-                Width: =If(App.ActiveScreen.Size>1,120,80)
+                Width: =If(App.ActiveScreen.Size>1,120,90)
                 ZIndex: =9
 
                 btnDelete_1 As button:
