@@ -704,6 +704,126 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "DataMenu.co.DataFilter.co.FilterOptions.imgIcon_Info.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "DataMenu.co.DataFilter.co.FilterOptions.imgIcon_Info.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "DataMenu",
+                "type": "DataMenu.co.DataFilter.co.FilterOptions.imgIcon_Info"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "DataMenu.co.DataFilter.co.FilterOptions.imgIcon_Info.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "DataMenu.co.DataFilter.co.FilterOptions.imgIcon_Info.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "DataMenu",
+                "type": "DataMenu.co.DataFilter.co.FilterOptions.imgIcon_Info"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Data Container Screen.imgIcon_Info_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Data Container Screen.imgIcon_Info_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Data Container Screen",
+                "type": "Data Container Screen.imgIcon_Info_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Data Container Screen.imgIcon_Info_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Data Container Screen.imgIcon_Info_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Data Container Screen",
+                "type": "Data Container Screen.imgIcon_Info_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Data Container Screen.co.DataContainer.co.DataListContainer.galDataList.AccessibleLabel"
                 }
               ],
@@ -2474,6 +2594,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "DataMenu.co.DataFilter.co.FilterOptions.imgIcon_Audit.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "DataMenu.co.DataFilter.co.FilterOptions.imgIcon_Audit.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "DataMenu",
+                "type": "DataMenu.co.DataFilter.co.FilterOptions.imgIcon_Audit"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "DataMenu.co.DataFilter.co.FilterOptions.imgIcon_Audit.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "DataMenu.co.DataFilter.co.FilterOptions.imgIcon_Audit.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "DataMenu",
+                "type": "DataMenu.co.DataFilter.co.FilterOptions.imgIcon_Audit"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.vargUserProfile"
                 }
               ],
@@ -2588,6 +2768,36 @@
           },
           "ruleId": "app-UnusedVariables",
           "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "DataMenu.co.DataFilter.co.FilterOptions.imgIcon_Audit.Y"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "DataMenu.co.DataFilter.co.FilterOptions.imgIcon_Audit.Y",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Y",
+                "module": "DataMenu",
+                "type": "DataMenu.co.DataFilter.co.FilterOptions.imgIcon_Audit"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -2757,6 +2967,36 @@
                 "member": "Y",
                 "module": "DataMenu",
                 "type": "DataMenu.co.DataFilter.co.FilterOptions.imgIcon_Search"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "DataMenu.co.DataFilter.co.FilterOptions.imgIcon_Info.Y"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "DataMenu.co.DataFilter.co.FilterOptions.imgIcon_Info.Y",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Y",
+                "module": "DataMenu",
+                "type": "DataMenu.co.DataFilter.co.FilterOptions.imgIcon_Info"
               }
             }
           ],

@@ -4603,7 +4603,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "co.ActionButton_Attachments",
-    "ParentIndex": 4,
+    "ParentIndex": 3,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -4878,7 +4878,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "co.ActionButton_Comments",
-    "ParentIndex": 3,
+    "ParentIndex": 2,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -5153,7 +5153,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "co.ActionButton_Contacts",
-    "ParentIndex": 5,
+    "ParentIndex": 4,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -5392,7 +5392,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "co.ActionButton_Delete",
-    "ParentIndex": 0,
+    "ParentIndex": 6,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -5662,7 +5662,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "co.ActionButton_Details",
-    "ParentIndex": 2,
+    "ParentIndex": 1,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -5937,7 +5937,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "co.ActionButton_Edit",
-    "ParentIndex": 1,
+    "ParentIndex": 0,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -6212,7 +6212,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "co.ActionButton_IndustrialPlants",
-    "ParentIndex": 6,
+    "ParentIndex": 5,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -6485,7 +6485,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "co.ActionsButtons",
-    "ParentIndex": 0,
+    "ParentIndex": 1,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -6892,7 +6892,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "co.NewButton_1",
-    "ParentIndex": 1,
+    "ParentIndex": 0,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {

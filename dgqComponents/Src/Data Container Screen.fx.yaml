@@ -27,7 +27,7 @@
             Fill: =vargStyle.ItemsList.Background
             Height: =Parent.Height-Self.Y
             Width: =Parent.Width-Self.X
-            Y: =lblDescriptionData.Height
+            Y: =If(varcSeeInfo,lblDescriptionData.Height,0)
             ZIndex: =1
 
             galDataList As gallery.variableTemplateHeightGallery:
@@ -1183,10 +1183,11 @@
             FocusedBorderThickness: =4
             Font: =vargStyle.ItemsList.TitleFont
             FontWeight: =vargStyle.ItemsList.TitleFontWeight
-            Height: =50
+            Height: =
             Size: =vargStyle.ItemsList.TitleFontHeight
-            Text: =" Opciones para carga de producto no conforme Opciones para carga de producto no conforme Opciones para carga de "
+            Text: =" Opciones para carga de producto no conforme Opciones para carga de producto no conforme Opciones para carga de pciones para carga de producto no conforme Opciones para carga de producto no conforpciones para carga de producto no conforme Opciones para carga de producto no confor"
             Tooltip: =Self.Text
+            Visible: =varcSeeInfo
             Width: =Parent.Width
             ZIndex: =5
 
@@ -1285,7 +1286,42 @@
         X: =375
         ZIndex: =5
 
-    Label7 As label:
+    imgIcon_Info_1 As image:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =vargStyle.StartMenu.IconSize
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: |-
+            =// SVG
+            "data:image/svg+xml," & EncodeUrl(
+                "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+                        <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code:MIT License) -->" 
+                        // Get the definition of the icon fill from theme variable
+            & vargStyle.ItemsList.FilterAndSearchBar.IconColor &
+                        //Change the image in the "d" property
+             "<path d='M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z'" &
+                        // Theme style
+             " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.ItemsList.FilterAndSearchBar.IconOpacity & ";'></path></svg>"
+            )
+        OnSelect: |-
+            =UpdateContext({varcSeeInfo:!varcSeeInfo})
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =vargStyle.StartMenu.IconSize
+        X: =66
+        Y: =107
+        ZIndex: =7
+
+    Label9 As label:
         BorderColor: =RGBA(0, 0, 0, 0)
         BorderStyle: =BorderStyle.None
         BorderThickness: =2
@@ -1294,14 +1330,9 @@
         DisabledColor: =RGBA(166, 166, 166, 1)
         FocusedBorderThickness: =4
         Font: =Font.'Segoe UI'
-        Height: =178
         Size: =13
-        Text: |-
-            ="
-            Bloqueo de datos
-            Ocultar o mostrar descripción
-            Contenedor de filtros"
-        Width: =298
-        Y: =444
-        ZIndex: =6
+        Text: =varcSeeInfo
+        X: =140
+        Y: =107
+        ZIndex: =8
 
