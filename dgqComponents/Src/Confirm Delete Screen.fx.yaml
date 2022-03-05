@@ -77,9 +77,9 @@
                 Height: =30
                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                 HoverColor: =RGBA(255, 255, 255, 1)
-                HoverFill: =ColorFade(Self.Fill,-20%)
+                HoverFill: =vargStyle.Buttons.Midium.Cancel.HoverFill
                 OnSelect: =Back()
-                PressedBorderColor: =ColorFade(Self.Fill, -50%)
+                PressedBorderColor: =ColorFade(Self.Fill, 20%)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =ColorFade(Self.Fill, -50%)
                 RadiusBottomLeft: =vargStyle.Buttons.Midium.Cancel.BorderRadius
@@ -120,7 +120,6 @@
 
         lblDeleteMessage As label:
             Align: =Align.Center
-            AutoHeight: =true
             BorderColor: =RGBA(0, 0, 0, 0)
             BorderStyle: =BorderStyle.None
             BorderThickness: =2
@@ -131,7 +130,7 @@
             FocusedBorderThickness: =4
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Lighter
-            Height: =53
+            Height: =85
             LineHeight: =1.3
             Overflow: =Overflow.Scroll
             PaddingLeft: =10

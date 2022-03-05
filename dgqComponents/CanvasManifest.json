@@ -58,6 +58,7 @@
       "reliableconcurrent": true,
       "rtlinstudiopreview": false,
       "rtlsupport": false,
+      "searchtool": false,
       "usedisplaynamemetadata": true,
       "useenforcesavedatalimits": true,
       "useexperimentalcdsconnector": true,
@@ -93,7 +94,7 @@
     "PublishDataLocally": false,
     "PublishResourcesLocally": false,
     "PublishTarget": "player",
-    "UserLocale": "en-US"
+    "UserLocale": "es-ES"
   },
   "ScreenOrder": [
     "Home Screen",

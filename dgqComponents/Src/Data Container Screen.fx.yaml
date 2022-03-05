@@ -17,7 +17,7 @@
                     vargStyle.Sidebar.SmallWidth
                 )
             )
-        Y: =40
+        Y: =200
         ZIndex: =3
 
         "'co.DataListContainer' As groupContainer.manualLayoutContainer":
@@ -27,7 +27,7 @@
             Fill: =vargStyle.ItemsList.Background
             Height: =Parent.Height-Self.Y
             Width: =Parent.Width-Self.X
-            Y: =lblDescriptionData.Height+imgIcon_20.Height
+            Y: =lblDescriptionData.Height
             ZIndex: =1
 
             galDataList As gallery.variableTemplateHeightGallery:
@@ -1151,54 +1151,25 @@
                         Y: =1
                         ZIndex: =4
 
-        imgIcon_20 As image:
-            BorderColor: =RGBA(0, 0, 0, 0)
-            BorderStyle: =BorderStyle.None
-            BorderThickness: =2
-            DisabledBorderColor: =RGBA(0, 0, 0, 0)
-            DisabledFill: =RGBA(0, 0, 0, 0)
-            FocusedBorderThickness: =4
-            Height: =vargStyle.StartMenu.IconSize
-            HoverBorderColor: =RGBA(0, 0, 0, 0)
-            HoverFill: =RGBA(0, 0, 0, 0)
-            Image: |-
-                =If(
-                    varcLockData = true,
-                
-                    //True SVG*/
-                    "data:image/svg+xml," & EncodeUrl(
-                            "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'>
-                            <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code:MIT License) -->" 
-                            // Get the definition of the icon fill from theme variable
-                            & vargStyle.StartMenu.IconColor &
-                            //Change the image in the "d" property
-                            "<path d='M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72                  72-72s72 32.3 72 72v72z'" &
-                            // Theme style
-                            " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.StartMenu.IconOpacity & ";'></path></svg>"
-                    ),
-                    //False SVG
-                    "data:image/svg+xml," & EncodeUrl(
-                            "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'>
-                            <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1,               Code:MIT License) -->" 
-                            // Get the definition of the icon fill from theme variable
-                            & vargStyle.StartMenu.IconColor &
-                            //Change the image in the "d" property
-                            "<path d='M423.5 0C339.5.3 272 69.5 272 153.5V224H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48h-48v-71.1c0-39.6 31.7-72.5 71.3-72.9 40-.4 72.7                   32.1 72.7 72v80c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24v-80C576 68 507.5-.3 423.5 0z'" &
-                            // Theme style
-                            " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.StartMenu.IconOpacity & ";'></path></svg>"
-                    )
-                )
-            OnSelect: |-
-                =UpdateContext({varcLockData:!varcLockData})
-            PaddingBottom: =5
-            PaddingLeft: =5
-            PaddingRight: =5
-            PaddingTop: =5
-            PressedBorderColor: =RGBA(0, 0, 0, 0)
-            PressedFill: =RGBA(0, 0, 0, 0)
-            Width: =vargStyle.StartMenu.IconSize
-            Y: =lblDescriptionData.Height
+        "'co.SortGroup' As groupContainer.manualLayoutContainer":
+            BorderColor: =RGBA(0, 121, 187, 1)
+            BorderThickness: =1
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =Parent.Height
+            Visible: =varcViewFormAssignCost
+            Width: =Switch(App.ActiveScreen.Size,1,Parent.Width,2,Parent.Width,400)
+            X: =Parent.Width-Self.Width
             ZIndex: =3
+
+        "'co.FilterGroup' As groupContainer.manualLayoutContainer":
+            BorderColor: =RGBA(0, 121, 187, 1)
+            BorderThickness: =1
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =Parent.Height
+            Visible: =varcViewFormAssignCost
+            Width: =Switch(App.ActiveScreen.Size,1,Parent.Width,2,Parent.Width,400)
+            X: =Parent.Width-Self.Width
+            ZIndex: =4
 
         lblDescriptionData As label:
             AutoHeight: =true
@@ -1217,41 +1188,6 @@
             Text: =" Opciones para carga de producto no conforme Opciones para carga de producto no conforme Opciones para carga de "
             Tooltip: =Self.Text
             Width: =Parent.Width
-            ZIndex: =4
-
-        imgIcon_Tags_1 As image:
-            BorderColor: =RGBA(0, 0, 0, 0)
-            BorderStyle: =BorderStyle.None
-            BorderThickness: =2
-            DisabledBorderColor: =RGBA(0, 0, 0, 0)
-            DisabledFill: =RGBA(0, 0, 0, 0)
-            FocusedBorderThickness: =4
-            Height: =vargStyle.StartMenu.IconSize
-            HoverBorderColor: =RGBA(0, 0, 0, 0)
-            HoverFill: =RGBA(0, 0, 0, 0)
-            Image: |
-                =// SVG
-                "data:image/svg+xml," & EncodeUrl(
-                    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
-                            <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code:MIT License) -->" 
-                            // Get the definition of the icon fill from theme variable
-                & vargStyle.ItemsList.FilterAndSearchBar.IconColor &
-                            //Change the image in the "d" property
-                 "<path d='M472.8 168.4C525.1 221.4 525.1 306.6 472.8 359.6L360.8 472.9C351.5 482.3 336.3 482.4 326.9 473.1C317.4 463.8 317.4 448.6 326.7 439.1L438.6 325.9C472.5 291.6 472.5 236.4 438.6 202.1L310.9 72.87C301.5 63.44 301.6 48.25 311.1 38.93C320.5 29.61 335.7 29.7 344.1 39.13L472.8 168.4zM.0003 229.5V80C.0003 53.49 21.49 32 48 32H197.5C214.5 32 230.7 38.74 242.7 50.75L410.7 218.7C435.7 243.7 435.7 284.3 410.7 309.3L277.3 442.7C252.3 467.7 211.7 467.7 186.7 442.7L18.75 274.7C6.743 262.7 0 246.5 0 229.5L.0003 229.5zM112 112C94.33 112 80 126.3 80 144C80 161.7 94.33 176 112 176C129.7 176 144 161.7 144 144C144 126.3 129.7 112 112 112z'" &
-                            // Theme style
-                 " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.ItemsList.FilterAndSearchBar.IconOpacity & ";'></path></svg>"
-                )
-            OnSelect: |-
-                =UpdateContext({varcSeeTags:!varcSeeTags})
-            PaddingBottom: =5
-            PaddingLeft: =5
-            PaddingRight: =5
-            PaddingTop: =5
-            PressedBorderColor: =RGBA(0, 0, 0, 0)
-            PressedFill: =RGBA(0, 0, 0, 0)
-            Width: =vargStyle.StartMenu.IconSize
-            X: =40
-            Y: =lblDescriptionData.Height
             ZIndex: =5
 
     Arrow1_6 As arrow.backArrow:
