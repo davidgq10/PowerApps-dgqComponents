@@ -395,6 +395,10 @@ App As appinfo:
                         1
                     ),
                     ImportantOptionBorderThickness: 3,
+                    WarningOptionColor: Red,
+                    WarningOptionBorderRadius: 5,
+                    WarningOptionBorderColor: Red,
+                    WarningOptionBorderThickness: 1,
                     Background: White,
                     //This variable has to be a text type, and the "id" can't change.
                     IconColor: "          

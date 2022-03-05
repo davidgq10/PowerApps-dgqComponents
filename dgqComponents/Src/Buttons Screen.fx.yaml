@@ -259,7 +259,7 @@
                 Y: =8
                 ZIndex: =2
 
-        "'co.ActionsButtons_2' As groupContainer.horizontalAutoLayoutContainer":
+        "'co.ActionsButtons' As groupContainer.horizontalAutoLayoutContainer":
             AlignInContainer: =AlignInContainer.SetByContainer
             BorderThickness: =vargBorderComponent
             FillPortions: =0
@@ -274,7 +274,7 @@
             Y: =7
             ZIndex: =2
 
-            "'co.ActionButton_5' As groupContainer.manualLayoutContainer":
+            "'co.ActionButton_Edit' As groupContainer.manualLayoutContainer":
                 AlignInContainer: =AlignInContainer.SetByContainer
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =BorderStyle.None
@@ -364,7 +364,7 @@
                     Y: =1
                     ZIndex: =4
 
-            "'co.ActionButton_6' As groupContainer.manualLayoutContainer":
+            "'co.ActionButton_Details' As groupContainer.manualLayoutContainer":
                 AlignInContainer: =AlignInContainer.SetByContainer
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =BorderStyle.None
@@ -388,15 +388,15 @@
                     Height: =If(App.ActiveScreen.Size>1,15,25)
                     HoverBorderColor: =RGBA(0, 0, 0, 0)
                     HoverFill: =RGBA(0, 0, 0, 0)
-                    Image: |-
+                    Image: |
                         ="data:image/svg+xml," & EncodeUrl(
                             "    
-                            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 572 512'><!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License -         https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->" 
+                            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'><!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License -         https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->" 
                             // Get the definition of the icon fill
                             & vargStyle.OptionsMenu.IconColor & 
                         
                             //Icon
-                               "<path d='M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z' style='fill: url(#myLinearGradient1);        fill-opacity:"      
+                               "<path d='M279.6 160.4C282.4 160.1 285.2 160 288 160C341 160 384 202.1 384 256C384 309 341 352 288 352C234.1 352 192 309 192 256C192 253.2 192.1 250.4 192.4 247.6C201.7 252.1 212.5 256 224 256C259.3 256 288 227.3 288 192C288 180.5 284.1 169.7 279.6 160.4zM480.6 112.6C527.4 156 558.7 207.1 573.5 243.7C576.8 251.6 576.8 260.4 573.5 268.3C558.7 304 527.4 355.1 480.6 399.4C433.5 443.2 368.8 480 288 480C207.2 480 142.5 443.2 95.42 399.4C48.62 355.1 17.34 304 2.461 268.3C-.8205 260.4-.8205 251.6 2.461 243.7C17.34 207.1 48.62 156 95.42 112.6C142.5 68.84 207.2 32 288 32C368.8 32 433.5 68.84 480.6 112.6V112.6zM288 112C208.5 112 144 176.5 144 256C144 335.5 208.5 400 288 400C367.5 400 432 335.5 432 256C432 176.5 367.5 112 288 112z' style='fill: url(#myLinearGradient1);        fill-opacity:"      
                             
                             & vargStyle.OptionsMenu.IconOpacity & " '/></svg>"
                         )
@@ -418,7 +418,7 @@
                     FontWeight: =vargStyle.OptionsMenu.FontWeight
                     Height: =30
                     Size: =vargStyle.OptionsMenu.FontHeight
-                    Text: ="Editar"
+                    Text: ="Detalles"
                     Width: =If(App.ActiveScreen.Size>1,Len(Self.Text)*10,0)
                     X: =imgIcon_20.X+imgIcon_20.Width+5
                     Y: =5
@@ -454,7 +454,7 @@
                     Y: =1
                     ZIndex: =4
 
-            "'co.ActionButton_7' As groupContainer.manualLayoutContainer":
+            "'co.ActionButton_Comments' As groupContainer.manualLayoutContainer":
                 AlignInContainer: =AlignInContainer.SetByContainer
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =BorderStyle.None
@@ -481,12 +481,12 @@
                     Image: |-
                         ="data:image/svg+xml," & EncodeUrl(
                             "    
-                            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 572 512'><!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License -         https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->" 
+                            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License -         https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->" 
                             // Get the definition of the icon fill
                             & vargStyle.OptionsMenu.IconColor & 
                         
                             //Icon
-                               "<path d='M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z' style='fill: url(#myLinearGradient1);        fill-opacity:"      
+                               "<path d='M256 32C114.6 32 .0272 125.1 .0272 240c0 49.63 21.35 94.98 56.97 130.7c-12.5 50.37-54.27 95.27-54.77 95.77c-2.25 2.25-2.875 5.734-1.5 8.734C1.979 478.2 4.75 480 8 480c66.25 0 115.1-31.76 140.6-51.39C181.2 440.9 217.6 448 256 448c141.4 0 255.1-93.13 255.1-208S397.4 32 256 32z' style='fill: url(#myLinearGradient1);        fill-opacity:"      
                             
                             & vargStyle.OptionsMenu.IconOpacity & " '/></svg>"
                         )
@@ -508,7 +508,7 @@
                     FontWeight: =vargStyle.OptionsMenu.FontWeight
                     Height: =30
                     Size: =vargStyle.OptionsMenu.FontHeight
-                    Text: ="Editar"
+                    Text: ="Comentarios"
                     Width: =If(App.ActiveScreen.Size>1,Len(Self.Text)*10,0)
                     X: =imgIcon_22.X+imgIcon_22.Width+5
                     Y: =5
@@ -544,7 +544,7 @@
                     Y: =1
                     ZIndex: =4
 
-            "'co.ActionButton_8' As groupContainer.manualLayoutContainer":
+            "'co.ActionButton_Attachments' As groupContainer.manualLayoutContainer":
                 AlignInContainer: =AlignInContainer.SetByContainer
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =BorderStyle.None
@@ -571,12 +571,12 @@
                     Image: |-
                         ="data:image/svg+xml," & EncodeUrl(
                             "    
-                            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 572 512'><!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License -         https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->" 
+                            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'><!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License -         https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->" 
                             // Get the definition of the icon fill
                             & vargStyle.OptionsMenu.IconColor & 
                         
                             //Icon
-                               "<path d='M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z' style='fill: url(#myLinearGradient1);        fill-opacity:"      
+                               "<path d='M364.2 83.8C339.8 59.39 300.2 59.39 275.8 83.8L91.8 267.8C49.71 309.9 49.71 378.1 91.8 420.2C133.9 462.3 202.1 462.3 244.2 420.2L396.2 268.2C407.1 257.3 424.9 257.3 435.8 268.2C446.7 279.1 446.7 296.9 435.8 307.8L283.8 459.8C219.8 523.8 116.2 523.8 52.2 459.8C-11.75 395.8-11.75 292.2 52.2 228.2L236.2 44.2C282.5-2.08 357.5-2.08 403.8 44.2C450.1 90.48 450.1 165.5 403.8 211.8L227.8 387.8C199.2 416.4 152.8 416.4 124.2 387.8C95.59 359.2 95.59 312.8 124.2 284.2L268.2 140.2C279.1 129.3 296.9 129.3 307.8 140.2C318.7 151.1 318.7 168.9 307.8 179.8L163.8 323.8C157.1 330.5 157.1 341.5 163.8 348.2C170.5 354.9 181.5 354.9 188.2 348.2L364.2 172.2C388.6 147.8 388.6 108.2 364.2 83.8V83.8z' style='fill: url(#myLinearGradient1);        fill-opacity:"      
                             
                             & vargStyle.OptionsMenu.IconOpacity & " '/></svg>"
                         )
@@ -598,7 +598,7 @@
                     FontWeight: =vargStyle.OptionsMenu.FontWeight
                     Height: =30
                     Size: =vargStyle.OptionsMenu.FontHeight
-                    Text: ="Editar"
+                    Text: ="Adjuntos"
                     Width: =If(App.ActiveScreen.Size>1,Len(Self.Text)*10,0)
                     X: =imgIcon_23.X+imgIcon_23.Width+5
                     Y: =5
@@ -634,7 +634,7 @@
                     Y: =1
                     ZIndex: =4
 
-            "'co.ActionButton_9' As groupContainer.manualLayoutContainer":
+            "'co.ActionButton_Contacts' As groupContainer.manualLayoutContainer":
                 AlignInContainer: =AlignInContainer.SetByContainer
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =BorderStyle.None
@@ -658,15 +658,15 @@
                     Height: =If(App.ActiveScreen.Size>1,15,25)
                     HoverBorderColor: =RGBA(0, 0, 0, 0)
                     HoverFill: =RGBA(0, 0, 0, 0)
-                    Image: |-
+                    Image: |
                         ="data:image/svg+xml," & EncodeUrl(
                             "    
-                            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 572 512'><!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License -         https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->" 
+                            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License -         https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->" 
                             // Get the definition of the icon fill
                             & vargStyle.OptionsMenu.IconColor & 
                         
                             //Icon
-                               "<path d='M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z' style='fill: url(#myLinearGradient1);        fill-opacity:"      
+                               "<path d='M384 0H96C60.65 0 32 28.65 32 64v384c0 35.35 28.65 64 64 64h288c35.35 0 64-28.65 64-64V64C448 28.65 419.3 0 384 0zM240 128c35.35 0 64 28.65 64 64s-28.65 64-64 64c-35.34 0-64-28.65-64-64S204.7 128 240 128zM336 384h-192C135.2 384 128 376.8 128 368C128 323.8 163.8 288 208 288h64c44.18 0 80 35.82 80 80C352 376.8 344.8 384 336 384zM496 64H480v96h16C504.8 160 512 152.8 512 144v-64C512 71.16 504.8 64 496 64zM496 192H480v96h16C504.8 288 512 280.8 512 272v-64C512 199.2 504.8 192 496 192zM496 320H480v96h16c8.836 0 16-7.164 16-16v-64C512 327.2 504.8 320 496 320z' style='fill: url(#myLinearGradient1);        fill-opacity:"      
                             
                             & vargStyle.OptionsMenu.IconOpacity & " '/></svg>"
                         )
@@ -678,6 +678,7 @@
                     ZIndex: =1
 
                 lblText_14 As label:
+                    Align: =Align.Center
                     BorderColor: =RGBA(0, 0, 0, 0)
                     BorderStyle: =BorderStyle.None
                     Color: =vargStyle.OptionsMenu.FontSubColor
@@ -688,7 +689,7 @@
                     FontWeight: =vargStyle.OptionsMenu.FontWeight
                     Height: =30
                     Size: =vargStyle.OptionsMenu.FontHeight
-                    Text: ="Editar"
+                    Text: ="Contactos"
                     Width: =If(App.ActiveScreen.Size>1,Len(Self.Text)*10,0)
                     X: =imgIcon_24.X+imgIcon_24.Width+5
                     Y: =5
@@ -724,7 +725,7 @@
                     Y: =1
                     ZIndex: =4
 
-            "'co.ActionButton_10' As groupContainer.manualLayoutContainer":
+            "'co.ActionButton_IndustrialPlants' As groupContainer.manualLayoutContainer":
                 AlignInContainer: =AlignInContainer.SetByContainer
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =BorderStyle.None
@@ -751,12 +752,12 @@
                     Image: |-
                         ="data:image/svg+xml," & EncodeUrl(
                             "    
-                            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 572 512'><!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License -         https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->" 
+                            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'><!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License -         https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->" 
                             // Get the definition of the icon fill
                             & vargStyle.OptionsMenu.IconColor & 
                         
                             //Icon
-                               "<path d='M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z' style='fill: url(#myLinearGradient1);        fill-opacity:"      
+                               "<path d='M128 32C145.7 32 160 46.33 160 64V215.4L316.6 131C332.6 122.4 352 134 352 152.2V215.4L508.6 131C524.6 122.4 544 134 544 152.2V432C544 458.5 522.5 480 496 480H80C53.49 480 32 458.5 32 432V64C32 46.33 46.33 32 64 32H128z' style='fill: url(#myLinearGradient1);        fill-opacity:"      
                             
                             & vargStyle.OptionsMenu.IconOpacity & " '/></svg>"
                         )
@@ -778,7 +779,7 @@
                     FontWeight: =vargStyle.OptionsMenu.FontWeight
                     Height: =30
                     Size: =vargStyle.OptionsMenu.FontHeight
-                    Text: ="Editar"
+                    Text: ="Plantas"
                     Width: =If(App.ActiveScreen.Size>1,Len(Self.Text)*10,0)
                     X: =imgIcon_25.X+imgIcon_25.Width+5
                     Y: =5
@@ -814,365 +815,50 @@
                     Y: =1
                     ZIndex: =4
 
-            "'co.ActionButton_11' As groupContainer.manualLayoutContainer":
-                AlignInContainer: =AlignInContainer.SetByContainer
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =BorderStyle.None
-                Fill: =vargStyle.OptionsMenu.Background
+            "'co.ActionButton_Delete' As groupContainer.manualLayoutContainer":
+                AlignInContainer: =AlignInContainer.Center
+                BorderThickness: =vargBorderComponent
                 FillPortions: =0
-                Height: =40
-                LayoutMinHeight: =40
+                Height: =50
+                LayoutMinHeight: =55
                 LayoutMinWidth: =250
-                Width: =lblText_16.Width+imgIcon_26.Width+30
-                X: =222
-                Y: =190
-                ZIndex: =8
-
-                imgIcon_26 As image:
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =2
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledFill: =RGBA(0, 0, 0, 0)
-                    FocusedBorderThickness: =4
-                    Height: =If(App.ActiveScreen.Size>1,15,25)
-                    HoverBorderColor: =RGBA(0, 0, 0, 0)
-                    HoverFill: =RGBA(0, 0, 0, 0)
-                    Image: |-
-                        ="data:image/svg+xml," & EncodeUrl(
-                            "    
-                            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 572 512'><!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License -         https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->" 
-                            // Get the definition of the icon fill
-                            & vargStyle.OptionsMenu.IconColor & 
-                        
-                            //Icon
-                               "<path d='M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z' style='fill: url(#myLinearGradient1);        fill-opacity:"      
-                            
-                            & vargStyle.OptionsMenu.IconOpacity & " '/></svg>"
-                        )
-                    PressedBorderColor: =RGBA(0, 0, 0, 0)
-                    PressedFill: =RGBA(0, 0, 0, 0)
-                    Width: =If(App.ActiveScreen.Size>1,15,25)
-                    X: =(Parent.Width-imgIcon_26.Width-lblText_16.Width)/2
-                    Y: =If(App.ActiveScreen.Size>1,12.5,6)
-                    ZIndex: =1
-
-                lblText_16 As label:
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    Color: =vargStyle.OptionsMenu.FontSubColor
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    FocusedBorderThickness: =4
-                    Font: =vargStyle.OptionsMenu.FontSub
-                    FontWeight: =vargStyle.OptionsMenu.FontWeight
-                    Height: =30
-                    Size: =vargStyle.OptionsMenu.FontHeight
-                    Text: ="Editar"
-                    Width: =If(App.ActiveScreen.Size>1,Len(Self.Text)*10,0)
-                    X: =imgIcon_26.X+imgIcon_26.Width+5
-                    Y: =5
-                    ZIndex: =2
-
-                btnHover_17 As button:
-                    BorderColor: =vargStyle.OptionsMenu.BorderColor
-                    BorderStyle: =vargStyle.OptionsMenu.BorderStyle
-                    BorderThickness: =vargStyle.OptionsMenu.BorderThickness
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    DisabledFill: =RGBA(244, 244, 244, 1)
-                    Fill: =If(Self.DisplayMode = DisplayMode.View,RGBA(181, 159, 159, 0.3),RGBA(181, 159, 159, 0))
-                    FocusedBorderColor: =ColorFade(Self.Fill, -75%)
-                    Font: =Font.'Segoe UI'
-                    FontWeight: =FontWeight.Semibold
-                    Height: =Parent.Height
-                    HoverBorderColor: =RGBA(0, 0, 0, 0)
-                    HoverColor: =RGBA(255, 255, 255, 1)
-                    HoverFill: =vargStyle.OptionsMenu.HoverFill
-                    OnSelect: |-
-                        =//EditForm(FormStore);UpdateContext({varcViewFormStore:true})
-                    PressedBorderColor: =ColorFade(Self.HoverFill, -50%)
-                    PressedColor: =RGBA(255, 255, 255, 1)
-                    PressedFill: =ColorFade(Self.HoverFill, -20%)
-                    RadiusBottomLeft: =0
-                    RadiusBottomRight: =0
-                    RadiusTopLeft: =0
-                    RadiusTopRight: =0
-                    Size: =15
-                    Text: =""
-                    Width: =Parent.Width
-                    Y: =1
-                    ZIndex: =4
-
-            "'co.ActionButton_12' As groupContainer.manualLayoutContainer":
-                AlignInContainer: =AlignInContainer.SetByContainer
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =BorderStyle.None
-                Fill: =vargStyle.OptionsMenu.Background
-                FillPortions: =0
-                Height: =40
-                LayoutMinHeight: =40
-                LayoutMinWidth: =250
-                Width: =lblText_17.Width+imgIcon_27.Width+30
-                X: =222
-                Y: =190
+                PaddingTop: =5
+                Width: =If(App.ActiveScreen.Size>1,120,80)
                 ZIndex: =9
 
-                imgIcon_27 As image:
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =2
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledFill: =RGBA(0, 0, 0, 0)
-                    FocusedBorderThickness: =4
-                    Height: =If(App.ActiveScreen.Size>1,15,25)
-                    HoverBorderColor: =RGBA(0, 0, 0, 0)
-                    HoverFill: =RGBA(0, 0, 0, 0)
-                    Image: |-
-                        ="data:image/svg+xml," & EncodeUrl(
-                            "    
-                            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 572 512'><!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License -         https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->" 
-                            // Get the definition of the icon fill
-                            & vargStyle.OptionsMenu.IconColor & 
-                        
-                            //Icon
-                               "<path d='M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z' style='fill: url(#myLinearGradient1);        fill-opacity:"      
-                            
-                            & vargStyle.OptionsMenu.IconOpacity & " '/></svg>"
-                        )
-                    PressedBorderColor: =RGBA(0, 0, 0, 0)
-                    PressedFill: =RGBA(0, 0, 0, 0)
-                    Width: =If(App.ActiveScreen.Size>1,15,25)
-                    X: =(Parent.Width-imgIcon_27.Width-lblText_17.Width)/2
-                    Y: =If(App.ActiveScreen.Size>1,12.5,6)
-                    ZIndex: =1
-
-                lblText_17 As label:
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
+                btnDelete_1 As button:
+                    BorderColor: =vargStyle.OptionsMenu.WarningOptionBorderColor
+                    BorderStyle: =vargStyle.OptionsMenu.BorderStyle
+                    BorderThickness: =vargStyle.OptionsMenu.WarningOptionBorderThickness
                     Color: =vargStyle.OptionsMenu.FontSubColor
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
-                    FocusedBorderThickness: =4
-                    Font: =vargStyle.OptionsMenu.FontSub
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =Transparent
+                    FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                    Font: =vargStyle.OptionsMenu.Font
                     FontWeight: =vargStyle.OptionsMenu.FontWeight
                     Height: =30
+                    HoverBorderColor: =ColorFade(vargStyle.OptionsMenu.WarningOptionBorderColor,-20%)
+                    HoverColor: =vargStyle.OptionsMenu.Background
+                    HoverFill: =vargStyle.OptionsMenu.WarningOptionColor
+                    OnSelect: =
+                    PressedBorderColor: =ColorFade(vargStyle.OptionsMenu.WarningOptionColor,-20%)
+                    PressedColor: =ColorFade(vargStyle.OptionsMenu.WarningOptionColor,-20%)
+                    PressedFill: =vargStyle.OptionsMenu.Background
+                    RadiusBottomLeft: =vargStyle.Buttons.Midium.Accept.BorderRadius
+                    RadiusBottomRight: =vargStyle.Buttons.Midium.Accept.BorderRadius
+                    RadiusTopLeft: =vargStyle.OptionsMenu.WarningOptionBorderRadius
+                    RadiusTopRight: =vargStyle.Buttons.Midium.Accept.BorderRadius
                     Size: =vargStyle.OptionsMenu.FontHeight
-                    Text: ="Editar"
-                    Width: =If(App.ActiveScreen.Size>1,Len(Self.Text)*10,0)
-                    X: =imgIcon_27.X+imgIcon_27.Width+5
-                    Y: =5
-                    ZIndex: =2
-
-                btnHover_18 As button:
-                    BorderColor: =vargStyle.OptionsMenu.BorderColor
-                    BorderStyle: =vargStyle.OptionsMenu.BorderStyle
-                    BorderThickness: =vargStyle.OptionsMenu.BorderThickness
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    DisabledFill: =RGBA(244, 244, 244, 1)
-                    Fill: =If(Self.DisplayMode = DisplayMode.View,RGBA(181, 159, 159, 0.3),RGBA(181, 159, 159, 0))
-                    FocusedBorderColor: =ColorFade(Self.Fill, -75%)
-                    Font: =Font.'Segoe UI'
-                    FontWeight: =FontWeight.Semibold
-                    Height: =Parent.Height
-                    HoverBorderColor: =RGBA(0, 0, 0, 0)
-                    HoverColor: =RGBA(255, 255, 255, 1)
-                    HoverFill: =vargStyle.OptionsMenu.HoverFill
-                    OnSelect: |-
-                        =//EditForm(FormStore);UpdateContext({varcViewFormStore:true})
-                    PressedBorderColor: =ColorFade(Self.HoverFill, -50%)
-                    PressedColor: =RGBA(255, 255, 255, 1)
-                    PressedFill: =ColorFade(Self.HoverFill, -20%)
-                    RadiusBottomLeft: =0
-                    RadiusBottomRight: =0
-                    RadiusTopLeft: =0
-                    RadiusTopRight: =0
-                    Size: =15
-                    Text: =""
-                    Width: =Parent.Width
-                    Y: =1
-                    ZIndex: =4
-
-            "'co.ActionButton_13' As groupContainer.manualLayoutContainer":
-                AlignInContainer: =AlignInContainer.SetByContainer
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =BorderStyle.None
-                Fill: =vargStyle.OptionsMenu.Background
-                FillPortions: =0
-                Height: =40
-                LayoutMinHeight: =40
-                LayoutMinWidth: =250
-                Width: =lblText_18.Width+imgIcon_28.Width+30
-                X: =222
-                Y: =190
-                ZIndex: =10
-
-                imgIcon_28 As image:
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =2
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledFill: =RGBA(0, 0, 0, 0)
-                    FocusedBorderThickness: =4
-                    Height: =If(App.ActiveScreen.Size>1,15,25)
-                    HoverBorderColor: =RGBA(0, 0, 0, 0)
-                    HoverFill: =RGBA(0, 0, 0, 0)
-                    Image: |-
-                        ="data:image/svg+xml," & EncodeUrl(
-                            "    
-                            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 572 512'><!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License -         https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->" 
-                            // Get the definition of the icon fill
-                            & vargStyle.OptionsMenu.IconColor & 
+                    Text: ="Eliminar"
+                    Tooltip: =Self.Text
+                    Width: |+
+                        =Parent.Width-10
                         
-                            //Icon
-                               "<path d='M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z' style='fill: url(#myLinearGradient1);        fill-opacity:"      
-                            
-                            & vargStyle.OptionsMenu.IconOpacity & " '/></svg>"
-                        )
-                    PressedBorderColor: =RGBA(0, 0, 0, 0)
-                    PressedFill: =RGBA(0, 0, 0, 0)
-                    Width: =If(App.ActiveScreen.Size>1,15,25)
-                    X: =(Parent.Width-imgIcon_28.Width-lblText_18.Width)/2
-                    Y: =If(App.ActiveScreen.Size>1,12.5,6)
-                    ZIndex: =1
-
-                lblText_18 As label:
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    Color: =vargStyle.OptionsMenu.FontSubColor
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    FocusedBorderThickness: =4
-                    Font: =vargStyle.OptionsMenu.FontSub
-                    FontWeight: =vargStyle.OptionsMenu.FontWeight
-                    Height: =30
-                    Size: =vargStyle.OptionsMenu.FontHeight
-                    Text: ="Editar"
-                    Width: =If(App.ActiveScreen.Size>1,Len(Self.Text)*10,0)
-                    X: =imgIcon_28.X+imgIcon_28.Width+5
-                    Y: =5
+                    X: =7
+                    Y: =8
                     ZIndex: =2
-
-                btnHover_19 As button:
-                    BorderColor: =vargStyle.OptionsMenu.BorderColor
-                    BorderStyle: =vargStyle.OptionsMenu.BorderStyle
-                    BorderThickness: =vargStyle.OptionsMenu.BorderThickness
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    DisabledFill: =RGBA(244, 244, 244, 1)
-                    Fill: =If(Self.DisplayMode = DisplayMode.View,RGBA(181, 159, 159, 0.3),RGBA(181, 159, 159, 0))
-                    FocusedBorderColor: =ColorFade(Self.Fill, -75%)
-                    Font: =Font.'Segoe UI'
-                    FontWeight: =FontWeight.Semibold
-                    Height: =Parent.Height
-                    HoverBorderColor: =RGBA(0, 0, 0, 0)
-                    HoverColor: =RGBA(255, 255, 255, 1)
-                    HoverFill: =vargStyle.OptionsMenu.HoverFill
-                    OnSelect: |-
-                        =//EditForm(FormStore);UpdateContext({varcViewFormStore:true})
-                    PressedBorderColor: =ColorFade(Self.HoverFill, -50%)
-                    PressedColor: =RGBA(255, 255, 255, 1)
-                    PressedFill: =ColorFade(Self.HoverFill, -20%)
-                    RadiusBottomLeft: =0
-                    RadiusBottomRight: =0
-                    RadiusTopLeft: =0
-                    RadiusTopRight: =0
-                    Size: =15
-                    Text: =""
-                    Width: =Parent.Width
-                    Y: =1
-                    ZIndex: =4
-
-            "'co.ActionButton_14' As groupContainer.manualLayoutContainer":
-                AlignInContainer: =AlignInContainer.SetByContainer
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =BorderStyle.None
-                Fill: =vargStyle.OptionsMenu.Background
-                FillPortions: =0
-                Height: =40
-                LayoutMinHeight: =40
-                LayoutMinWidth: =250
-                Width: =lblText_19.Width+imgIcon_29.Width+30
-                X: =222
-                Y: =190
-                ZIndex: =11
-
-                imgIcon_29 As image:
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =2
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledFill: =RGBA(0, 0, 0, 0)
-                    FocusedBorderThickness: =4
-                    Height: =If(App.ActiveScreen.Size>1,15,25)
-                    HoverBorderColor: =RGBA(0, 0, 0, 0)
-                    HoverFill: =RGBA(0, 0, 0, 0)
-                    Image: |-
-                        ="data:image/svg+xml," & EncodeUrl(
-                            "    
-                            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 572 512'><!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License -         https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->" 
-                            // Get the definition of the icon fill
-                            & vargStyle.OptionsMenu.IconColor & 
-                        
-                            //Icon
-                               "<path d='M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z' style='fill: url(#myLinearGradient1);        fill-opacity:"      
-                            
-                            & vargStyle.OptionsMenu.IconOpacity & " '/></svg>"
-                        )
-                    PressedBorderColor: =RGBA(0, 0, 0, 0)
-                    PressedFill: =RGBA(0, 0, 0, 0)
-                    Width: =If(App.ActiveScreen.Size>1,15,25)
-                    X: =(Parent.Width-imgIcon_29.Width-lblText_19.Width)/2
-                    Y: =If(App.ActiveScreen.Size>1,12.5,6)
-                    ZIndex: =1
-
-                lblText_19 As label:
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    Color: =vargStyle.OptionsMenu.FontSubColor
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    FocusedBorderThickness: =4
-                    Font: =vargStyle.OptionsMenu.FontSub
-                    FontWeight: =vargStyle.OptionsMenu.FontWeight
-                    Height: =30
-                    Size: =vargStyle.OptionsMenu.FontHeight
-                    Text: ="Editar"
-                    Width: =If(App.ActiveScreen.Size>1,Len(Self.Text)*10,0)
-                    X: =imgIcon_29.X+imgIcon_29.Width+5
-                    Y: =5
-                    ZIndex: =2
-
-                btnHover_20 As button:
-                    BorderColor: =vargStyle.OptionsMenu.BorderColor
-                    BorderStyle: =vargStyle.OptionsMenu.BorderStyle
-                    BorderThickness: =vargStyle.OptionsMenu.BorderThickness
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    DisabledFill: =RGBA(244, 244, 244, 1)
-                    Fill: =If(Self.DisplayMode = DisplayMode.View,RGBA(181, 159, 159, 0.3),RGBA(181, 159, 159, 0))
-                    FocusedBorderColor: =ColorFade(Self.Fill, -75%)
-                    Font: =Font.'Segoe UI'
-                    FontWeight: =FontWeight.Semibold
-                    Height: =Parent.Height
-                    HoverBorderColor: =RGBA(0, 0, 0, 0)
-                    HoverColor: =RGBA(255, 255, 255, 1)
-                    HoverFill: =vargStyle.OptionsMenu.HoverFill
-                    OnSelect: |-
-                        =//EditForm(FormStore);UpdateContext({varcViewFormStore:true})
-                    PressedBorderColor: =ColorFade(Self.HoverFill, -50%)
-                    PressedColor: =RGBA(255, 255, 255, 1)
-                    PressedFill: =ColorFade(Self.HoverFill, -20%)
-                    RadiusBottomLeft: =0
-                    RadiusBottomRight: =0
-                    RadiusTopLeft: =0
-                    RadiusTopRight: =0
-                    Size: =15
-                    Text: =""
-                    Width: =Parent.Width
-                    Y: =1
-                    ZIndex: =4
 
     "'XXX-1' As group":
         Height: =5
@@ -1187,6 +873,7 @@
             Fill: =RGBA(0, 120, 212, 1)
             OnSelect: =Navigate('Home Screen')
             X: =App.Width-Self.Width
+            Y: =150
             ZIndex: =1
 
         Label5 As label:

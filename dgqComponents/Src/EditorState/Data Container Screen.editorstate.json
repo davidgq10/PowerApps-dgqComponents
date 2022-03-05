@@ -3184,7 +3184,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "co.FilterGroup",
-    "ParentIndex": 2,
+    "ParentIndex": 1,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -4021,7 +4021,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "co.SortGroup",
-    "ParentIndex": 1,
+    "ParentIndex": 0,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -12454,7 +12454,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "lblDescriptionData",
-    "ParentIndex": 0,
+    "ParentIndex": 2,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
