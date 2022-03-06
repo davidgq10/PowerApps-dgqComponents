@@ -1,4 +1,4 @@
-DataMenu As screen:
+"'Data Menu Screen' As screen":
     LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
 
     "'co.DataFilter' As groupContainer.manualLayoutContainer":

@@ -257,7 +257,7 @@
       },
       {
         "Category": "Design",
-        "PropertyName": "Height",
+        "PropertyName": "Width",
         "RuleProviderType": "Unknown"
       },
       {
@@ -282,7 +282,7 @@
       },
       {
         "Category": "Design",
-        "PropertyName": "Width",
+        "PropertyName": "Height",
         "RuleProviderType": "Unknown"
       },
       {
@@ -615,7 +615,7 @@
     "StyleName": "",
     "Type": "ControlInfo"
   },
-  "DataMenu": {
+  "Data Menu Screen": {
     "AllowAccessToGlobals": true,
     "ControlPropertyState": [
       "Fill",
@@ -635,18 +635,13 @@
     "IsLocked": false,
     "LayoutName": "",
     "MetaDataIDKey": "",
-    "Name": "DataMenu",
+    "Name": "Data Menu Screen",
     "ParentIndex": 0,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
         "Category": "Design",
-        "PropertyName": "Width",
-        "RuleProviderType": "Unknown"
-      },
-      {
-        "Category": "Design",
-        "PropertyName": "Height",
+        "PropertyName": "Fill",
         "RuleProviderType": "Unknown"
       },
       {
@@ -656,17 +651,12 @@
       },
       {
         "Category": "Design",
-        "PropertyName": "Fill",
+        "PropertyName": "Height",
         "RuleProviderType": "Unknown"
       },
       {
         "Category": "Design",
-        "PropertyName": "LoadingSpinner",
-        "RuleProviderType": "Unknown"
-      },
-      {
-        "Category": "Design",
-        "PropertyName": "LoadingSpinnerColor",
+        "PropertyName": "Width",
         "RuleProviderType": "Unknown"
       },
       {
@@ -677,6 +667,16 @@
       {
         "Category": "Design",
         "PropertyName": "Orientation",
+        "RuleProviderType": "Unknown"
+      },
+      {
+        "Category": "Design",
+        "PropertyName": "LoadingSpinner",
+        "RuleProviderType": "Unknown"
+      },
+      {
+        "Category": "Design",
+        "PropertyName": "LoadingSpinnerColor",
         "RuleProviderType": "Unknown"
       }
     ],
@@ -844,7 +844,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "imgIcon_Audit",
-    "ParentIndex": 6,
+    "ParentIndex": 4,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -1177,12 +1177,12 @@
     "Properties": [
       {
         "Category": "Data",
-        "PropertyName": "Image",
+        "PropertyName": "ContentLanguage",
         "RuleProviderType": "Unknown"
       },
       {
         "Category": "Data",
-        "PropertyName": "ContentLanguage",
+        "PropertyName": "Image",
         "RuleProviderType": "Unknown"
       },
       {
@@ -2163,7 +2163,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "imgIcon_RefreshData",
-    "ParentIndex": 3,
+    "ParentIndex": 7,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -2499,7 +2499,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "imgIcon_Search",
-    "ParentIndex": 7,
+    "ParentIndex": 6,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -3160,7 +3160,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "imgIcon_Tags",
-    "ParentIndex": 4,
+    "ParentIndex": 3,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
