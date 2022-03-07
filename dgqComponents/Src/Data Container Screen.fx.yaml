@@ -3,1200 +3,6 @@
     OnVisible: |-
         =UpdateContext({varcLockData:true})
 
-    "'co.DataContainer' As groupContainer.manualLayoutContainer":
-        BorderColor: =RGBA(221, 79, 14, 1)
-        BorderThickness: =2
-        Height: =App.Height-Self.Y
-        Visible: =varcSidebarNav=4
-        Width: =App.Width-Self.X
-        X: |-
-            =If(
-                vargWSide = true,
-                vargStyle.Sidebar.BigWidth,
-                If(
-                    App.ActiveScreen.Size = 1,
-                    0,
-                    vargStyle.Sidebar.SmallWidth
-                )
-            )
-        Y: =200
-        ZIndex: =3
-
-        "'co.DataListContainer' As groupContainer.manualLayoutContainer":
-            BorderColor: =vargStyle.Others.BorderComponentsColor
-            BorderStyle: =vargStyle.Others.BorderComponentsStyle
-            BorderThickness: =vargBorderComponent
-            Fill: =vargStyle.ItemsList.Background
-            Height: =Parent.Height-Self.Y
-            Width: =Parent.Width-Self.X
-            Y: |-
-                =If(varcSeeInfo,lblDescriptionData.Height,0
-                )
-            ZIndex: =1
-
-            galDataList As gallery.variableTemplateHeightGallery:
-                BorderColor: =RGBA(166, 166, 166, 1)
-                ContentLanguage: ="es"
-                DelayItemLoading: =true
-                Fill: =vargStyle.ItemsList.Background
-                Height: =Parent.Height-Self.Y
-                Items: ='Locales Spoon'
-                Layout: =Layout.Vertical
-                LoadingSpinner: =LoadingSpinner.Data
-                NavigationStep: =vargStyle.ItemsList.NavigationStep
-                ShowNavigation: =vargStyle.ItemsList.ShowNavigation
-                TemplateSize: =61
-                Transition: =vargStyle.ItemsList.NavigationTransition
-                Width: =Parent.Width
-                ZIndex: =2
-
-                "'co.Row_4' As groupContainer.horizontalAutoLayoutContainer":
-                    BorderColor: =vargStyle.ItemsList.BorderColor
-                    BorderStyle: =vargStyle.ItemsList.BorderStyle
-                    BorderThickness: =vargStyle.ItemsList.BorderThickness
-                    Fill: =If(ThisItem.IsSelected,vargStyle.ItemsList.SelectedColor,vargStyle.ItemsList.RowBackground)
-                    Height: =lblHeightControl_1.Y+lblHeightControl_1.Height+20
-                    LayoutAlignItems: =LayoutAlignItems.Center
-                    LayoutGap: =5
-                    LayoutMode: =LayoutMode.Auto
-                    LayoutOverflowX: =LayoutOverflow.Scroll
-                    LayoutOverflowY: =LayoutOverflow.Scroll
-                    LayoutWrap: =vargStyle.ItemsList.Wrap
-                    PaddingLeft: =10
-                    PaddingRight: =10
-                    Width: =Parent.Width-10
-                    ZIndex: =2
-
-                    ItemField As groupContainer.manualLayoutContainer:
-                        FillPortions: =0
-                        LayoutMinHeight: =lblData.Height
-                        LayoutMinWidth: =lblTag.Width+lblData.Width+25
-                        Width: =lblTag.Width+lblData.Width
-                        ZIndex: =1
-
-                        lblData As label:
-                            AutoHeight: =true
-                            BorderColor: =RGBA(0, 0, 0, 0)
-                            BorderStyle: =BorderStyle.None
-                            BorderThickness: =2
-                            Color: =//If(ThisItem.IsSelected, vargTheme.ItemsList.FontColorDataSelected,vargTheme.ItemsList.FontColorData)
-                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            Fill: =If(ThisItem.IsSelected,vargStyle.ItemsList.BackgroundDataSelected,vargStyle.ItemsList.BackgroundData)
-                            FocusedBorderThickness: =4
-                            Font: =vargStyle.ItemsList.FontData
-                            FontWeight: =vargStyle.ItemsList.FontWeightData
-                            Height: =31
-                            Size: =vargStyle.ItemsList.FontHeightData
-                            Text: ="Nombre Designado" //ThisItem.'Nombre designado'
-                            Tooltip: =Self.Text
-                            Width: =200
-                            X: =lblTag.Width
-                            ZIndex: =1
-
-                        lblTag As label:
-                            AutoHeight: =true
-                            BorderColor: =RGBA(0, 0, 0, 0)
-                            BorderStyle: =BorderStyle.None
-                            BorderThickness: =2
-                            Color: =If(ThisItem.IsSelected,vargStyle.ItemsList.FontColorLabelSelected,vargStyle.ItemsList.FontColorLabel)
-                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            Fill: =If(ThisItem.IsSelected,vargStyle.ItemsList.BackgroundLabelSelected, vargStyle.ItemsList.BackgroundLabel)
-                            FocusedBorderThickness: =4
-                            Font: =vargStyle.ItemsList.FontLabel
-                            FontWeight: =vargStyle.ItemsList.FontWeightLabel
-                            Height: =31
-                            Size: =vargStyle.ItemsList.FontHeightLabel
-                            Text: |-
-                                ="Nombre:"
-                            Tooltip: =Self.Text
-                            Width: =If(varcSeeTags=true,70,0)
-                            ZIndex: =2
-
-                    ItemField_1 As groupContainer.manualLayoutContainer:
-                        FillPortions: =0
-                        LayoutMinHeight: =ItemData_1.Height
-                        LayoutMinWidth: =lblTag_1.Width+ItemData_1.Width+25
-                        Width: =lblTag_1.Width+ItemData_1.Width
-                        ZIndex: =2
-
-                        ItemData_1 As label:
-                            AutoHeight: =true
-                            BorderColor: =RGBA(0, 0, 0, 0)
-                            BorderStyle: =BorderStyle.None
-                            BorderThickness: =2
-                            Color: =If(ThisItem.IsSelected, vargStyle.ItemsList.FontColorDataSelected,vargStyle.ItemsList.FontColorData)
-                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            Fill: =If(ThisItem.IsSelected,vargStyle.ItemsList.BackgroundDataSelected,vargStyle.ItemsList.BackgroundData)
-                            FocusedBorderThickness: =4
-                            Font: =vargStyle.ItemsList.FontData
-                            FontWeight: =vargStyle.ItemsList.FontWeightData
-                            Height: =31
-                            Size: =vargStyle.ItemsList.FontHeightData
-                            Text: ="Descripción" //ThisItem.Descripción
-                            Tooltip: =Self.Text
-                            Width: =300
-                            X: =lblTag_1.Width
-                            ZIndex: =1
-
-                        lblTag_1 As label:
-                            AutoHeight: =true
-                            BorderColor: =RGBA(0, 0, 0, 0)
-                            BorderStyle: =BorderStyle.None
-                            BorderThickness: =2
-                            Color: =If(ThisItem.IsSelected,vargStyle.ItemsList.FontColorLabelSelected,vargStyle.ItemsList.FontColorLabel)
-                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            Fill: =If(ThisItem.IsSelected,vargStyle.ItemsList.BackgroundLabelSelected, vargStyle.ItemsList.BackgroundLabel)
-                            FocusedBorderThickness: =4
-                            Font: =vargStyle.ItemsList.FontLabel
-                            FontWeight: =vargStyle.ItemsList.FontWeightLabel
-                            Height: =31
-                            Size: =vargStyle.ItemsList.FontHeightLabel
-                            Text: |-
-                                ="Descripción:"
-                            Tooltip: =Self.Text
-                            Width: =If(varcSeeTags=true,70,0)
-                            ZIndex: =2
-
-                    ItemField_2 As groupContainer.manualLayoutContainer:
-                        FillPortions: =0
-                        LayoutMinHeight: =ckbData_2.Height
-                        LayoutMinWidth: =lblTag_2.Width+ckbData_2+25
-                        Width: =lblTag_2.Width+ckbData_2.Width+25
-                        ZIndex: =3
-
-                        ckbData_2 As checkbox:
-                            BorderColor: =RGBA(0, 0, 0, 0)
-                            BorderStyle: =BorderStyle.None
-                            BorderThickness: =vargStyle.ItemsList.CheckBox.CheckboxBorderThickness
-                            CheckboxBackgroundFill: =vargStyle.ItemsList.CheckBox.CheckboxFill
-                            CheckboxBorderColor: =vargStyle.ItemsList.CheckBox.CheckboxBorderColor
-                            CheckmarkFill: =vargStyle.ItemsList.CheckBox.CheckmarkFill
-                            Color: =If(ThisItem.IsSelected, vargStyle.ItemsList.FontColorDataSelected,vargStyle.ItemsList.FontColorData)
-                            Default: =//ThisItem.'Requiere nota de crédito'
-                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            DisplayMode: =If(varcLockData=false,DisplayMode.Edit,DisplayMode.Disabled)
-                            Fill: =vargStyle.ItemsList.BackgroundData
-                            FocusedBorderThickness: =4
-                            Font: =vargStyle.ItemsList.FontData
-                            FontWeight: =vargStyle.ItemsList.FontWeightData
-                            HoverBorderColor: =RGBA(0, 0, 0, 0)
-                            HoverColor: =RGBA(51, 51, 51, 1)
-                            HoverFill: =RGBA(0, 0, 0, 0)
-                            OnSelect: |-
-                                =/*Collect(ShowLoading,{itemID:ThisItem.ID});
-                                If(
-                                    ThisItem.'Requiere nota de crédito' = false,
-                                    Patch(
-                                        'Carga de producto boleta de locales',
-                                        ThisItem,
-                                        {'Requiere nota de crédito': true}
-                                    ),
-                                    Patch(
-                                        'Carga de producto boleta de locales',
-                                        ThisItem,
-                                        {'Requiere nota de crédito': false}
-                                    )
-                                );
-                                Remove(ShowLoading,{itemID:ThisItem.ID})*/
-                            PressedBorderColor: =RGBA(0, 0, 0, 0)
-                            PressedColor: =RGBA(51, 51, 51, 1)
-                            PressedFill: =RGBA(0, 0, 0, 0)
-                            Size: =vargStyle.ItemsList.FontHeightData
-                            Text: ="Requiere Nota de Crédito"
-                            Width: =181
-                            X: =lblTag_2.Width
-                            Y: =5
-                            ZIndex: =1
-
-                        lblTag_2 As label:
-                            AutoHeight: =true
-                            BorderColor: =RGBA(0, 0, 0, 0)
-                            BorderStyle: =BorderStyle.None
-                            BorderThickness: =2
-                            Color: =If(ThisItem.IsSelected,vargStyle.ItemsList.FontColorLabelSelected,vargStyle.ItemsList.FontColorLabel)
-                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            Fill: =If(ThisItem.IsSelected,vargStyle.ItemsList.BackgroundLabelSelected, vargStyle.ItemsList.BackgroundLabel)
-                            FocusedBorderThickness: =4
-                            Font: =vargStyle.ItemsList.FontLabel
-                            FontWeight: =vargStyle.ItemsList.FontWeightLabel
-                            Height: =31
-                            Size: =vargStyle.ItemsList.FontHeightLabel
-                            Text: |-
-                                ="Requiere Nota de Crédito:"
-                            Tooltip: =Self.Text
-                            Width: =If(varcSeeTags=true,80,0)
-                            ZIndex: =2
-
-                    ItemField_3 As groupContainer.manualLayoutContainer:
-                        FillPortions: =0
-                        LayoutMinHeight: =tglData_3.Height*2
-                        LayoutMinWidth: =lblTag_3.Width+tglData_3.Width+25
-                        Width: =lblTag_3.Width+tglData_3.Width+25
-                        ZIndex: =4
-
-                        tglData_3 As toggleSwitch:
-                            BorderColor: =RGBA(0, 0, 0, 0)
-                            BorderStyle: =BorderStyle.None
-                            Color: =If(ThisItem.IsSelected, vargStyle.ItemsList.FontColorDataSelected,vargStyle.ItemsList.FontColorData)
-                            Default: =If(ThisItem.'Estado de actividad'.Value="Activo",true,false)
-                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                            DisplayMode: =If(varcLockData=false,DisplayMode.Edit,DisplayMode.Disabled)
-                            FalseFill: =vargStyle.ItemsList.ToggleActiveItem.OnUncheckBackground
-                            FalseHoverFill: =RGBA(33, 33, 33, 1)
-                            FalseText: ="Inactivo"
-                            FocusedBorderThickness: =0
-                            Font: =vargStyle.ItemsList.FontData
-                            FontWeight: =FontWeight.Bold
-                            HandleFill: =RGBA(255, 255, 255, 1)
-                            Height: =vargStyle.ItemsList.ToggleActiveItem.ToggleHeight
-                            HoverBorderColor: =RGBA(0, 0, 0, 0)
-                            LabelPaddingRight: |
-                                =20
-                            OnSelect: |-
-                                =Collect(ShowLoading,{itemID:ThisItem.ID});
-                                If(
-                                    ThisItem.'Estado de actividad'.Value = "Inactivo",
-                                    Patch(
-                                        'Locales Spoon', //Update this property when you change the data origin.
-                                        ThisItem,
-                                        {'Estado de actividad': {Value: "Activo"}}
-                                    ),
-                                    Patch(
-                                        'Locales Spoon', //Update this property when you change the data origin.
-                                        ThisItem,
-                                        {'Estado de actividad': {Value: "Inactivo"}}
-                                    )
-                                );
-                                Remove(ShowLoading,{itemID:ThisItem.ID})
-                            PressedBorderColor: =RGBA(0, 0, 0, 0)
-                            Size: =vargStyle.ItemsList.FontHeightData
-                            TrueFill: =vargStyle.ItemsList.ToggleActiveItem.OnCheckBackground
-                            TrueHoverFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                            TrueText: ="Activo"
-                            Width: =vargStyle.ItemsList.ToggleActiveItem.ToggleWidth
-                            X: =lblTag_3.Width+10
-                            Y: =15
-                            ZIndex: =2
-
-                        lblTag_3 As label:
-                            AutoHeight: =true
-                            BorderColor: =RGBA(0, 0, 0, 0)
-                            BorderStyle: =BorderStyle.None
-                            BorderThickness: =2
-                            Color: =If(ThisItem.IsSelected,vargStyle.ItemsList.FontColorLabelSelected,vargStyle.ItemsList.FontColorLabel)
-                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                            DisabledColor: =RGBA(166, 166, 166, 1)
-                            Fill: =If(ThisItem.IsSelected,vargStyle.ItemsList.BackgroundLabelSelected, vargStyle.ItemsList.BackgroundLabel)
-                            FocusedBorderThickness: =4
-                            Font: =vargStyle.ItemsList.FontLabel
-                            FontWeight: =vargStyle.ItemsList.FontWeightLabel
-                            Height: =31
-                            Size: =vargStyle.ItemsList.FontHeightLabel
-                            Text: |-
-                                ="Estado:"
-                            Tooltip: =Self.Text
-                            Width: =If(varcSeeTags=true,70,0)
-                            ZIndex: =3
-
-                    "'co.ImageLoading' As groupContainer.manualLayoutContainer":
-                        FillPortions: =0
-                        LayoutMinHeight: =
-                        LayoutMinWidth: =
-                        Width: =imgLoadingSVG.Width
-                        ZIndex: =5
-
-                        imgLoadingSVG As image:
-                            BorderColor: =RGBA(0, 0, 0, 0)
-                            BorderStyle: =BorderStyle.None
-                            BorderThickness: =2
-                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                            DisabledFill: =RGBA(0, 0, 0, 0)
-                            FocusedBorderThickness: =4
-                            Height: =50
-                            HoverBorderColor: =RGBA(0, 0, 0, 0)
-                            HoverFill: =RGBA(0, 0, 0, 0)
-                            Image: =vargStyle.ItemsList.LoadingIcon
-                            PressedBorderColor: =RGBA(0, 0, 0, 0)
-                            PressedFill: =RGBA(0, 0, 0, 0)
-                            Visible: =If(ThisItem.ID in ShowLoading.itemID,true,false)
-                            Width: =50
-                            X: =Parent.Width-Self.Width
-                            Y: =5
-                            ZIndex: =1
-
-                    lblHeightControl_1 As label:
-                        Align: =Align.Right
-                        AlignInContainer: =AlignInContainer.End
-                        BorderStyle: =BorderStyle.Dashed
-                        BorderThickness: =vargBorderComponent
-                        Color: =RGBA(51, 51, 51, 1)
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        FocusedBorderThickness: =4
-                        Font: =Font.'Segoe UI'
-                        Height: =30
-                        LayoutMinWidth: =5
-                        Size: =13
-                        Text: =""
-                        Width: =10
-                        ZIndex: =6
-
-        "'co.FormGroup' As groupContainer.manualLayoutContainer":
-            BorderColor: =RGBA(0, 121, 187, 1)
-            BorderThickness: =1
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =Parent.Height
-            Visible: =varcViewFormAssignCost
-            Width: =Switch(App.ActiveScreen.Size,1,Parent.Width,2,Parent.Width,400)
-            X: =Parent.Width-Self.Width
-            Y: ='co.DataListContainer'.Y
-            ZIndex: =2
-
-            frmStores As form:
-                BorderColor: =RGBA(0, 121, 187, 1)
-                BorderThickness: =1
-                DataSource: ='Locales Spoon'
-                Fill: =RGBA(255, 255, 255, 1)
-                Height: =Parent.Height-Self.Y
-                Item: =galDataList.Selected
-                NumberOfColumns: =1
-                OnFailure: =
-                OnSuccess: |-
-                    =UpdateContext({varcViewFormAssignCost:false});ResetForm(frmStores)
-                Width: =Switch(App.ActiveScreen.Size,1,Parent.Width,2,Parent.Width,400)
-                X: =Parent.Width-Self.Width
-                Y: =50
-                ZIndex: =1
-
-                Modificado_DataCard1 As typedDataCard.textualViewCard:
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    BorderStyle: =BorderStyle.Solid
-                    DataField: ="Modified"
-                    Default: =ThisItem.Modificado
-                    DisplayMode: =DisplayMode.View
-                    DisplayName: =DataSourceInfo([@'Locales Spoon'],DataSourceInfo.DisplayName,"Modified")
-                    Fill: =RGBA(0, 0, 0, 0)
-                    Height: =40
-                    Required: =false
-                    Visible: =Parent.DisplayMode = DisplayMode.View
-                    Width: =400
-                    X: =0
-                    Y: =3
-                    ZIndex: =1
-
-                    DataCardKey6 As label:
-                        AutoHeight: =true
-                        BorderColor: =RGBA(0, 0, 0, 0)
-                        BorderStyle: =BorderStyle.None
-                        BorderThickness: =2
-                        Color: =RGBA(51, 51, 51, 1)
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        FocusedBorderThickness: =4
-                        Font: =Font.'Segoe UI'
-                        FontWeight: =FontWeight.Semibold
-                        Height: =34
-                        PaddingLeft: =0
-                        Size: =13
-                        Text: =Parent.DisplayName
-                        Width: =Parent.Width - 60
-                        Wrap: =false
-                        X: =30
-                        Y: =10
-                        ZIndex: =1
-
-                    DataCardValue6 As label:
-                        AutoHeight: =true
-                        BorderColor: =RGBA(0, 0, 0, 0)
-                        BorderStyle: =BorderStyle.None
-                        BorderThickness: =2
-                        Color: =RGBA(51, 51, 51, 1)
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        DisplayMode: =Parent.DisplayMode
-                        FocusedBorderThickness: =4
-                        Font: =Font.'Segoe UI'
-                        Height: =27
-                        PaddingLeft: =0
-                        PaddingRight: =0
-                        PaddingTop: =0
-                        Size: =13
-                        Text: =Parent.Default
-                        Width: =Parent.Width - 60
-                        X: =30
-                        Y: =DataCardKey6.Y + DataCardKey6.Height + 5
-                        ZIndex: =2
-
-                "'Modificado por_DataCard1' As typedDataCard.comboBoxViewCard":
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    BorderStyle: =BorderStyle.Solid
-                    DataField: ="Editor"
-                    Default: =ThisItem.'Modificado por'
-                    DisplayMode: =DisplayMode.View
-                    DisplayName: =DataSourceInfo([@'Locales Spoon'],DataSourceInfo.DisplayName,"Editor")
-                    Fill: =RGBA(0, 0, 0, 0)
-                    Height: =50
-                    Required: =false
-                    Update: =DataCardValue7.Selected
-                    Visible: =Parent.DisplayMode = DisplayMode.View
-                    Width: =400
-                    X: =0
-                    Y: =4
-                    ZIndex: =1
-
-                    DataCardKey7 As label:
-                        AutoHeight: =true
-                        BorderColor: =RGBA(0, 0, 0, 0)
-                        BorderStyle: =BorderStyle.None
-                        BorderThickness: =2
-                        Color: =RGBA(51, 51, 51, 1)
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        FocusedBorderThickness: =4
-                        Font: =Font.'Segoe UI'
-                        FontWeight: =FontWeight.Semibold
-                        Height: =34
-                        PaddingLeft: =0
-                        Size: =13
-                        Text: =Parent.DisplayName
-                        Width: =Parent.Width - 60
-                        Wrap: =false
-                        X: =30
-                        Y: =10
-                        ZIndex: =1
-
-                    DataCardValue7 As combobox:
-                        BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                        ChevronBackground: =RGBA(255, 255, 255, 1)
-                        ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
-                        ChevronDisabledFill: =RGBA(166, 166, 166, 1)
-                        ChevronFill: =RGBA(33, 33, 33, 1)
-                        ChevronHoverBackground: =RGBA(212, 212, 212, 1)
-                        ChevronHoverFill: =RGBA(33, 33, 33, 1)
-                        Color: =RGBA(51, 51, 51, 1)
-                        DefaultSelectedItems: =Parent.Default
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        DisabledFill: =RGBA(244, 244, 244, 1)
-                        DisplayFields: =["DisplayName","Email","Picture"]
-                        DisplayMode: =Parent.DisplayMode
-                        Font: =Font.'Segoe UI'
-                        HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                        HoverColor: =RGBA(51, 51, 51, 1)
-                        HoverFill: =RGBA(212, 212, 212, 1)
-                        Items: =Choices([@'Locales Spoon'].'Modificado por')
-                        PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                        PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                        PressedColor: =RGBA(255, 255, 255, 1)
-                        PressedFill: =RGBA(0, 120, 212, 1)
-                        SearchFields: =["DisplayName"]
-                        SearchItems: =Choices('Locales Spoon'.'Modificado por',DataCardValue7.SearchText)
-                        SelectionFill: =RGBA(0, 120, 212, 1)
-                        SelectMultiple: =false
-                        Size: =13
-                        Template: =ListItemTemplate.Person
-                        Width: =Parent.Width - 60
-                        X: =30
-                        Y: =DataCardKey7.Y + DataCardKey7.Height + 5
-                        ZIndex: =2
-
-                    ErrorMessage6 As label:
-                        AutoHeight: =true
-                        BorderColor: =RGBA(0, 0, 0, 0)
-                        BorderStyle: =BorderStyle.None
-                        BorderThickness: =2
-                        Color: =RGBA(168, 0, 0, 1)
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(168, 0, 0, 1)
-                        FocusedBorderThickness: =4
-                        Font: =Font.'Segoe UI'
-                        FontWeight: =FontWeight.Semibold
-                        Height: =10
-                        Live: =Live.Assertive
-                        PaddingBottom: =0
-                        PaddingLeft: =0
-                        PaddingRight: =0
-                        PaddingTop: =0
-                        Size: =13
-                        Text: =Parent.Error
-                        Visible: =Parent.DisplayMode=DisplayMode.Edit
-                        Width: =Parent.Width - 60
-                        X: =30
-                        Y: =DataCardValue7.Y + DataCardValue7.Height
-                        ZIndex: =3
-
-                    StarVisible6 As label:
-                        Align: =Align.Center
-                        BorderColor: =RGBA(0, 0, 0, 0)
-                        BorderStyle: =BorderStyle.None
-                        BorderThickness: =2
-                        Color: =RGBA(51, 51, 51, 1)
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        FocusedBorderThickness: =4
-                        Font: =Font.'Segoe UI'
-                        FontWeight: =FontWeight.Semibold
-                        Height: =DataCardKey7.Height
-                        PaddingLeft: =0
-                        Size: =13
-                        Text: ="*"
-                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                        Width: =30
-                        Wrap: =false
-                        Y: =DataCardKey7.Y
-                        ZIndex: =4
-
-                ID_DataCard1 As typedDataCard.textualViewCard:
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    BorderStyle: =BorderStyle.Solid
-                    DataField: ="ID"
-                    Default: =ThisItem.ID
-                    DisplayMode: =DisplayMode.View
-                    DisplayName: =DataSourceInfo([@'Locales Spoon'],DataSourceInfo.DisplayName,"ID")
-                    Fill: =RGBA(0, 0, 0, 0)
-                    Height: =40
-                    Required: =false
-                    Visible: =Parent.DisplayMode = DisplayMode.View
-                    Width: =400
-                    X: =0
-                    Y: =5
-                    ZIndex: =1
-
-                    DataCardKey8 As label:
-                        AutoHeight: =true
-                        BorderColor: =RGBA(0, 0, 0, 0)
-                        BorderStyle: =BorderStyle.None
-                        BorderThickness: =2
-                        Color: =RGBA(51, 51, 51, 1)
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        FocusedBorderThickness: =4
-                        Font: =Font.'Segoe UI'
-                        FontWeight: =FontWeight.Semibold
-                        Height: =34
-                        PaddingLeft: =0
-                        Size: =13
-                        Text: =Parent.DisplayName
-                        Width: =Parent.Width - 60
-                        Wrap: =false
-                        X: =30
-                        Y: =10
-                        ZIndex: =1
-
-                    DataCardValue8 As label:
-                        AutoHeight: =true
-                        BorderColor: =RGBA(0, 0, 0, 0)
-                        BorderStyle: =BorderStyle.None
-                        BorderThickness: =2
-                        Color: =RGBA(51, 51, 51, 1)
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        DisplayMode: =Parent.DisplayMode
-                        FocusedBorderThickness: =4
-                        Font: =Font.'Segoe UI'
-                        Height: =27
-                        PaddingLeft: =0
-                        PaddingRight: =0
-                        PaddingTop: =0
-                        Size: =13
-                        Text: =Parent.Default
-                        Width: =Parent.Width - 60
-                        X: =30
-                        Y: =DataCardKey8.Y + DataCardKey8.Height + 5
-                        ZIndex: =2
-
-                "'Cuenta M365_DataCard1' As typedDataCard.comboBoxEditCard":
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    BorderStyle: =BorderStyle.Solid
-                    DataField: ="clCuentaM365"
-                    Default: =ThisItem.'Cuenta M365'
-                    DisplayMode: =Parent.DisplayMode
-                    DisplayName: =DataSourceInfo([@'Locales Spoon'],DataSourceInfo.DisplayName,"clCuentaM365")
-                    Fill: =RGBA(0, 0, 0, 0)
-                    Height: =50
-                    Required: =true
-                    Update: =DataCardValue2.Selected
-                    Width: =399
-                    X: =0
-                    Y: =0
-                    ZIndex: =2
-
-                    DataCardKey2 As label:
-                        AutoHeight: =true
-                        BorderColor: =RGBA(0, 0, 0, 0)
-                        BorderStyle: =BorderStyle.None
-                        BorderThickness: =2
-                        Color: =RGBA(51, 51, 51, 1)
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        FocusedBorderThickness: =4
-                        Font: =Font.'Segoe UI'
-                        FontWeight: =FontWeight.Semibold
-                        Height: =34
-                        PaddingLeft: =0
-                        Size: =13
-                        Text: =Parent.DisplayName
-                        Width: =Parent.Width - 60
-                        Wrap: =false
-                        X: =30
-                        Y: =10
-                        ZIndex: =1
-
-                    DataCardValue2 As combobox:
-                        BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                        ChevronBackground: =RGBA(255, 255, 255, 1)
-                        ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
-                        ChevronDisabledFill: =RGBA(166, 166, 166, 1)
-                        ChevronFill: =RGBA(33, 33, 33, 1)
-                        ChevronHoverBackground: =RGBA(212, 212, 212, 1)
-                        ChevronHoverFill: =RGBA(33, 33, 33, 1)
-                        Color: =RGBA(51, 51, 51, 1)
-                        DefaultSelectedItems: =Parent.Default
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        DisabledFill: =RGBA(244, 244, 244, 1)
-                        DisplayFields: =["DisplayName","Email","Picture"]
-                        DisplayMode: =Parent.DisplayMode
-                        Font: =Font.'Segoe UI'
-                        HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                        HoverColor: =RGBA(51, 51, 51, 1)
-                        HoverFill: =RGBA(212, 212, 212, 1)
-                        Items: =Choices([@'Locales Spoon'].'Cuenta M365')
-                        PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                        PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                        PressedColor: =RGBA(255, 255, 255, 1)
-                        PressedFill: =RGBA(0, 120, 212, 1)
-                        SearchFields: =["DisplayName"]
-                        SearchItems: =Choices('Locales Spoon'.'Cuenta M365',DataCardValue2.SearchText)
-                        SelectionFill: =RGBA(0, 120, 212, 1)
-                        SelectMultiple: =false
-                        Size: =13
-                        Template: =ListItemTemplate.Person
-                        Tooltip: =Parent.DisplayName
-                        Width: =Parent.Width - 60
-                        X: =30
-                        Y: =DataCardKey2.Y + DataCardKey2.Height + 5
-                        ZIndex: =2
-
-                    ErrorMessage2 As label:
-                        AutoHeight: =true
-                        BorderColor: =RGBA(0, 0, 0, 0)
-                        BorderStyle: =BorderStyle.None
-                        BorderThickness: =2
-                        Color: =RGBA(168, 0, 0, 1)
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(168, 0, 0, 1)
-                        FocusedBorderThickness: =4
-                        Font: =Font.'Segoe UI'
-                        FontWeight: =FontWeight.Semibold
-                        Height: =10
-                        Live: =Live.Assertive
-                        PaddingBottom: =0
-                        PaddingLeft: =0
-                        PaddingRight: =0
-                        PaddingTop: =0
-                        Size: =13
-                        Text: =Parent.Error
-                        Visible: =Parent.DisplayMode=DisplayMode.Edit
-                        Width: =Parent.Width - 60
-                        X: =30
-                        Y: =DataCardValue2.Y + DataCardValue2.Height
-                        ZIndex: =3
-
-                    StarVisible2 As label:
-                        Align: =Align.Center
-                        BorderColor: =RGBA(0, 0, 0, 0)
-                        BorderStyle: =BorderStyle.None
-                        BorderThickness: =2
-                        Color: =RGBA(51, 51, 51, 1)
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        FocusedBorderThickness: =4
-                        Font: =Font.'Segoe UI'
-                        FontWeight: =FontWeight.Semibold
-                        Height: =DataCardKey2.Height
-                        PaddingLeft: =0
-                        Size: =13
-                        Text: ="*"
-                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                        Width: =30
-                        Wrap: =false
-                        Y: =DataCardKey2.Y
-                        ZIndex: =4
-
-                "'Nombre designado_DataCard1' As typedDataCard.textualEditCard":
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    BorderStyle: =BorderStyle.Solid
-                    DataField: ="clNombre"
-                    Default: =ThisItem.'Nombre designado'
-                    DisplayMode: =Parent.DisplayMode
-                    DisplayName: =DataSourceInfo([@'Locales Spoon'],DataSourceInfo.DisplayName,"clNombre")
-                    Fill: =RGBA(0, 0, 0, 0)
-                    Height: =50
-                    MaxLength: =DataSourceInfo([@'Locales Spoon'], DataSourceInfo.MaxLength, "clNombre")
-                    Required: =true
-                    Update: =DataCardValue3.Text
-                    Width: =399
-                    X: =0
-                    Y: =1
-                    ZIndex: =2
-
-                    DataCardKey3 As label:
-                        AutoHeight: =true
-                        BorderColor: =RGBA(0, 0, 0, 0)
-                        BorderStyle: =BorderStyle.None
-                        BorderThickness: =2
-                        Color: =RGBA(51, 51, 51, 1)
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        FocusedBorderThickness: =4
-                        Font: =Font.'Segoe UI'
-                        FontWeight: =FontWeight.Semibold
-                        Height: =34
-                        PaddingLeft: =0
-                        Size: =13
-                        Text: =Parent.DisplayName
-                        Width: =Parent.Width - 60
-                        Wrap: =false
-                        X: =30
-                        Y: =10
-                        ZIndex: =1
-
-                    DataCardValue3 As text:
-                        BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                        BorderThickness: =2
-                        Color: =RGBA(51, 51, 51, 1)
-                        Default: =Parent.Default
-                        DelayOutput: =true
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        DisabledFill: =RGBA(244, 244, 244, 1)
-                        DisplayMode: =Parent.DisplayMode
-                        FocusedBorderThickness: =4
-                        Font: =Font.'Segoe UI'
-                        HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                        HoverColor: =RGBA(51, 51, 51, 1)
-                        HoverFill: =RGBA(255, 255, 255, 1)
-                        MaxLength: =Parent.MaxLength
-                        PaddingLeft: =5
-                        PressedBorderColor: =RGBA(0, 120, 212, 1)
-                        PressedColor: =RGBA(51, 51, 51, 1)
-                        PressedFill: =RGBA(255, 255, 255, 1)
-                        RadiusBottomLeft: =0
-                        RadiusBottomRight: =0
-                        RadiusTopLeft: =0
-                        RadiusTopRight: =0
-                        Size: =13
-                        Tooltip: =Parent.DisplayName
-                        Width: =Parent.Width - 60
-                        X: =30
-                        Y: =DataCardKey3.Y + DataCardKey3.Height + 5
-                        ZIndex: =2
-
-                    ErrorMessage3 As label:
-                        AutoHeight: =true
-                        BorderColor: =RGBA(0, 0, 0, 0)
-                        BorderStyle: =BorderStyle.None
-                        BorderThickness: =2
-                        Color: =RGBA(168, 0, 0, 1)
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(168, 0, 0, 1)
-                        FocusedBorderThickness: =4
-                        Font: =Font.'Segoe UI'
-                        FontWeight: =FontWeight.Semibold
-                        Height: =10
-                        Live: =Live.Assertive
-                        PaddingBottom: =0
-                        PaddingLeft: =0
-                        PaddingRight: =0
-                        PaddingTop: =0
-                        Size: =13
-                        Text: =Parent.Error
-                        Visible: =Parent.DisplayMode=DisplayMode.Edit
-                        Width: =Parent.Width - 60
-                        X: =30
-                        Y: =DataCardValue3.Y + DataCardValue3.Height
-                        ZIndex: =3
-
-                    StarVisible3 As label:
-                        Align: =Align.Center
-                        BorderColor: =RGBA(0, 0, 0, 0)
-                        BorderStyle: =BorderStyle.None
-                        BorderThickness: =2
-                        Color: =RGBA(51, 51, 51, 1)
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        FocusedBorderThickness: =4
-                        Font: =Font.'Segoe UI'
-                        FontWeight: =FontWeight.Semibold
-                        Height: =DataCardKey3.Height
-                        PaddingLeft: =0
-                        Size: =13
-                        Text: ="*"
-                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                        Width: =30
-                        Wrap: =false
-                        Y: =DataCardKey3.Y
-                        ZIndex: =4
-
-                "'Estado de actividad_DataCard1' As typedDataCard.comboBoxEditCard":
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    BorderStyle: =BorderStyle.Solid
-                    DataField: ="clEstadoActividad"
-                    Default: =ThisItem.'Estado de actividad'
-                    DisplayMode: =Parent.DisplayMode
-                    DisplayName: =DataSourceInfo([@'Locales Spoon'],DataSourceInfo.DisplayName,"clEstadoActividad")
-                    Fill: =RGBA(0, 0, 0, 0)
-                    Height: =50
-                    Required: =true
-                    Update: =DataCardValue4.Selected
-                    Width: =399
-                    X: =0
-                    Y: =2
-                    ZIndex: =2
-
-                    DataCardKey4 As label:
-                        AutoHeight: =true
-                        BorderColor: =RGBA(0, 0, 0, 0)
-                        BorderStyle: =BorderStyle.None
-                        BorderThickness: =2
-                        Color: =RGBA(51, 51, 51, 1)
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        FocusedBorderThickness: =4
-                        Font: =Font.'Segoe UI'
-                        FontWeight: =FontWeight.Semibold
-                        Height: =34
-                        PaddingLeft: =0
-                        Size: =13
-                        Text: =Parent.DisplayName
-                        Width: =Parent.Width - 60
-                        Wrap: =false
-                        X: =30
-                        Y: =10
-                        ZIndex: =1
-
-                    DataCardValue4 As combobox:
-                        BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                        ChevronBackground: =RGBA(255, 255, 255, 1)
-                        ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
-                        ChevronDisabledFill: =RGBA(166, 166, 166, 1)
-                        ChevronFill: =RGBA(33, 33, 33, 1)
-                        ChevronHoverBackground: =RGBA(212, 212, 212, 1)
-                        ChevronHoverFill: =RGBA(33, 33, 33, 1)
-                        Color: =RGBA(51, 51, 51, 1)
-                        DefaultSelectedItems: =Parent.Default
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        DisabledFill: =RGBA(244, 244, 244, 1)
-                        DisplayFields: =["Value"]
-                        DisplayMode: =Parent.DisplayMode
-                        Font: =Font.'Segoe UI'
-                        HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                        HoverColor: =RGBA(51, 51, 51, 1)
-                        HoverFill: =RGBA(212, 212, 212, 1)
-                        Items: =Choices([@'Locales Spoon'].'Estado de actividad')
-                        PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                        PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                        PressedColor: =RGBA(255, 255, 255, 1)
-                        PressedFill: =RGBA(0, 120, 212, 1)
-                        SearchFields: =["Value"]
-                        SearchItems: =Choices('Locales Spoon'.'Estado de actividad',DataCardValue4.SearchText)
-                        SelectionFill: =RGBA(0, 120, 212, 1)
-                        SelectMultiple: =false
-                        Size: =13
-                        Tooltip: =Parent.DisplayName
-                        Width: =Parent.Width - 60
-                        X: =30
-                        Y: =DataCardKey4.Y + DataCardKey4.Height + 5
-                        ZIndex: =2
-
-                    ErrorMessage4 As label:
-                        AutoHeight: =true
-                        BorderColor: =RGBA(0, 0, 0, 0)
-                        BorderStyle: =BorderStyle.None
-                        BorderThickness: =2
-                        Color: =RGBA(168, 0, 0, 1)
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(168, 0, 0, 1)
-                        FocusedBorderThickness: =4
-                        Font: =Font.'Segoe UI'
-                        FontWeight: =FontWeight.Semibold
-                        Height: =10
-                        Live: =Live.Assertive
-                        PaddingBottom: =0
-                        PaddingLeft: =0
-                        PaddingRight: =0
-                        PaddingTop: =0
-                        Size: =13
-                        Text: =Parent.Error
-                        Visible: =Parent.DisplayMode=DisplayMode.Edit
-                        Width: =Parent.Width - 60
-                        X: =30
-                        Y: =DataCardValue4.Y + DataCardValue4.Height
-                        ZIndex: =3
-
-                    StarVisible4 As label:
-                        Align: =Align.Center
-                        BorderColor: =RGBA(0, 0, 0, 0)
-                        BorderStyle: =BorderStyle.None
-                        BorderThickness: =2
-                        Color: =RGBA(51, 51, 51, 1)
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        FocusedBorderThickness: =4
-                        Font: =Font.'Segoe UI'
-                        FontWeight: =FontWeight.Semibold
-                        Height: =DataCardKey4.Height
-                        PaddingLeft: =0
-                        Size: =13
-                        Text: ="*"
-                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                        Width: =30
-                        Wrap: =false
-                        Y: =DataCardKey4.Y
-                        ZIndex: =4
-
-            "'co.ActionsButtons_1' As groupContainer.horizontalAutoLayoutContainer":
-                BorderColor: =RGBA(0, 121, 187, 1)
-                BorderThickness: =1
-                Height: =50
-                LayoutMode: =LayoutMode.Auto
-                LayoutOverflowX: =LayoutOverflow.Scroll
-                Width: =Parent.Width
-                ZIndex: =5
-
-                "'co.ActionButton_1' As groupContainer.manualLayoutContainer":
-                    AlignInContainer: =AlignInContainer.SetByContainer
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =BorderStyle.None
-                    Fill: =vargStyle.ItemsList.FormActionsButtons.Background
-                    Height: =50
-                    LayoutMinHeight: =40
-                    LayoutMinWidth: =50
-                    Visible: =frmStores.DisplayMode = DisplayMode.Edit
-                    Width: =lblText_3.Width+imgIcon_3.Width+30
-                    X: =222
-                    Y: =190
-                    ZIndex: =1
-
-                    imgIcon_3 As image:
-                        BorderColor: =RGBA(0, 0, 0, 0)
-                        BorderStyle: =BorderStyle.None
-                        BorderThickness: =2
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledFill: =RGBA(0, 0, 0, 0)
-                        FocusedBorderThickness: =4
-                        Height: =If(App.ActiveScreen.Size>1,15,25)
-                        HoverBorderColor: =RGBA(0, 0, 0, 0)
-                        HoverFill: =RGBA(0, 0, 0, 0)
-                        Image: |-
-                            ="data:image/svg+xml," & EncodeUrl(
-                                "    
-                                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'><!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License -         https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->" 
-                                // Get the definition of the icon fill
-                                & vargStyle.ItemsList.FormActionsButtons.IconColor & 
-                            
-                                //Icon
-                                   "<path d='M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM272 80v80H144V80h128zm122 352H54a6 6 0 0 1-6-6V86a6 6 0 0 1 6-6h42v104c0 13.255 10.745 24 24 24h176c13.255 0 24-10.745 24-24V83.882l78.243 78.243a6 6 0 0 1 1.757 4.243V426a6 6 0 0 1-6 6zM224 232c-48.523 0-88 39.477-88 88s39.477 88 88 88 88-39.477 88-88-39.477-88-88-88zm0 128c-22.056 0-40-17.944-40-40s17.944-40 40-40 40 17.944 40 40-17.944 40-40 40z' style='fill: url(#myLinearGradient1);        fill-opacity:"      
-                                
-                                & vargStyle.ItemsList.FormActionsButtons.IconOpacity & " '/></svg>"
-                            )
-                        PressedBorderColor: =RGBA(0, 0, 0, 0)
-                        PressedFill: =RGBA(0, 0, 0, 0)
-                        Width: =If(App.ActiveScreen.Size>1,15,25)
-                        X: =(Parent.Width-imgIcon_3.Width-lblText_3.Width)/2
-                        Y: =If(App.ActiveScreen.Size>1,17.5,12)
-                        ZIndex: =1
-
-                    lblText_3 As label:
-                        BorderColor: =RGBA(0, 0, 0, 0)
-                        BorderStyle: =BorderStyle.None
-                        Color: =vargStyle.ItemsList.FormActionsButtons.FontColor
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        FocusedBorderThickness: =4
-                        Font: =vargStyle.ItemsList.FormActionsButtons.Font
-                        FontWeight: =vargStyle.ItemsList.FormActionsButtons.FontWeight
-                        Height: =30
-                        Size: =vargStyle.ItemsList.FormActionsButtons.FontHeight
-                        Text: ="Guardar"
-                        Width: =Len(Self.Text)*11
-                        X: =imgIcon_3.X+imgIcon_3.Width+5
-                        Y: =10
-                        ZIndex: =2
-
-                    btnSHover_8 As button:
-                        BorderColor: =vargStyle.ItemsList.FormActionsButtons.BorderColor
-                        BorderStyle: =vargStyle.ItemsList.FormActionsButtons.BorderStyle
-                        BorderThickness: =vargStyle.ItemsList.FormActionsButtons.BorderThickness
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        DisabledFill: =RGBA(244, 244, 244, 1)
-                        Fill: =RGBA(0,0,0,0)
-                        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
-                        Font: =Font.'Segoe UI'
-                        FontWeight: =FontWeight.Semibold
-                        Height: =Parent.Height
-                        HoverBorderColor: =RGBA(0, 0, 0, 0)
-                        HoverColor: =RGBA(255, 255, 255, 1)
-                        HoverFill: =vargStyle.ItemsList.FormActionsButtons.HoverPositiveFill
-                        OnSelect: =SubmitForm(frmStores)
-                        PressedBorderColor: =ColorFade(Self.HoverFill, -50%)
-                        PressedColor: =RGBA(255, 255, 255, 1)
-                        PressedFill: =ColorFade(Self.HoverFill, -20%)
-                        RadiusBottomLeft: =0
-                        RadiusBottomRight: =0
-                        RadiusTopLeft: =0
-                        RadiusTopRight: =0
-                        Size: =15
-                        Text: =""
-                        Width: =Parent.Width
-                        Y: =1
-                        ZIndex: =4
-
-                "'co.ActionButton_2' As groupContainer.manualLayoutContainer":
-                    AlignInContainer: =AlignInContainer.SetByContainer
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =BorderStyle.None
-                    Fill: =vargStyle.ItemsList.FormActionsButtons.Background
-                    Height: =50
-                    LayoutMinHeight: =40
-                    LayoutMinWidth: =50
-                    Width: =lblText_4.Width+imgIcon_4.Width+30
-                    X: =222
-                    Y: =190
-                    ZIndex: =2
-
-                    imgIcon_4 As image:
-                        BorderColor: =RGBA(0, 0, 0, 0)
-                        BorderStyle: =BorderStyle.None
-                        BorderThickness: =2
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledFill: =RGBA(0, 0, 0, 0)
-                        FocusedBorderThickness: =4
-                        Height: =If(App.ActiveScreen.Size>1,15,25)
-                        HoverBorderColor: =RGBA(0, 0, 0, 0)
-                        HoverFill: =RGBA(0, 0, 0, 0)
-                        Image: |-
-                            ="data:image/svg+xml," & EncodeUrl(
-                                "    
-                                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 352 512'><!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License -         https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->" 
-                                // Get the definition of the icon fill
-                                & vargStyle.ItemsList.FormActionsButtons.IconColor & 
-                            
-                                //Icon
-                                   "<path d='M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z' style='fill: url(#myLinearGradient1);        fill-opacity:"      
-                                
-                                & vargStyle.ItemsList.FormActionsButtons.IconOpacity & " '/></svg>"
-                            )
-                        PressedBorderColor: =RGBA(0, 0, 0, 0)
-                        PressedFill: =RGBA(0, 0, 0, 0)
-                        Width: =If(App.ActiveScreen.Size>1,15,25)
-                        X: =(Parent.Width-imgIcon_4.Width-lblText_4.Width)/2
-                        Y: =If(App.ActiveScreen.Size>1,17.5,12)
-                        ZIndex: =1
-
-                    lblText_4 As label:
-                        BorderColor: =RGBA(0, 0, 0, 0)
-                        BorderStyle: =BorderStyle.None
-                        Color: =vargStyle.ItemsList.FormActionsButtons.FontColor
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        FocusedBorderThickness: =4
-                        Font: =vargStyle.ItemsList.FormActionsButtons.Font
-                        FontWeight: =vargStyle.ItemsList.FormActionsButtons.FontWeight
-                        Height: =30
-                        Size: =vargStyle.ItemsList.FormActionsButtons.FontHeight
-                        Text: |-
-                            =If(
-                                frmStores.DisplayMode = DisplayMode.Edit,
-                                "Cancelar",
-                                "Cerrar"
-                            )
-                        Width: =Len(Self.Text)*11
-                        X: =imgIcon_4.X+imgIcon_4.Width+5
-                        Y: =10
-                        ZIndex: =2
-
-                    btnHover_9 As button:
-                        BorderColor: =vargStyle.ItemsList.FormActionsButtons.BorderColor
-                        BorderStyle: =vargStyle.ItemsList.FormActionsButtons.BorderStyle
-                        BorderThickness: =vargStyle.ItemsList.FormActionsButtons.BorderThickness
-                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                        DisabledColor: =RGBA(166, 166, 166, 1)
-                        DisabledFill: =RGBA(244, 244, 244, 1)
-                        Fill: =RGBA(0,0,0,0)
-                        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
-                        Font: =Font.'Segoe UI'
-                        FontWeight: =FontWeight.Semibold
-                        Height: =Parent.Height
-                        HoverBorderColor: =RGBA(0, 0, 0, 0)
-                        HoverColor: =RGBA(255, 255, 255, 1)
-                        HoverFill: =vargStyle.ItemsList.FormActionsButtons.HoverNegativeFill
-                        OnSelect: |-
-                            =UpdateContext({varcViewFormAssignCost:false});ResetForm(frmStores)
-                        PressedBorderColor: =ColorFade(Self.HoverFill, -50%)
-                        PressedColor: =RGBA(255, 255, 255, 1)
-                        PressedFill: =ColorFade(Self.HoverFill, -20%)
-                        RadiusBottomLeft: =0
-                        RadiusBottomRight: =0
-                        RadiusTopLeft: =0
-                        RadiusTopRight: =0
-                        Size: =15
-                        Text: =""
-                        Width: =Parent.Width
-                        Y: =1
-                        ZIndex: =4
-
-        "'co.SortGroup' As groupContainer.manualLayoutContainer":
-            BorderColor: =RGBA(0, 121, 187, 1)
-            BorderThickness: =1
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =Parent.Height
-            Visible: =varcViewFormAssignCost
-            Width: =Switch(App.ActiveScreen.Size,1,Parent.Width,2,Parent.Width,400)
-            X: =Parent.Width-Self.Width
-            Y: ='co.DataListContainer'.Y
-            ZIndex: =3
-
-        "'co.FilterGroup' As groupContainer.manualLayoutContainer":
-            BorderColor: =RGBA(0, 121, 187, 1)
-            BorderThickness: =1
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =Parent.Height
-            Visible: =varcViewFormAssignCost
-            Width: =Switch(App.ActiveScreen.Size,1,Parent.Width,2,Parent.Width,400)
-            X: =Parent.Width-Self.Width
-            Y: ='co.DataListContainer'.Y
-            ZIndex: =4
-
-        lblDescriptionData As label:
-            AutoHeight: =true
-            BorderColor: =RGBA(0, 0, 0, 0)
-            BorderStyle: =BorderStyle.None
-            BorderThickness: =2
-            Color: =vargStyle.ItemsList.TitleFontColor
-            DisabledBorderColor: =RGBA(0, 0, 0, 0)
-            DisabledColor: =RGBA(166, 166, 166, 1)
-            DisplayMode: =DisplayMode.View
-            FocusedBorderThickness: =4
-            Font: =vargStyle.ItemsList.TitleFont
-            FontWeight: =vargStyle.ItemsList.TitleFontWeight
-            Height: =
-            Size: =vargStyle.ItemsList.TitleFontHeight
-            Text: =" Opciones para carga de producto no conforme Opciones para carga de producto no conforme Opciones para carga de pciones para carga de producto no conforme Opciones para carga de producto no conforpciones para carga de producto no conforme Opciones para carga de producto no confor"
-            Tooltip: =Self.Text
-            Visible: =varcSeeInfo
-            Width: =Parent.Width
-            ZIndex: =5
-
     Arrow1_6 As arrow.backArrow:
         BorderColor: =RGBA(0, 0, 0, 0)
         DisabledBorderColor: =RGBA(0, 0, 0, 0)
@@ -1292,63 +98,1216 @@
         X: =375
         ZIndex: =5
 
-    imgIcon_Info_1 As image:
-        BorderColor: =RGBA(0, 0, 0, 0)
-        BorderStyle: =BorderStyle.None
-        BorderThickness: =2
-        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-        DisabledFill: =RGBA(0, 0, 0, 0)
-        FocusedBorderThickness: =4
-        Height: =vargStyle.StartMenu.IconSize
-        HoverBorderColor: =RGBA(0, 0, 0, 0)
-        HoverFill: =RGBA(0, 0, 0, 0)
-        Image: |-
-            =// SVG
-            "data:image/svg+xml," & EncodeUrl(
-                "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
-                        <!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code:MIT License) -->" 
-                        // Get the definition of the icon fill from theme variable
-            & vargStyle.ItemsList.FilterAndSearchBar.IconColor &
-                        //Change the image in the "d" property
-             "<path d='M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z'" &
-                        // Theme style
-             " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.ItemsList.FilterAndSearchBar.IconOpacity & ";'></path></svg>"
-            )
-        OnSelect: |-
-            =UpdateContext({varcSeeInfo:!varcSeeInfo})
-        PaddingBottom: =5
-        PaddingLeft: =5
-        PaddingRight: =5
-        PaddingTop: =5
-        PressedBorderColor: =RGBA(0, 0, 0, 0)
-        PressedFill: =RGBA(0, 0, 0, 0)
-        Width: =vargStyle.StartMenu.IconSize
-        X: =66
-        Y: =107
-        ZIndex: =7
-
-    Label9 As label:
-        BorderColor: =RGBA(0, 0, 0, 0)
-        BorderStyle: =BorderStyle.None
-        BorderThickness: =2
-        Color: =RGBA(51, 51, 51, 1)
-        DisabledBorderColor: =RGBA(0, 0, 0, 0)
-        DisabledColor: =RGBA(166, 166, 166, 1)
-        FocusedBorderThickness: =4
-        Font: =Font.'Segoe UI'
-        Size: =13
-        Text: =varcSeeInfo
-        X: =140
-        Y: =107
-        ZIndex: =8
-
-    "'co.FilterGroup_1' As groupContainer.manualLayoutContainer":
+    "'co.DataContainerGroup' As groupContainer.manualLayoutContainer":
         BorderThickness: =vargBorderComponent
         Fill: =RGBA(255, 255, 255, 1)
         Height: =Parent.Height-Self.Y
         Width: =Parent.Width-Self.X
+        X: |-
+            =If(
+                vargWSide = true,
+                vargStyle.Sidebar.BigWidth,
+                If(
+                    App.ActiveScreen.Size = 1,
+                    0,
+                    vargStyle.Sidebar.SmallWidth
+                )
+            )
         Y: =200
         ZIndex: =9
+
+        "'co.DataContainer' As groupContainer.manualLayoutContainer":
+            BorderThickness: =vargBorderComponent
+            Height: =Parent.Height-Self.Y
+            Visible: =varcSidebarNav=4
+            Width: =Parent.Width-Self.X
+            Y: ='co.DataFilter_1'.Y+'co.DataFilter_1'.Height
+            ZIndex: =1
+
+            "'co.DataListContainer' As groupContainer.manualLayoutContainer":
+                BorderColor: =vargStyle.Others.BorderComponentsColor
+                BorderStyle: =vargStyle.Others.BorderComponentsStyle
+                BorderThickness: =vargBorderComponent
+                Fill: =vargStyle.ItemsList.Background
+                Height: =Parent.Height-Self.Y
+                Width: =Parent.Width-Self.X
+                Y: |-
+                    =If(varcSeeInfo,lblDescriptionData.Height,0
+                    )
+                ZIndex: =1
+
+                galDataList As gallery.variableTemplateHeightGallery:
+                    ContentLanguage: ="es"
+                    DelayItemLoading: =true
+                    Fill: =vargStyle.ItemsList.Background
+                    Height: =Parent.Height-Self.Y
+                    Items: ='Locales Spoon'
+                    Layout: =Layout.Vertical
+                    LoadingSpinner: =LoadingSpinner.Data
+                    NavigationStep: =vargStyle.ItemsList.NavigationStep
+                    ShowNavigation: =vargStyle.ItemsList.ShowNavigation
+                    TemplateSize: =61
+                    Transition: =vargStyle.ItemsList.NavigationTransition
+                    Width: =Parent.Width
+                    ZIndex: =2
+
+                    "'co.Row_4' As groupContainer.horizontalAutoLayoutContainer":
+                        BorderColor: =vargStyle.ItemsList.BorderColor
+                        BorderStyle: =vargStyle.ItemsList.BorderStyle
+                        BorderThickness: =vargStyle.ItemsList.BorderThickness
+                        Fill: =If(ThisItem.IsSelected,vargStyle.ItemsList.SelectedColor,vargStyle.ItemsList.RowBackground)
+                        Height: =lblHeightControl_1.Y+lblHeightControl_1.Height+20
+                        LayoutGap: =5
+                        LayoutMode: =LayoutMode.Auto
+                        LayoutOverflowX: =LayoutOverflow.Scroll
+                        LayoutOverflowY: =LayoutOverflow.Scroll
+                        LayoutWrap: =vargStyle.ItemsList.Wrap
+                        PaddingLeft: =10
+                        PaddingRight: =10
+                        Width: =Parent.Width-10
+                        ZIndex: =2
+
+                        ItemField As groupContainer.manualLayoutContainer:
+                            AlignInContainer: =AlignInContainer.Start
+                            BorderThickness: =vargBorderComponent
+                            FillPortions: =0
+                            Height: =lblData.Height
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =50
+                            Width: =lblTag.Width+lblData.Width
+                            ZIndex: =1
+
+                            lblData As label:
+                                AutoHeight: =true
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =//If(ThisItem.IsSelected, vargTheme.ItemsList.FontColorDataSelected,vargTheme.ItemsList.FontColorData)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Fill: =If(ThisItem.IsSelected,vargStyle.ItemsList.BackgroundDataSelected,vargStyle.ItemsList.BackgroundData)
+                                FocusedBorderThickness: =4
+                                Font: =vargStyle.ItemsList.FontData
+                                FontWeight: =vargStyle.ItemsList.FontWeightData
+                                Height: =31
+                                Size: =vargStyle.ItemsList.FontHeightData
+                                Text: =ThisItem.'Nombre designado'
+                                Tooltip: =Self.Text
+                                Width: =200
+                                X: =lblTag.Width
+                                ZIndex: =1
+
+                            lblTag As label:
+                                AutoHeight: =true
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =If(ThisItem.IsSelected,vargStyle.ItemsList.FontColorLabelSelected,vargStyle.ItemsList.FontColorLabel)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Fill: =If(ThisItem.IsSelected,vargStyle.ItemsList.BackgroundLabelSelected, vargStyle.ItemsList.BackgroundLabel)
+                                FocusedBorderThickness: =4
+                                Font: =vargStyle.ItemsList.FontLabel
+                                FontWeight: =vargStyle.ItemsList.FontWeightLabel
+                                Height: =31
+                                Size: =vargStyle.ItemsList.FontHeightLabel
+                                Text: |-
+                                    ="Nombre:"
+                                Tooltip: =Self.Text
+                                Width: =If(varcSeeTags=true,70,0)
+                                ZIndex: =2
+
+                        ItemField_1 As groupContainer.manualLayoutContainer:
+                            AlignInContainer: =AlignInContainer.Start
+                            BorderThickness: =vargBorderComponent
+                            FillPortions: =0
+                            Height: =lblData_1.Height
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =50
+                            Width: =lblTag_1.Width+lblData_1.Width
+                            ZIndex: =2
+
+                            lblData_1 As label:
+                                AutoHeight: =true
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =If(ThisItem.IsSelected, vargStyle.ItemsList.FontColorDataSelected,vargStyle.ItemsList.FontColorData)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Fill: =If(ThisItem.IsSelected,vargStyle.ItemsList.BackgroundDataSelected,vargStyle.ItemsList.BackgroundData)
+                                FocusedBorderThickness: =4
+                                Font: =vargStyle.ItemsList.FontData
+                                FontWeight: =vargStyle.ItemsList.FontWeightData
+                                Height: =31
+                                Size: =vargStyle.ItemsList.FontHeightData
+                                Text: ="Descripción" //ThisItem.Descripción
+                                Tooltip: =Self.Text
+                                Width: =300
+                                X: =lblTag_1.Width
+                                ZIndex: =1
+
+                            lblTag_1 As label:
+                                AutoHeight: =true
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =If(ThisItem.IsSelected,vargStyle.ItemsList.FontColorLabelSelected,vargStyle.ItemsList.FontColorLabel)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Fill: =If(ThisItem.IsSelected,vargStyle.ItemsList.BackgroundLabelSelected, vargStyle.ItemsList.BackgroundLabel)
+                                FocusedBorderThickness: =4
+                                Font: =vargStyle.ItemsList.FontLabel
+                                FontWeight: =vargStyle.ItemsList.FontWeightLabel
+                                Height: =31
+                                Size: =vargStyle.ItemsList.FontHeightLabel
+                                Text: |-
+                                    ="Descripción:"
+                                Tooltip: =Self.Text
+                                Width: =If(varcSeeTags=true,70,0)
+                                ZIndex: =2
+
+                        ItemField_2 As groupContainer.manualLayoutContainer:
+                            AlignInContainer: =AlignInContainer.Start
+                            BorderThickness: =vargBorderComponent
+                            FillPortions: =0
+                            Height: =ckbData_2.Height
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =50
+                            Width: =lblTag_2.Width+ckbData_2.Width+25
+                            ZIndex: =3
+
+                            ckbData_2 As checkbox:
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =vargStyle.ItemsList.CheckBox.CheckboxBorderThickness
+                                CheckboxBackgroundFill: =vargStyle.ItemsList.CheckBox.CheckboxFill
+                                CheckboxBorderColor: =vargStyle.ItemsList.CheckBox.CheckboxBorderColor
+                                CheckmarkFill: =vargStyle.ItemsList.CheckBox.CheckmarkFill
+                                Color: =If(ThisItem.IsSelected, vargStyle.ItemsList.FontColorDataSelected,vargStyle.ItemsList.FontColorData)
+                                Default: =//ThisItem.'Requiere nota de crédito'
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisplayMode: =If(varcLockData=false,DisplayMode.Edit,DisplayMode.Disabled)
+                                Fill: =vargStyle.ItemsList.BackgroundData
+                                FocusedBorderThickness: =4
+                                Font: =vargStyle.ItemsList.FontData
+                                FontWeight: =vargStyle.ItemsList.FontWeightData
+                                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                HoverColor: =RGBA(51, 51, 51, 1)
+                                HoverFill: =RGBA(0, 0, 0, 0)
+                                OnSelect: |-
+                                    =/*Collect(ShowLoading,{itemID:ThisItem.ID});
+                                    If(
+                                        ThisItem.'Requiere nota de crédito' = false,
+                                        Patch(
+                                            'Carga de producto boleta de locales',
+                                            ThisItem,
+                                            {'Requiere nota de crédito': true}
+                                        ),
+                                        Patch(
+                                            'Carga de producto boleta de locales',
+                                            ThisItem,
+                                            {'Requiere nota de crédito': false}
+                                        )
+                                    );
+                                    Remove(ShowLoading,{itemID:ThisItem.ID})*/
+                                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                PressedColor: =RGBA(51, 51, 51, 1)
+                                PressedFill: =RGBA(0, 0, 0, 0)
+                                Size: =vargStyle.ItemsList.FontHeightData
+                                Text: ="Requiere Nota de Crédito"
+                                Width: =181
+                                X: =lblTag_2.Width
+                                Y: =5
+                                ZIndex: =1
+
+                            lblTag_2 As label:
+                                AutoHeight: =true
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =If(ThisItem.IsSelected,vargStyle.ItemsList.FontColorLabelSelected,vargStyle.ItemsList.FontColorLabel)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Fill: =If(ThisItem.IsSelected,vargStyle.ItemsList.BackgroundLabelSelected, vargStyle.ItemsList.BackgroundLabel)
+                                FocusedBorderThickness: =4
+                                Font: =vargStyle.ItemsList.FontLabel
+                                FontWeight: =vargStyle.ItemsList.FontWeightLabel
+                                Height: =31
+                                Size: =vargStyle.ItemsList.FontHeightLabel
+                                Text: |-
+                                    ="Requiere Nota de Crédito:"
+                                Tooltip: =Self.Text
+                                Width: =If(varcSeeTags=true,80,0)
+                                ZIndex: =2
+
+                        ItemField_3 As groupContainer.manualLayoutContainer:
+                            AlignInContainer: =AlignInContainer.Start
+                            BorderThickness: =vargBorderComponent
+                            FillPortions: =0
+                            Height: =tglData_3.Height+20
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =50
+                            Width: =lblTag_3.Width+tglData_3.Width+25
+                            ZIndex: =4
+
+                            tglData_3 As toggleSwitch:
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                Color: =If(ThisItem.IsSelected, vargStyle.ItemsList.FontColorDataSelected,vargStyle.ItemsList.FontColorData)
+                                Default: =If(ThisItem.'Estado de actividad'.Value="Activo",true,false)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisplayMode: =If(varcLockData=false,DisplayMode.Edit,DisplayMode.Disabled)
+                                FalseFill: =vargStyle.ItemsList.ToggleActiveItem.OnUncheckBackground
+                                FalseHoverFill: =RGBA(33, 33, 33, 1)
+                                FalseText: ="Inactivo"
+                                FocusedBorderThickness: =0
+                                Font: =vargStyle.ItemsList.FontData
+                                FontWeight: =FontWeight.Bold
+                                HandleFill: =RGBA(255, 255, 255, 1)
+                                Height: =vargStyle.ItemsList.ToggleActiveItem.ToggleHeight
+                                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                LabelPaddingRight: |
+                                    =20
+                                OnSelect: |-
+                                    =Collect(ShowLoading,{itemID:ThisItem.ID});
+                                    If(
+                                        ThisItem.'Estado de actividad'.Value = "Inactivo",
+                                        Patch(
+                                            'Locales Spoon', //Update this property when you change the data origin.
+                                            ThisItem,
+                                            {'Estado de actividad': {Value: "Activo"}}
+                                        ),
+                                        Patch(
+                                            'Locales Spoon', //Update this property when you change the data origin.
+                                            ThisItem,
+                                            {'Estado de actividad': {Value: "Inactivo"}}
+                                        )
+                                    );
+                                    Remove(ShowLoading,{itemID:ThisItem.ID})
+                                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                Size: =vargStyle.ItemsList.FontHeightData
+                                TrueFill: =vargStyle.ItemsList.ToggleActiveItem.OnCheckBackground
+                                TrueHoverFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                                TrueText: ="Activo"
+                                Width: =vargStyle.ItemsList.ToggleActiveItem.ToggleWidth
+                                X: =lblTag_3.Width+10
+                                Y: =15
+                                ZIndex: =2
+
+                            lblTag_3 As label:
+                                AutoHeight: =true
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =If(ThisItem.IsSelected,vargStyle.ItemsList.FontColorLabelSelected,vargStyle.ItemsList.FontColorLabel)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Fill: =If(ThisItem.IsSelected,vargStyle.ItemsList.BackgroundLabelSelected, vargStyle.ItemsList.BackgroundLabel)
+                                FocusedBorderThickness: =4
+                                Font: =vargStyle.ItemsList.FontLabel
+                                FontWeight: =vargStyle.ItemsList.FontWeightLabel
+                                Height: =31
+                                Size: =vargStyle.ItemsList.FontHeightLabel
+                                Text: |-
+                                    ="Estado:"
+                                Tooltip: =Self.Text
+                                Width: =If(varcSeeTags=true,70,0)
+                                ZIndex: =3
+
+                        "'co.ImageLoading' As groupContainer.manualLayoutContainer":
+                            AlignInContainer: =AlignInContainer.Start
+                            BorderThickness: =vargBorderComponent
+                            FillPortions: =0
+                            Height: =50
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =50
+                            Width: =imgLoadingSVG.Width
+                            ZIndex: =5
+
+                            imgLoadingSVG As image:
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledFill: =RGBA(0, 0, 0, 0)
+                                FocusedBorderThickness: =4
+                                Height: =50
+                                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                HoverFill: =RGBA(0, 0, 0, 0)
+                                Image: =vargStyle.ItemsList.LoadingIcon
+                                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                PressedFill: =RGBA(0, 0, 0, 0)
+                                Visible: =If(ThisItem.ID in ShowLoading.itemID,true,false)
+                                Width: =50
+                                X: =Parent.Width-Self.Width
+                                Y: =5
+                                ZIndex: =1
+
+                        lblHeightControl_1 As label:
+                            Align: =Align.Right
+                            AlignInContainer: =AlignInContainer.End
+                            BorderStyle: =BorderStyle.Dashed
+                            BorderThickness: =vargBorderComponent
+                            Color: =RGBA(51, 51, 51, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Height: =30
+                            Size: =13
+                            Text: =""
+                            Width: =10
+                            ZIndex: =6
+
+            "'co.SortGroup' As groupContainer.manualLayoutContainer":
+                BorderColor: =RGBA(0, 121, 187, 1)
+                BorderThickness: =1
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =Parent.Height
+                Visible: =varcViewFormAssignCost
+                Width: =Switch(App.ActiveScreen.Size,1,Parent.Width,2,Parent.Width,400)
+                X: =Parent.Width-Self.Width
+                Y: ='co.DataListContainer'.Y
+                ZIndex: =2
+
+            "'co.FilterGroup' As groupContainer.manualLayoutContainer":
+                BorderColor: =RGBA(0, 121, 187, 1)
+                BorderThickness: =1
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =Parent.Height
+                Visible: =varcViewFormAssignCost
+                Width: =Switch(App.ActiveScreen.Size,1,Parent.Width,2,Parent.Width,400)
+                X: =Parent.Width-Self.Width
+                Y: ='co.DataListContainer'.Y
+                ZIndex: =3
+
+            lblDescriptionData As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =vargStyle.ItemsList.TitleFontColor
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =DisplayMode.View
+                FocusedBorderThickness: =4
+                Font: =vargStyle.ItemsList.TitleFont
+                FontWeight: =vargStyle.ItemsList.TitleFontWeight
+                Height: =
+                Size: =vargStyle.ItemsList.TitleFontHeight
+                Text: =" Opciones para carga de producto no conforme Opciones para carga de producto no conforme Opciones para carga de pciones para carga de producto no conforme Opciones para carga de producto no conforpciones para carga de producto no conforme Opciones para carga de producto no confor"
+                Tooltip: =Self.Text
+                Visible: =varcSeeInfo
+                Width: =Parent.Width
+                ZIndex: =4
+
+            "'co.FormGroup' As groupContainer.manualLayoutContainer":
+                BorderColor: =RGBA(0, 121, 187, 1)
+                BorderThickness: =1
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =Parent.Height
+                Visible: =varcViewFormAssignCost
+                Width: =Switch(App.ActiveScreen.Size,1,Parent.Width,2,Parent.Width,400)
+                X: =Parent.Width-Self.Width
+                Y: ='co.DataListContainer'.Y
+                ZIndex: =5
+
+                frmStores As form:
+                    BorderColor: =RGBA(0, 121, 187, 1)
+                    BorderThickness: =1
+                    DataSource: ='Locales Spoon'
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =Parent.Height-Self.Y
+                    Item: =galDataList.Selected
+                    NumberOfColumns: =1
+                    OnFailure: =
+                    OnSuccess: |-
+                        =UpdateContext({varcViewFormAssignCost:false});ResetForm(frmStores)
+                    Width: =Switch(App.ActiveScreen.Size,1,Parent.Width,2,Parent.Width,400)
+                    X: =Parent.Width-Self.Width
+                    Y: =50
+                    ZIndex: =1
+
+                    Modificado_DataCard1 As typedDataCard.textualViewCard:
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="Modified"
+                        Default: =ThisItem.Modificado
+                        DisplayMode: =DisplayMode.View
+                        DisplayName: =DataSourceInfo([@'Locales Spoon'],DataSourceInfo.DisplayName,"Modified")
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =40
+                        Required: =false
+                        Visible: =Parent.DisplayMode = DisplayMode.View
+                        Width: =399
+                        X: =0
+                        Y: =2
+                        ZIndex: =1
+
+                        DataCardKey6 As label:
+                            AutoHeight: =true
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(51, 51, 51, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =34
+                            PaddingLeft: =0
+                            Size: =13
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue6 As label:
+                            AutoHeight: =true
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(51, 51, 51, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            DisplayMode: =Parent.DisplayMode
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Height: =27
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Size: =13
+                            Text: =Parent.Default
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey6.Y + DataCardKey6.Height + 5
+                            ZIndex: =2
+
+                    "'Modificado por_DataCard1' As typedDataCard.comboBoxViewCard":
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="Editor"
+                        Default: =ThisItem.'Modificado por'
+                        DisplayMode: =DisplayMode.View
+                        DisplayName: =DataSourceInfo([@'Locales Spoon'],DataSourceInfo.DisplayName,"Editor")
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        Required: =false
+                        Update: =DataCardValue7.Selected
+                        Visible: =Parent.DisplayMode = DisplayMode.View
+                        Width: =399
+                        X: =0
+                        Y: =1
+                        ZIndex: =1
+
+                        DataCardKey7 As label:
+                            AutoHeight: =true
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(51, 51, 51, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =34
+                            PaddingLeft: =0
+                            Size: =13
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue7 As combobox:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            ChevronBackground: =RGBA(255, 255, 255, 1)
+                            ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                            ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                            ChevronFill: =RGBA(33, 33, 33, 1)
+                            ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                            ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                            Color: =RGBA(51, 51, 51, 1)
+                            DefaultSelectedItems: =Parent.Default
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            DisabledFill: =RGBA(244, 244, 244, 1)
+                            DisplayFields: =["DisplayName","Email","Picture"]
+                            DisplayMode: =Parent.DisplayMode
+                            Font: =Font.'Segoe UI'
+                            HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                            HoverColor: =RGBA(51, 51, 51, 1)
+                            HoverFill: =RGBA(212, 212, 212, 1)
+                            Items: =Choices([@'Locales Spoon'].'Modificado por')
+                            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                            PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                            PressedColor: =RGBA(255, 255, 255, 1)
+                            PressedFill: =RGBA(0, 120, 212, 1)
+                            SearchFields: =["DisplayName"]
+                            SearchItems: =Choices('Locales Spoon'.'Modificado por',DataCardValue7.SearchText)
+                            SelectionFill: =RGBA(0, 120, 212, 1)
+                            SelectMultiple: =false
+                            Size: =13
+                            Template: =ListItemTemplate.Person
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey7.Y + DataCardKey7.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage6 As label:
+                            AutoHeight: =true
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(168, 0, 0, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(168, 0, 0, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Size: =13
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue7.Y + DataCardValue7.Height
+                            ZIndex: =3
+
+                        StarVisible6 As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(51, 51, 51, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =DataCardKey7.Height
+                            PaddingLeft: =0
+                            Size: =13
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey7.Y
+                            ZIndex: =4
+
+                    ID_DataCard1 As typedDataCard.textualViewCard:
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="ID"
+                        Default: =ThisItem.ID
+                        DisplayMode: =DisplayMode.View
+                        DisplayName: =DataSourceInfo([@'Locales Spoon'],DataSourceInfo.DisplayName,"ID")
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =40
+                        Required: =false
+                        Visible: =Parent.DisplayMode = DisplayMode.View
+                        Width: =399
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+                        DataCardKey8 As label:
+                            AutoHeight: =true
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(51, 51, 51, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =34
+                            PaddingLeft: =0
+                            Size: =13
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue8 As label:
+                            AutoHeight: =true
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(51, 51, 51, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            DisplayMode: =Parent.DisplayMode
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Height: =27
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Size: =13
+                            Text: =Parent.Default
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey8.Y + DataCardKey8.Height + 5
+                            ZIndex: =2
+
+                    "'Estado de actividad_DataCard1' As typedDataCard.comboBoxEditCard":
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="clEstadoActividad"
+                        Default: =ThisItem.'Estado de actividad'
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@'Locales Spoon'],DataSourceInfo.DisplayName,"clEstadoActividad")
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        Required: =true
+                        Update: =DataCardValue4.Selected
+                        Width: =399
+                        X: =0
+                        Y: =3
+                        ZIndex: =2
+
+                        DataCardKey4 As label:
+                            AutoHeight: =true
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(51, 51, 51, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =34
+                            PaddingLeft: =0
+                            Size: =13
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue4 As combobox:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            ChevronBackground: =RGBA(255, 255, 255, 1)
+                            ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                            ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                            ChevronFill: =RGBA(33, 33, 33, 1)
+                            ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                            ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                            Color: =RGBA(51, 51, 51, 1)
+                            DefaultSelectedItems: =Parent.Default
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            DisabledFill: =RGBA(244, 244, 244, 1)
+                            DisplayFields: =["Value"]
+                            DisplayMode: =Parent.DisplayMode
+                            Font: =Font.'Segoe UI'
+                            HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                            HoverColor: =RGBA(51, 51, 51, 1)
+                            HoverFill: =RGBA(212, 212, 212, 1)
+                            Items: =Choices([@'Locales Spoon'].'Estado de actividad')
+                            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                            PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                            PressedColor: =RGBA(255, 255, 255, 1)
+                            PressedFill: =RGBA(0, 120, 212, 1)
+                            SearchFields: =["Value"]
+                            SearchItems: =Choices('Locales Spoon'.'Estado de actividad',DataCardValue4.SearchText)
+                            SelectionFill: =RGBA(0, 120, 212, 1)
+                            SelectMultiple: =false
+                            Size: =13
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey4.Y + DataCardKey4.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage4 As label:
+                            AutoHeight: =true
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(168, 0, 0, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(168, 0, 0, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Size: =13
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue4.Y + DataCardValue4.Height
+                            ZIndex: =3
+
+                        StarVisible4 As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(51, 51, 51, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =DataCardKey4.Height
+                            PaddingLeft: =0
+                            Size: =13
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey4.Y
+                            ZIndex: =4
+
+                    "'Nombre designado_DataCard1' As typedDataCard.textualEditCard":
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="clNombre"
+                        Default: =ThisItem.'Nombre designado'
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@'Locales Spoon'],DataSourceInfo.DisplayName,"clNombre")
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        MaxLength: =DataSourceInfo([@'Locales Spoon'], DataSourceInfo.MaxLength, "clNombre")
+                        Required: =true
+                        Update: =DataCardValue3.Text
+                        Width: =399
+                        X: =0
+                        Y: =4
+                        ZIndex: =2
+
+                        DataCardKey3 As label:
+                            AutoHeight: =true
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(51, 51, 51, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =34
+                            PaddingLeft: =0
+                            Size: =13
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue3 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            BorderThickness: =2
+                            Color: =RGBA(51, 51, 51, 1)
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            DisabledFill: =RGBA(244, 244, 244, 1)
+                            DisplayMode: =Parent.DisplayMode
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                            HoverColor: =RGBA(51, 51, 51, 1)
+                            HoverFill: =RGBA(255, 255, 255, 1)
+                            MaxLength: =Parent.MaxLength
+                            PaddingLeft: =5
+                            PressedBorderColor: =RGBA(0, 120, 212, 1)
+                            PressedColor: =RGBA(51, 51, 51, 1)
+                            PressedFill: =RGBA(255, 255, 255, 1)
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Size: =13
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey3.Y + DataCardKey3.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage3 As label:
+                            AutoHeight: =true
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(168, 0, 0, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(168, 0, 0, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Size: =13
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue3.Y + DataCardValue3.Height
+                            ZIndex: =3
+
+                        StarVisible3 As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(51, 51, 51, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =DataCardKey3.Height
+                            PaddingLeft: =0
+                            Size: =13
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey3.Y
+                            ZIndex: =4
+
+                    "'Cuenta M365_DataCard1' As typedDataCard.comboBoxEditCard":
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="clCuentaM365"
+                        Default: =ThisItem.'Cuenta M365'
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@'Locales Spoon'],DataSourceInfo.DisplayName,"clCuentaM365")
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        Required: =true
+                        Update: =DataCardValue2.Selected
+                        Width: =399
+                        X: =0
+                        Y: =5
+                        ZIndex: =2
+
+                        DataCardKey2 As label:
+                            AutoHeight: =true
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(51, 51, 51, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =34
+                            PaddingLeft: =0
+                            Size: =13
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue2 As combobox:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            ChevronBackground: =RGBA(255, 255, 255, 1)
+                            ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                            ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                            ChevronFill: =RGBA(33, 33, 33, 1)
+                            ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                            ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                            Color: =RGBA(51, 51, 51, 1)
+                            DefaultSelectedItems: =Parent.Default
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            DisabledFill: =RGBA(244, 244, 244, 1)
+                            DisplayFields: =["DisplayName","Email","Picture"]
+                            DisplayMode: =Parent.DisplayMode
+                            Font: =Font.'Segoe UI'
+                            HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                            HoverColor: =RGBA(51, 51, 51, 1)
+                            HoverFill: =RGBA(212, 212, 212, 1)
+                            Items: =Choices([@'Locales Spoon'].'Cuenta M365')
+                            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                            PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                            PressedColor: =RGBA(255, 255, 255, 1)
+                            PressedFill: =RGBA(0, 120, 212, 1)
+                            SearchFields: =["DisplayName"]
+                            SearchItems: =Choices('Locales Spoon'.'Cuenta M365',DataCardValue2.SearchText)
+                            SelectionFill: =RGBA(0, 120, 212, 1)
+                            SelectMultiple: =false
+                            Size: =13
+                            Template: =ListItemTemplate.Person
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey2.Y + DataCardKey2.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage2 As label:
+                            AutoHeight: =true
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(168, 0, 0, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(168, 0, 0, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Size: =13
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue2.Y + DataCardValue2.Height
+                            ZIndex: =3
+
+                        StarVisible2 As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(51, 51, 51, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =DataCardKey2.Height
+                            PaddingLeft: =0
+                            Size: =13
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey2.Y
+                            ZIndex: =4
+
+                "'co.ActionsButtons_1' As groupContainer.horizontalAutoLayoutContainer":
+                    BorderColor: =RGBA(0, 121, 187, 1)
+                    BorderThickness: =1
+                    Height: =50
+                    LayoutMode: =LayoutMode.Auto
+                    LayoutOverflowX: =LayoutOverflow.Scroll
+                    Width: =Parent.Width
+                    ZIndex: =5
+
+                    "'co.ActionButton_1' As groupContainer.manualLayoutContainer":
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =BorderStyle.None
+                        Fill: =vargStyle.ItemsList.FormActionsButtons.Background
+                        Height: =50
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        Visible: =frmStores.DisplayMode = DisplayMode.Edit
+                        Width: =lblText_3.Width+imgIcon_3.Width+30
+                        X: =222
+                        Y: =190
+                        ZIndex: =1
+
+                        imgIcon_3 As image:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledFill: =RGBA(0, 0, 0, 0)
+                            FocusedBorderThickness: =4
+                            Height: =If(App.ActiveScreen.Size>1,15,25)
+                            HoverBorderColor: =RGBA(0, 0, 0, 0)
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            Image: |-
+                                ="data:image/svg+xml," & EncodeUrl(
+                                    "    
+                                    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'><!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License -         https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->" 
+                                    // Get the definition of the icon fill
+                                    & vargStyle.ItemsList.FormActionsButtons.IconColor & 
+                                
+                                    //Icon
+                                       "<path d='M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM272 80v80H144V80h128zm122 352H54a6 6 0 0 1-6-6V86a6 6 0 0 1 6-6h42v104c0 13.255 10.745 24 24 24h176c13.255 0 24-10.745 24-24V83.882l78.243 78.243a6 6 0 0 1 1.757 4.243V426a6 6 0 0 1-6 6zM224 232c-48.523 0-88 39.477-88 88s39.477 88 88 88 88-39.477 88-88-39.477-88-88-88zm0 128c-22.056 0-40-17.944-40-40s17.944-40 40-40 40 17.944 40 40-17.944 40-40 40z' style='fill: url(#myLinearGradient1);        fill-opacity:"      
+                                    
+                                    & vargStyle.ItemsList.FormActionsButtons.IconOpacity & " '/></svg>"
+                                )
+                            PressedBorderColor: =RGBA(0, 0, 0, 0)
+                            PressedFill: =RGBA(0, 0, 0, 0)
+                            Width: =If(App.ActiveScreen.Size>1,15,25)
+                            X: =(Parent.Width-imgIcon_3.Width-lblText_3.Width)/2
+                            Y: =If(App.ActiveScreen.Size>1,17.5,12)
+                            ZIndex: =1
+
+                        lblText_3 As label:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            Color: =vargStyle.ItemsList.FormActionsButtons.FontColor
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =vargStyle.ItemsList.FormActionsButtons.Font
+                            FontWeight: =vargStyle.ItemsList.FormActionsButtons.FontWeight
+                            Height: =30
+                            Size: =vargStyle.ItemsList.FormActionsButtons.FontHeight
+                            Text: ="Guardar"
+                            Width: =Len(Self.Text)*11
+                            X: =imgIcon_3.X+imgIcon_3.Width+5
+                            Y: =10
+                            ZIndex: =2
+
+                        btnSHover_8 As button:
+                            BorderColor: =vargStyle.ItemsList.FormActionsButtons.BorderColor
+                            BorderStyle: =vargStyle.ItemsList.FormActionsButtons.BorderStyle
+                            BorderThickness: =vargStyle.ItemsList.FormActionsButtons.BorderThickness
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            DisabledFill: =RGBA(244, 244, 244, 1)
+                            Fill: =RGBA(0,0,0,0)
+                            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =Parent.Height
+                            HoverBorderColor: =RGBA(0, 0, 0, 0)
+                            HoverColor: =RGBA(255, 255, 255, 1)
+                            HoverFill: =vargStyle.ItemsList.FormActionsButtons.HoverPositiveFill
+                            OnSelect: =SubmitForm(frmStores)
+                            PressedBorderColor: =ColorFade(Self.HoverFill, -50%)
+                            PressedColor: =RGBA(255, 255, 255, 1)
+                            PressedFill: =ColorFade(Self.HoverFill, -20%)
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Size: =15
+                            Text: =""
+                            Width: =Parent.Width
+                            Y: =1
+                            ZIndex: =4
+
+                    "'co.ActionButton_2' As groupContainer.manualLayoutContainer":
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =BorderStyle.None
+                        Fill: =vargStyle.ItemsList.FormActionsButtons.Background
+                        Height: =50
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        Width: =lblText_4.Width+imgIcon_4.Width+30
+                        X: =222
+                        Y: =190
+                        ZIndex: =2
+
+                        imgIcon_4 As image:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledFill: =RGBA(0, 0, 0, 0)
+                            FocusedBorderThickness: =4
+                            Height: =If(App.ActiveScreen.Size>1,15,25)
+                            HoverBorderColor: =RGBA(0, 0, 0, 0)
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            Image: |-
+                                ="data:image/svg+xml," & EncodeUrl(
+                                    "    
+                                    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 352 512'><!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License -         https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->" 
+                                    // Get the definition of the icon fill
+                                    & vargStyle.ItemsList.FormActionsButtons.IconColor & 
+                                
+                                    //Icon
+                                       "<path d='M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z' style='fill: url(#myLinearGradient1);        fill-opacity:"      
+                                    
+                                    & vargStyle.ItemsList.FormActionsButtons.IconOpacity & " '/></svg>"
+                                )
+                            PressedBorderColor: =RGBA(0, 0, 0, 0)
+                            PressedFill: =RGBA(0, 0, 0, 0)
+                            Width: =If(App.ActiveScreen.Size>1,15,25)
+                            X: =(Parent.Width-imgIcon_4.Width-lblText_4.Width)/2
+                            Y: =If(App.ActiveScreen.Size>1,17.5,12)
+                            ZIndex: =1
+
+                        lblText_4 As label:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            Color: =vargStyle.ItemsList.FormActionsButtons.FontColor
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =vargStyle.ItemsList.FormActionsButtons.Font
+                            FontWeight: =vargStyle.ItemsList.FormActionsButtons.FontWeight
+                            Height: =30
+                            Size: =vargStyle.ItemsList.FormActionsButtons.FontHeight
+                            Text: |-
+                                =If(
+                                    frmStores.DisplayMode = DisplayMode.Edit,
+                                    "Cancelar",
+                                    "Cerrar"
+                                )
+                            Width: =Len(Self.Text)*11
+                            X: =imgIcon_4.X+imgIcon_4.Width+5
+                            Y: =10
+                            ZIndex: =2
+
+                        btnHover_9 As button:
+                            BorderColor: =vargStyle.ItemsList.FormActionsButtons.BorderColor
+                            BorderStyle: =vargStyle.ItemsList.FormActionsButtons.BorderStyle
+                            BorderThickness: =vargStyle.ItemsList.FormActionsButtons.BorderThickness
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            DisabledFill: =RGBA(244, 244, 244, 1)
+                            Fill: =RGBA(0,0,0,0)
+                            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =Parent.Height
+                            HoverBorderColor: =RGBA(0, 0, 0, 0)
+                            HoverColor: =RGBA(255, 255, 255, 1)
+                            HoverFill: =vargStyle.ItemsList.FormActionsButtons.HoverNegativeFill
+                            OnSelect: |-
+                                =UpdateContext({varcViewFormAssignCost:false});ResetForm(frmStores)
+                            PressedBorderColor: =ColorFade(Self.HoverFill, -50%)
+                            PressedColor: =RGBA(255, 255, 255, 1)
+                            PressedFill: =ColorFade(Self.HoverFill, -20%)
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Size: =15
+                            Text: =""
+                            Width: =Parent.Width
+                            Y: =1
+                            ZIndex: =4
 
         "'co.DataFilter_1' As groupContainer.manualLayoutContainer":
             Fill: =vargStyle.ItemsList.FilterAndSearchBar.BackgroundColor
@@ -1365,7 +1324,7 @@
                 )
             Width: =Parent.Width-Self.X*2
             Y: =50
-            ZIndex: =1
+            ZIndex: =2
 
             "'co.FilterOptions_1' As groupContainer.horizontalAutoLayoutContainer":
                 BorderThickness: =vargBorderComponent
@@ -1727,8 +1686,8 @@
             LayoutAlignItems: =LayoutAlignItems.Center
             LayoutMode: =LayoutMode.Auto
             LayoutOverflowX: =LayoutOverflow.Scroll
-            Width: =Parent.Width
-            ZIndex: =2
+            Width: =Parent.Width-Self.X
+            ZIndex: =3
 
             "'co.NewButton_2' As groupContainer.manualLayoutContainer":
                 AlignInContainer: =AlignInContainer.Start
@@ -1798,7 +1757,7 @@
                 "'co.ActionButton_Edit_1' As groupContainer.manualLayoutContainer":
                     AlignInContainer: =AlignInContainer.SetByContainer
                     BorderThickness: =vargBorderComponent
-                    Fill: =vargStyle.OptionsMenu.Background
+                    Fill: =RGBA(0,0,0,0)
                     FillPortions: =0
                     Height: =40
                     LayoutMinHeight: =40
@@ -1887,7 +1846,7 @@
                 "'co.ActionButton_Details_1' As groupContainer.manualLayoutContainer":
                     AlignInContainer: =AlignInContainer.SetByContainer
                     BorderThickness: =vargBorderComponent
-                    Fill: =vargStyle.OptionsMenu.Background
+                    Fill: =RGBA(0,0,0,0)
                     FillPortions: =0
                     Height: =40
                     LayoutMinHeight: =40
@@ -1976,7 +1935,7 @@
                 "'co.ActionButton_Comments_1' As groupContainer.manualLayoutContainer":
                     AlignInContainer: =AlignInContainer.SetByContainer
                     BorderThickness: =vargBorderComponent
-                    Fill: =vargStyle.OptionsMenu.Background
+                    Fill: =RGBA(0,0,0,0)
                     FillPortions: =0
                     Height: =40
                     LayoutMinHeight: =40
@@ -2065,7 +2024,7 @@
                 "'co.ActionButton_Attachments_1' As groupContainer.manualLayoutContainer":
                     AlignInContainer: =AlignInContainer.SetByContainer
                     BorderThickness: =vargBorderComponent
-                    Fill: =vargStyle.OptionsMenu.Background
+                    Fill: =RGBA(0,0,0,0)
                     FillPortions: =0
                     Height: =40
                     LayoutMinHeight: =40
@@ -2154,7 +2113,7 @@
                 "'co.ActionButton_Contacts_1' As groupContainer.manualLayoutContainer":
                     AlignInContainer: =AlignInContainer.SetByContainer
                     BorderThickness: =vargBorderComponent
-                    Fill: =vargStyle.OptionsMenu.Background
+                    Fill: =RGBA(0,0,0,0)
                     FillPortions: =0
                     Height: =40
                     LayoutMinHeight: =40
@@ -2244,7 +2203,7 @@
                 "'co.ActionButton_IndustrialPlants_1' As groupContainer.manualLayoutContainer":
                     AlignInContainer: =AlignInContainer.SetByContainer
                     BorderThickness: =vargBorderComponent
-                    Fill: =vargStyle.OptionsMenu.Background
+                    Fill: =RGBA(0,0,0,0)
                     FillPortions: =0
                     Height: =40
                     LayoutMinHeight: =40
