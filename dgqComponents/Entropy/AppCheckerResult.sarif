@@ -2324,36 +2324,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Data Container Screen.co.DataContainerGroup.co.DataFilter_1.co.FilterOptions_1.imgIcon_RefreshData_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Data Container Screen.co.DataContainerGroup.co.DataFilter_1.co.FilterOptions_1.imgIcon_RefreshData_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Data Container Screen",
-                "type": "Data Container Screen.co.DataContainerGroup.co.DataFilter_1.co.FilterOptions_1.imgIcon_RefreshData_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Data Container Screen.co.DataContainerGroup.co.DataFilter_1.co.FilterOptions_1.imgIcon_RefreshData_1.TabIndex"
                 }
               ],
@@ -2378,6 +2348,36 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Data Container Screen.co.DataContainerGroup.co.DataFilter_1.co.FilterOptions_1.imgIcon_RefreshData_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Data Container Screen.co.DataContainerGroup.co.DataFilter_1.co.FilterOptions_1.imgIcon_RefreshData_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Data Container Screen",
+                "type": "Data Container Screen.co.DataContainerGroup.co.DataFilter_1.co.FilterOptions_1.imgIcon_RefreshData_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -3475,6 +3475,36 @@
               },
               "properties": {
                 "member": "locLockData",
+                "module": "Data Container Screen",
+                "type": "Data Container Screen"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Data Container Screen.varcViewFormAssignCost"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Data Container Screen.varcViewFormAssignCost",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varcViewFormAssignCost",
                 "module": "Data Container Screen",
                 "type": "Data Container Screen"
               }

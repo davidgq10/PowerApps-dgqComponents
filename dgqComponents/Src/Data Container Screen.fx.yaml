@@ -31,7 +31,22 @@
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =ColorFade(RGBA(0, 120, 212, 1), -10%)
             OnSelect: |-
-                =UpdateContext({varcSidebarNav:4})
+                =UpdateContext(
+                    {
+                        varcSidebarNav: 4,
+                        varcDataContainerVisibleButtons: {
+                            New: true,
+                            Edit: true,
+                            Detail: true,
+                            Comment: true,
+                            Attachment: true,
+                            Contact: true,
+                            IndustrialPlant: true,
+                            Delete: true
+                        },
+                        varcDataOrigin: 'Locales Spoon'
+                    }
+                )
             PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -50%)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
@@ -124,6 +139,26 @@
             Y: ='co.DataFilter_1'.Y+'co.DataFilter_1'.Height
             ZIndex: =1
 
+            lblDescriptionData As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =vargStyle.ItemsList.TitleFontColor
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =DisplayMode.View
+                FocusedBorderThickness: =4
+                Font: =vargStyle.ItemsList.TitleFont
+                FontWeight: =vargStyle.ItemsList.TitleFontWeight
+                Height: =
+                Size: =vargStyle.ItemsList.TitleFontHeight
+                Text: =" Opciones para carga de producto no conforme Opciones para carga de producto no conforme Opciones para carga de pciones para carga de producto no conforme Opciones para carga de producto no conforpciones para carga de producto no conforme Opciones para carga de producto no confor"
+                Tooltip: =Self.Text
+                Visible: =varcSeeTitle
+                Width: =Parent.Width
+                ZIndex: =1
+
             "'co.DataListContainer' As groupContainer.manualLayoutContainer":
                 BorderColor: =vargStyle.Others.BorderComponentsColor
                 BorderStyle: =vargStyle.Others.BorderComponentsStyle
@@ -131,10 +166,8 @@
                 Fill: =vargStyle.ItemsList.Background
                 Height: =Parent.Height-Self.Y
                 Width: =Parent.Width-Self.X
-                Y: |-
-                    =If(varcSeeInfo,lblDescriptionData.Height,0
-                    )
-                ZIndex: =1
+                Y: =If(varcSeeTitle,lblDescriptionData.Height,0)
+                ZIndex: =2
 
                 galDataList As gallery.variableTemplateHeightGallery:
                     ContentLanguage: ="es"
@@ -168,7 +201,7 @@
                         ZIndex: =2
 
                         ItemField As groupContainer.manualLayoutContainer:
-                            AlignInContainer: =AlignInContainer.Start
+                            AlignInContainer: =AlignInContainer.Center
                             BorderThickness: =vargBorderComponent
                             FillPortions: =0
                             Height: =lblData.Height
@@ -218,7 +251,7 @@
                                 ZIndex: =2
 
                         ItemField_1 As groupContainer.manualLayoutContainer:
-                            AlignInContainer: =AlignInContainer.Start
+                            AlignInContainer: =AlignInContainer.Center
                             BorderThickness: =vargBorderComponent
                             FillPortions: =0
                             Height: =lblData_1.Height
@@ -268,7 +301,7 @@
                                 ZIndex: =2
 
                         ItemField_2 As groupContainer.manualLayoutContainer:
-                            AlignInContainer: =AlignInContainer.Start
+                            AlignInContainer: =AlignInContainer.Center
                             BorderThickness: =vargBorderComponent
                             FillPortions: =0
                             Height: =ckbData_2.Height
@@ -343,7 +376,7 @@
                                 ZIndex: =2
 
                         ItemField_3 As groupContainer.manualLayoutContainer:
-                            AlignInContainer: =AlignInContainer.Start
+                            AlignInContainer: =AlignInContainer.Center
                             BorderThickness: =vargBorderComponent
                             FillPortions: =0
                             Height: =tglData_3.Height+20
@@ -417,7 +450,7 @@
                                 ZIndex: =3
 
                         "'co.ImageLoading' As groupContainer.manualLayoutContainer":
-                            AlignInContainer: =AlignInContainer.Start
+                            AlignInContainer: =AlignInContainer.Center
                             BorderThickness: =vargBorderComponent
                             FillPortions: =0
                             Height: =50
@@ -465,59 +498,40 @@
                 BorderColor: =RGBA(0, 121, 187, 1)
                 BorderThickness: =1
                 Fill: =RGBA(255, 255, 255, 1)
-                Height: =Parent.Height
-                Visible: =varcViewFormAssignCost
+                Height: =Parent.Height-2
+                Visible: =varcDataContext="ViewSortOptions"
                 Width: =Switch(App.ActiveScreen.Size,1,Parent.Width,2,Parent.Width,400)
-                X: =Parent.Width-Self.Width
-                Y: ='co.DataListContainer'.Y
-                ZIndex: =2
+                X: =Parent.Width-Self.Width-1
+                Y: ='co.DataListContainer'.Y+1
+                ZIndex: =3
 
             "'co.FilterGroup' As groupContainer.manualLayoutContainer":
                 BorderColor: =RGBA(0, 121, 187, 1)
                 BorderThickness: =1
                 Fill: =RGBA(255, 255, 255, 1)
-                Height: =Parent.Height
-                Visible: =varcViewFormAssignCost
+                Height: =Parent.Height-2
+                Visible: =varcDataContext="ViewFilterOptions"
                 Width: =Switch(App.ActiveScreen.Size,1,Parent.Width,2,Parent.Width,400)
-                X: =Parent.Width-Self.Width
-                Y: ='co.DataListContainer'.Y
-                ZIndex: =3
-
-            lblDescriptionData As label:
-                AutoHeight: =true
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =2
-                Color: =vargStyle.ItemsList.TitleFontColor
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                DisplayMode: =DisplayMode.View
-                FocusedBorderThickness: =4
-                Font: =vargStyle.ItemsList.TitleFont
-                FontWeight: =vargStyle.ItemsList.TitleFontWeight
-                Height: =
-                Size: =vargStyle.ItemsList.TitleFontHeight
-                Text: =" Opciones para carga de producto no conforme Opciones para carga de producto no conforme Opciones para carga de pciones para carga de producto no conforme Opciones para carga de producto no conforpciones para carga de producto no conforme Opciones para carga de producto no confor"
-                Tooltip: =Self.Text
-                Visible: =varcSeeInfo
-                Width: =Parent.Width
+                X: =Parent.Width-Self.Width-1
+                Y: ='co.DataListContainer'.Y+1
                 ZIndex: =4
 
             "'co.FormGroup' As groupContainer.manualLayoutContainer":
                 BorderColor: =RGBA(0, 121, 187, 1)
                 BorderThickness: =1
                 Fill: =RGBA(255, 255, 255, 1)
-                Height: =Parent.Height
-                Visible: =varcViewFormAssignCost
+                Height: =Parent.Height-2
+                Visible: =Or(varcDataContext="New",varcDataContext="Edit",varcDataContext="Detail",varcDataContext="varcSeeInfo")
                 Width: =Switch(App.ActiveScreen.Size,1,Parent.Width,2,Parent.Width,400)
-                X: =Parent.Width-Self.Width
-                Y: ='co.DataListContainer'.Y
+                X: =Parent.Width-Self.Width-1
+                Y: ='co.DataListContainer'.Y+1
                 ZIndex: =5
 
                 frmStores As form:
                     BorderColor: =RGBA(0, 121, 187, 1)
                     BorderThickness: =1
                     DataSource: ='Locales Spoon'
+                    DefaultMode: =If(varcDataContext="New",FormMode.New,varcDataContext="Edit",FormMode.Edit,FormMode.View)
                     Fill: =RGBA(255, 255, 255, 1)
                     Height: =Parent.Height-Self.Y
                     Item: =galDataList.Selected
@@ -530,23 +544,23 @@
                     Y: =50
                     ZIndex: =1
 
-                    Modificado_DataCard1 As typedDataCard.textualViewCard:
+                    ID_DataCard1 As typedDataCard.textualViewCard:
                         BorderColor: =RGBA(166, 166, 166, 1)
                         BorderStyle: =BorderStyle.Solid
-                        DataField: ="Modified"
-                        Default: =ThisItem.Modificado
+                        DataField: ="ID"
+                        Default: =ThisItem.ID
                         DisplayMode: =DisplayMode.View
-                        DisplayName: =DataSourceInfo([@'Locales Spoon'],DataSourceInfo.DisplayName,"Modified")
+                        DisplayName: =DataSourceInfo([@'Locales Spoon'],DataSourceInfo.DisplayName,"ID")
                         Fill: =RGBA(0, 0, 0, 0)
                         Height: =40
                         Required: =false
                         Visible: =Parent.DisplayMode = DisplayMode.View
                         Width: =399
                         X: =0
-                        Y: =2
+                        Y: =0
                         ZIndex: =1
 
-                        DataCardKey6 As label:
+                        DataCardKey8 As label:
                             AutoHeight: =true
                             BorderColor: =RGBA(0, 0, 0, 0)
                             BorderStyle: =BorderStyle.None
@@ -567,7 +581,7 @@
                             Y: =10
                             ZIndex: =1
 
-                        DataCardValue6 As label:
+                        DataCardValue8 As label:
                             AutoHeight: =true
                             BorderColor: =RGBA(0, 0, 0, 0)
                             BorderStyle: =BorderStyle.None
@@ -586,7 +600,7 @@
                             Text: =Parent.Default
                             Width: =Parent.Width - 60
                             X: =30
-                            Y: =DataCardKey6.Y + DataCardKey6.Height + 5
+                            Y: =DataCardKey8.Y + DataCardKey8.Height + 5
                             ZIndex: =2
 
                     "'Modificado por_DataCard1' As typedDataCard.comboBoxViewCard":
@@ -708,23 +722,23 @@
                             Y: =DataCardKey7.Y
                             ZIndex: =4
 
-                    ID_DataCard1 As typedDataCard.textualViewCard:
+                    Modificado_DataCard1 As typedDataCard.textualViewCard:
                         BorderColor: =RGBA(166, 166, 166, 1)
                         BorderStyle: =BorderStyle.Solid
-                        DataField: ="ID"
-                        Default: =ThisItem.ID
+                        DataField: ="Modified"
+                        Default: =ThisItem.Modificado
                         DisplayMode: =DisplayMode.View
-                        DisplayName: =DataSourceInfo([@'Locales Spoon'],DataSourceInfo.DisplayName,"ID")
+                        DisplayName: =DataSourceInfo([@'Locales Spoon'],DataSourceInfo.DisplayName,"Modified")
                         Fill: =RGBA(0, 0, 0, 0)
                         Height: =40
                         Required: =false
                         Visible: =Parent.DisplayMode = DisplayMode.View
                         Width: =399
                         X: =0
-                        Y: =0
+                        Y: =2
                         ZIndex: =1
 
-                        DataCardKey8 As label:
+                        DataCardKey6 As label:
                             AutoHeight: =true
                             BorderColor: =RGBA(0, 0, 0, 0)
                             BorderStyle: =BorderStyle.None
@@ -745,7 +759,7 @@
                             Y: =10
                             ZIndex: =1
 
-                        DataCardValue8 As label:
+                        DataCardValue6 As label:
                             AutoHeight: =true
                             BorderColor: =RGBA(0, 0, 0, 0)
                             BorderStyle: =BorderStyle.None
@@ -764,7 +778,7 @@
                             Text: =Parent.Default
                             Width: =Parent.Width - 60
                             X: =30
-                            Y: =DataCardKey8.Y + DataCardKey8.Height + 5
+                            Y: =DataCardKey6.Y + DataCardKey6.Height + 5
                             ZIndex: =2
 
                     "'Estado de actividad_DataCard1' As typedDataCard.comboBoxEditCard":
@@ -1133,8 +1147,8 @@
                         BorderThickness: =BorderStyle.None
                         Fill: =vargStyle.ItemsList.FormActionsButtons.Background
                         Height: =50
-                        LayoutMinHeight: =100
-                        LayoutMinWidth: =250
+                        LayoutMinHeight: =50
+                        LayoutMinWidth: =100
                         Visible: =frmStores.DisplayMode = DisplayMode.Edit
                         Width: =lblText_3.Width+imgIcon_3.Width+30
                         X: =222
@@ -1221,8 +1235,8 @@
                         BorderThickness: =BorderStyle.None
                         Fill: =vargStyle.ItemsList.FormActionsButtons.Background
                         Height: =50
-                        LayoutMinHeight: =100
-                        LayoutMinWidth: =250
+                        LayoutMinHeight: =50
+                        LayoutMinWidth: =100
                         Width: =lblText_4.Width+imgIcon_4.Width+30
                         X: =222
                         Y: =190
@@ -1295,7 +1309,7 @@
                             HoverColor: =RGBA(255, 255, 255, 1)
                             HoverFill: =vargStyle.ItemsList.FormActionsButtons.HoverNegativeFill
                             OnSelect: |-
-                                =UpdateContext({varcViewFormAssignCost:false});ResetForm(frmStores)
+                                =UpdateContext({varcDataContext:""});ResetForm(frmStores)
                             PressedBorderColor: =ColorFade(Self.HoverFill, -50%)
                             PressedColor: =RGBA(255, 255, 255, 1)
                             PressedFill: =ColorFade(Self.HoverFill, -20%)
@@ -1361,7 +1375,7 @@
                          " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.ItemsList.FilterAndSearchBar.IconOpacity & ";'></path></svg>"
                         )
                     OnSelect: |-
-                        =UpdateContext({varcLockData:!varcLockData})
+                        =UpdateContext({varcDataContext:"ViewSortOptions"})
                     PaddingBottom: =5
                     PaddingLeft: =5
                     PaddingRight: =5
@@ -1384,7 +1398,7 @@
                     HoverFill: =RGBA(0, 0, 0, 0)
                     Image: |-
                         =If(
-                            varcFilterData = true,
+                            varcDataContext="varcViewFilterOptions",
                         
                             //True SVG*/
                             "data:image/svg+xml," & EncodeUrl(
@@ -1410,7 +1424,7 @@
                             )
                         )
                     OnSelect: |-
-                        =UpdateContext({varcFilterData:!varcFilterData})
+                        =UpdateContext({varcDataContext:"varcViewFilterOptions"})
                     PaddingBottom: =5
                     PaddingLeft: =5
                     PaddingRight: =5
@@ -1527,7 +1541,7 @@
                          " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.ItemsList.FilterAndSearchBar.IconOpacity & ";'></path></svg>"
                         )
                     OnSelect: |-
-                        =UpdateContext({varcSeeInfo:!varcSeeInfo})
+                        =UpdateContext({varcDataContext:"varcSeeInfo"})
                     PaddingBottom: =5
                     PaddingLeft: =5
                     PaddingRight: =5
@@ -1561,7 +1575,7 @@
                          " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.ItemsList.FilterAndSearchBar.IconOpacity & ";'></path></svg>"
                         )
                     OnSelect: |-
-                        =UpdateContext({varcSeeInfo:!varcSeeInfo})
+                        =UpdateContext({varcSeeTitle:!varcSeeTitle})
                     PaddingBottom: =5
                     PaddingLeft: =5
                     PaddingRight: =5
@@ -1630,7 +1644,7 @@
                          " style='fill: url(#myLinearGradient1); fill-opacity:" & vargStyle.StartMenu.IconOpacity & ";'></path></svg>"
                         )
                     OnSelect: |-
-                        =UpdateContext({varcLockData:!varcLockData})
+                        =UpdateContext({varcShowLoading:true});Refresh(varcDataOrigin);UpdateContext({varcShowLoading:false})
                     PaddingBottom: =5
                     PaddingLeft: =5
                     PaddingRight: =5
@@ -1640,6 +1654,35 @@
                     Width: =vargStyle.StartMenu.IconSize
                     Y: =lblDescriptionData.Height
                     ZIndex: =8
+
+                "'co.ImageLoading_1' As groupContainer.manualLayoutContainer":
+                    AlignInContainer: =AlignInContainer.Center
+                    BorderThickness: =vargBorderComponent
+                    FillPortions: =0
+                    Height: =50
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =50
+                    Visible: =varcShowLoading
+                    Width: =imgLoadingSVG_1.Width
+                    ZIndex: =9
+
+                    imgLoadingSVG_1 As image:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Height: =50
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        Image: =vargStyle.ItemsList.LoadingIcon
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Visible: =If(varcShowLoading,true,false)
+                        Width: =50
+                        X: =Parent.Width-Self.Width
+                        ZIndex: =1
 
             "'co.SearchFilter_1' As groupContainer.manualLayoutContainer":
                 BorderThickness: =vargBorderComponent
@@ -1697,6 +1740,7 @@
                 LayoutMinHeight: =55
                 LayoutMinWidth: =250
                 PaddingTop: =5
+                Visible: =varcDataContainerVisibleButtons.New
                 Width: =If(App.ActiveScreen.Size>1,143,100)
                 ZIndex: =1
 
@@ -1724,6 +1768,8 @@
                     HoverBorderColor: =RGBA(0, 0, 0, 0)
                     HoverColor: =RGBA(255, 255, 255, 1)
                     HoverFill: =ColorFade(Self.Fill,-20%)
+                    OnSelect: |-
+                        =UpdateContext({varcDataContext:"New"})
                     PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -50%)
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =ColorFade(Self.Fill, -50%)
@@ -1762,6 +1808,7 @@
                     Height: =40
                     LayoutMinHeight: =40
                     LayoutMinWidth: =250
+                    Visible: =varcDataContainerVisibleButtons.Edit
                     Width: =lblText_16.Width+imgIcon_26.Width+30
                     X: =222
                     Y: =190
@@ -1829,7 +1876,7 @@
                         HoverColor: =RGBA(255, 255, 255, 1)
                         HoverFill: =vargStyle.OptionsMenu.HoverFill
                         OnSelect: |-
-                            =//EditForm(FormStore);UpdateContext({varcViewFormStore:true})
+                            =UpdateContext({varcDataContext:"Edit"})
                         PressedBorderColor: =ColorFade(Self.HoverFill, -50%)
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =ColorFade(Self.HoverFill, -20%)
@@ -1851,6 +1898,7 @@
                     Height: =40
                     LayoutMinHeight: =40
                     LayoutMinWidth: =250
+                    Visible: =varcDataContainerVisibleButtons.Detail
                     Width: =lblText_17.Width+imgIcon_27.Width+30
                     X: =222
                     Y: =190
@@ -1918,7 +1966,7 @@
                         HoverColor: =RGBA(255, 255, 255, 1)
                         HoverFill: =vargStyle.OptionsMenu.HoverFill
                         OnSelect: |-
-                            =//EditForm(FormStore);UpdateContext({varcViewFormStore:true})
+                            =UpdateContext({varcDataContext:"Detail"})
                         PressedBorderColor: =ColorFade(Self.HoverFill, -50%)
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =ColorFade(Self.HoverFill, -20%)
@@ -1940,6 +1988,7 @@
                     Height: =40
                     LayoutMinHeight: =40
                     LayoutMinWidth: =250
+                    Visible: =varcDataContainerVisibleButtons.Comment
                     Width: =lblText_18.Width+imgIcon_28.Width+30
                     X: =222
                     Y: =190
@@ -2007,7 +2056,7 @@
                         HoverColor: =RGBA(255, 255, 255, 1)
                         HoverFill: =vargStyle.OptionsMenu.HoverFill
                         OnSelect: |-
-                            =//EditForm(FormStore);UpdateContext({varcViewFormStore:true})
+                            =UpdateContext({varcDataContext:"Comment"})
                         PressedBorderColor: =ColorFade(Self.HoverFill, -50%)
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =ColorFade(Self.HoverFill, -20%)
@@ -2029,6 +2078,7 @@
                     Height: =40
                     LayoutMinHeight: =40
                     LayoutMinWidth: =250
+                    Visible: =varcDataContainerVisibleButtons.Attachment
                     Width: =lblText_19.Width+imgIcon_29.Width+30
                     X: =222
                     Y: =190
@@ -2096,7 +2146,7 @@
                         HoverColor: =RGBA(255, 255, 255, 1)
                         HoverFill: =vargStyle.OptionsMenu.HoverFill
                         OnSelect: |-
-                            =//EditForm(FormStore);UpdateContext({varcViewFormStore:true})
+                            =UpdateContext({varcDataContext:"Attachment"})
                         PressedBorderColor: =ColorFade(Self.HoverFill, -50%)
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =ColorFade(Self.HoverFill, -20%)
@@ -2118,6 +2168,7 @@
                     Height: =40
                     LayoutMinHeight: =40
                     LayoutMinWidth: =250
+                    Visible: =varcDataContainerVisibleButtons.Contact
                     Width: =lblText_20.Width+imgIcon_30.Width+30
                     X: =222
                     Y: =190
@@ -2186,7 +2237,7 @@
                         HoverColor: =RGBA(255, 255, 255, 1)
                         HoverFill: =vargStyle.OptionsMenu.HoverFill
                         OnSelect: |-
-                            =//EditForm(FormStore);UpdateContext({varcViewFormStore:true})
+                            =UpdateContext({varcDataContext:"Contact"})
                         PressedBorderColor: =ColorFade(Self.HoverFill, -50%)
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =ColorFade(Self.HoverFill, -20%)
@@ -2208,6 +2259,7 @@
                     Height: =40
                     LayoutMinHeight: =40
                     LayoutMinWidth: =250
+                    Visible: =varcDataContainerVisibleButtons.IndustrialPlant
                     Width: =lblText_21.Width+imgIcon_31.Width+30
                     X: =222
                     Y: =190
@@ -2275,7 +2327,7 @@
                         HoverColor: =RGBA(255, 255, 255, 1)
                         HoverFill: =vargStyle.OptionsMenu.HoverFill
                         OnSelect: |-
-                            =//EditForm(FormStore);UpdateContext({varcViewFormStore:true})
+                            =UpdateContext({varcDataContext:"IndustrialPlant"})
                         PressedBorderColor: =ColorFade(Self.HoverFill, -50%)
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =ColorFade(Self.HoverFill, -20%)
@@ -2297,6 +2349,7 @@
                     LayoutMinHeight: =55
                     LayoutMinWidth: =250
                     PaddingTop: =5
+                    Visible: =varcDataContainerVisibleButtons.Delete
                     Width: =If(App.ActiveScreen.Size>1,120,90)
                     ZIndex: =9
 
@@ -2316,7 +2369,7 @@
                         HoverBorderColor: =ColorFade(vargStyle.OptionsMenu.WarningOptionBorderColor,-20%)
                         HoverColor: =vargStyle.OptionsMenu.Background
                         HoverFill: =vargStyle.OptionsMenu.WarningOptionColor
-                        OnSelect: =
+                        OnSelect: =Navigate('Confirm Delete Screen',ScreenTransition.Fade)
                         PressedBorderColor: =ColorFade(vargStyle.OptionsMenu.WarningOptionColor,-20%)
                         PressedColor: =ColorFade(vargStyle.OptionsMenu.WarningOptionColor,-20%)
                         PressedFill: =vargStyle.OptionsMenu.Background
