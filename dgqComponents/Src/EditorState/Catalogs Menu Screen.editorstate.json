@@ -2108,7 +2108,14 @@
       "DisabledBorderColor",
       "PressedBorderColor",
       "HoverBorderColor",
-      "BorderStyle",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "",
+        "InvariantPropertyName": "BorderStyle",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "FocusedBorderColor",
       "Fill",
       "DisabledFill",
@@ -2160,7 +2167,14 @@
       },
       "ZIndex",
       "LineHeight",
-      "BorderThickness",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "2",
+        "InvariantPropertyName": "BorderThickness",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "FocusedBorderThickness",
       {
         "AFDDataSourceName": "",

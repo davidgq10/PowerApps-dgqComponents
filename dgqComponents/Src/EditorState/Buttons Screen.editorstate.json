@@ -4452,7 +4452,7 @@
       {
         "AFDDataSourceName": "",
         "AutoRuleBindingEnabled": false,
-        "AutoRuleBindingString": "BorderStyle.Solid",
+        "AutoRuleBindingString": "",
         "InvariantPropertyName": "BorderStyle",
         "IsLockable": false,
         "NameMapSourceSchema": "?"
@@ -4727,7 +4727,7 @@
       {
         "AFDDataSourceName": "",
         "AutoRuleBindingEnabled": false,
-        "AutoRuleBindingString": "BorderStyle.Solid",
+        "AutoRuleBindingString": "",
         "InvariantPropertyName": "BorderStyle",
         "IsLockable": false,
         "NameMapSourceSchema": "?"
@@ -5002,7 +5002,7 @@
       {
         "AFDDataSourceName": "",
         "AutoRuleBindingEnabled": false,
-        "AutoRuleBindingString": "BorderStyle.Solid",
+        "AutoRuleBindingString": "",
         "InvariantPropertyName": "BorderStyle",
         "IsLockable": false,
         "NameMapSourceSchema": "?"
@@ -5274,7 +5274,14 @@
     "AllowAccessToGlobals": true,
     "ControlPropertyState": [
       "BorderColor",
-      "BorderStyle",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "",
+        "InvariantPropertyName": "BorderStyle",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "Fill",
       "X",
       "Y",
@@ -5511,7 +5518,7 @@
       {
         "AFDDataSourceName": "",
         "AutoRuleBindingEnabled": false,
-        "AutoRuleBindingString": "BorderStyle.Solid",
+        "AutoRuleBindingString": "",
         "InvariantPropertyName": "BorderStyle",
         "IsLockable": false,
         "NameMapSourceSchema": "?"
@@ -5786,7 +5793,7 @@
       {
         "AFDDataSourceName": "",
         "AutoRuleBindingEnabled": false,
-        "AutoRuleBindingString": "BorderStyle.Solid",
+        "AutoRuleBindingString": "",
         "InvariantPropertyName": "BorderStyle",
         "IsLockable": false,
         "NameMapSourceSchema": "?"
@@ -6061,7 +6068,7 @@
       {
         "AFDDataSourceName": "",
         "AutoRuleBindingEnabled": false,
-        "AutoRuleBindingString": "BorderStyle.Solid",
+        "AutoRuleBindingString": "",
         "InvariantPropertyName": "BorderStyle",
         "IsLockable": false,
         "NameMapSourceSchema": "?"

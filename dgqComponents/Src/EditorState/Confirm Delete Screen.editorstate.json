@@ -849,14 +849,7 @@
         "IsLockable": false,
         "NameMapSourceSchema": "?"
       },
-      {
-        "AFDDataSourceName": "",
-        "AutoRuleBindingEnabled": false,
-        "AutoRuleBindingString": "BorderStyle.Solid",
-        "InvariantPropertyName": "BorderStyle",
-        "IsLockable": false,
-        "NameMapSourceSchema": "?"
-      },
+      "BorderStyle",
       "Fill",
       {
         "AFDDataSourceName": "",
@@ -1503,19 +1496,40 @@
       "DisabledFill",
       "PressedFill",
       "HoverFill",
-      "BorderColor",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "RGBA(0, 0, 0, 0)",
+        "InvariantPropertyName": "BorderColor",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "DisabledBorderColor",
       "PressedBorderColor",
       "HoverBorderColor",
       "FocusedBorderColor",
-      "BorderStyle",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "BorderStyle.None",
+        "InvariantPropertyName": "BorderStyle",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "DisplayMode",
       "ZIndex",
       "RadiusTopLeft",
       "RadiusTopRight",
       "RadiusBottomLeft",
       "RadiusBottomRight",
-      "BorderThickness",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "2",
+        "InvariantPropertyName": "BorderThickness",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "FocusedBorderThickness",
       "PaddingTop",
       "PaddingRight",
@@ -1709,11 +1723,25 @@
       "DisabledColor",
       "PressedColor",
       "HoverColor",
-      "BorderColor",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "RGBA(0, 0, 0, 0)",
+        "InvariantPropertyName": "BorderColor",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "DisabledBorderColor",
       "PressedBorderColor",
       "HoverBorderColor",
-      "BorderStyle",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "",
+        "InvariantPropertyName": "BorderStyle",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "FocusedBorderColor",
       "Fill",
       "DisabledFill",
@@ -1786,7 +1814,14 @@
         "IsLockable": false,
         "NameMapSourceSchema": "?"
       },
-      "BorderThickness",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "2",
+        "InvariantPropertyName": "BorderThickness",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "FocusedBorderThickness",
       {
         "AFDDataSourceName": "",
@@ -2089,11 +2124,25 @@
       "DisabledColor",
       "PressedColor",
       "HoverColor",
-      "BorderColor",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "RGBA(0, 0, 0, 0)",
+        "InvariantPropertyName": "BorderColor",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "DisabledBorderColor",
       "PressedBorderColor",
       "HoverBorderColor",
-      "BorderStyle",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "BorderStyle.None",
+        "InvariantPropertyName": "BorderStyle",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "FocusedBorderColor",
       "Fill",
       "DisabledFill",
@@ -2152,7 +2201,14 @@
         "IsLockable": false,
         "NameMapSourceSchema": "?"
       },
-      "BorderThickness",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "2",
+        "InvariantPropertyName": "BorderThickness",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "FocusedBorderThickness",
       {
         "AFDDataSourceName": "",

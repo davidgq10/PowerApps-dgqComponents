@@ -71,8 +71,7 @@
 
             lbGroupTitle As label:
                 BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =2
+                BorderThickness: =vargBorderComponent
                 Color: =vargStyle.ItemsList.TitleFontColor
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
@@ -89,6 +88,7 @@
                 ZIndex: =1
 
             "'co.CatalogOptionsGroup' As groupContainer.horizontalAutoLayoutContainer":
+                BorderThickness: =vargBorderComponent
                 Height: =Parent.Height-Self.Y
                 LayoutGap: =10
                 LayoutMode: =LayoutMode.Auto

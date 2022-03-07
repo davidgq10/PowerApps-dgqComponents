@@ -250,6 +250,14 @@
         "InvariantPropertyName": "PaddingRight",
         "IsLockable": false,
         "NameMapSourceSchema": "?"
+      },
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "0",
+        "InvariantPropertyName": "BorderThickness",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
       }
     ],
     "HasDynamicProperties": false,
@@ -368,6 +376,11 @@
       {
         "Category": "Design",
         "PropertyName": "LayoutJustifyContent",
+        "RuleProviderType": "Unknown"
+      },
+      {
+        "Category": "Design",
+        "PropertyName": "BorderThickness",
         "RuleProviderType": "Unknown"
       }
     ],

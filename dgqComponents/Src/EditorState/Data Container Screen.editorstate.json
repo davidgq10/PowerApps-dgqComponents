@@ -5462,7 +5462,7 @@
       {
         "AFDDataSourceName": "",
         "AutoRuleBindingEnabled": false,
-        "AutoRuleBindingString": "BorderStyle.Solid",
+        "AutoRuleBindingString": "",
         "InvariantPropertyName": "BorderStyle",
         "IsLockable": false,
         "NameMapSourceSchema": "?"
@@ -5613,7 +5613,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "co.ActionButton_Attachments_1",
-    "ParentIndex": 4,
+    "ParentIndex": 3,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -5737,7 +5737,7 @@
       {
         "AFDDataSourceName": "",
         "AutoRuleBindingEnabled": false,
-        "AutoRuleBindingString": "BorderStyle.Solid",
+        "AutoRuleBindingString": "",
         "InvariantPropertyName": "BorderStyle",
         "IsLockable": false,
         "NameMapSourceSchema": "?"
@@ -5888,7 +5888,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "co.ActionButton_Comments_1",
-    "ParentIndex": 3,
+    "ParentIndex": 2,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -6012,7 +6012,7 @@
       {
         "AFDDataSourceName": "",
         "AutoRuleBindingEnabled": false,
-        "AutoRuleBindingString": "BorderStyle.Solid",
+        "AutoRuleBindingString": "",
         "InvariantPropertyName": "BorderStyle",
         "IsLockable": false,
         "NameMapSourceSchema": "?"
@@ -6163,7 +6163,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "co.ActionButton_Contacts_1",
-    "ParentIndex": 5,
+    "ParentIndex": 4,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -6284,7 +6284,14 @@
     "AllowAccessToGlobals": true,
     "ControlPropertyState": [
       "BorderColor",
-      "BorderStyle",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "",
+        "InvariantPropertyName": "BorderStyle",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "Fill",
       "X",
       "Y",
@@ -6402,7 +6409,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "co.ActionButton_Delete_1",
-    "ParentIndex": 0,
+    "ParentIndex": 6,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -6521,7 +6528,7 @@
       {
         "AFDDataSourceName": "",
         "AutoRuleBindingEnabled": false,
-        "AutoRuleBindingString": "BorderStyle.Solid",
+        "AutoRuleBindingString": "",
         "InvariantPropertyName": "BorderStyle",
         "IsLockable": false,
         "NameMapSourceSchema": "?"
@@ -6672,7 +6679,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "co.ActionButton_Details_1",
-    "ParentIndex": 2,
+    "ParentIndex": 1,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -6796,7 +6803,7 @@
       {
         "AFDDataSourceName": "",
         "AutoRuleBindingEnabled": false,
-        "AutoRuleBindingString": "BorderStyle.Solid",
+        "AutoRuleBindingString": "",
         "InvariantPropertyName": "BorderStyle",
         "IsLockable": false,
         "NameMapSourceSchema": "?"
@@ -6947,7 +6954,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "co.ActionButton_Edit_1",
-    "ParentIndex": 1,
+    "ParentIndex": 0,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -7071,7 +7078,7 @@
       {
         "AFDDataSourceName": "",
         "AutoRuleBindingEnabled": false,
-        "AutoRuleBindingString": "BorderStyle.Solid",
+        "AutoRuleBindingString": "",
         "InvariantPropertyName": "BorderStyle",
         "IsLockable": false,
         "NameMapSourceSchema": "?"
@@ -7222,7 +7229,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "co.ActionButton_IndustrialPlants_1",
-    "ParentIndex": 6,
+    "ParentIndex": 5,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -7706,7 +7713,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "co.ActionsButtons_2",
-    "ParentIndex": 0,
+    "ParentIndex": 1,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -9031,6 +9038,14 @@
         "InvariantPropertyName": "PaddingRight",
         "IsLockable": false,
         "NameMapSourceSchema": "?"
+      },
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "0",
+        "InvariantPropertyName": "BorderThickness",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
       }
     ],
     "HasDynamicProperties": false,
@@ -9139,6 +9154,11 @@
       {
         "Category": "Design",
         "PropertyName": "ChildTabPriority",
+        "RuleProviderType": "Unknown"
+      },
+      {
+        "Category": "Design",
+        "PropertyName": "BorderThickness",
         "RuleProviderType": "Unknown"
       }
     ],
@@ -9657,7 +9677,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "co.NewButton_2",
-    "ParentIndex": 1,
+    "ParentIndex": 0,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -10053,7 +10073,15 @@
       "LayoutOverflowX",
       "LayoutOverflowY",
       "LayoutWrap",
-      "ZIndex"
+      "ZIndex",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "0",
+        "InvariantPropertyName": "BorderThickness",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      }
     ],
     "HasDynamicProperties": false,
     "IsAutoGenerated": false,
@@ -10151,6 +10179,11 @@
       {
         "Category": "Design",
         "PropertyName": "ZIndex",
+        "RuleProviderType": "Unknown"
+      },
+      {
+        "Category": "Design",
+        "PropertyName": "BorderThickness",
         "RuleProviderType": "Unknown"
       }
     ],
@@ -18281,7 +18314,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "imgIcon_Audit_1",
-    "ParentIndex": 5,
+    "ParentIndex": 4,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -18609,7 +18642,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "imgIcon_BlockData_1",
-    "ParentIndex": 3,
+    "ParentIndex": 2,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -18944,7 +18977,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "imgIcon_FilterData_1",
-    "ParentIndex": 2,
+    "ParentIndex": 1,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -19562,7 +19595,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "imgIcon_Info_2",
-    "ParentIndex": 6,
+    "ParentIndex": 5,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -20226,7 +20259,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "imgIcon_Search_1",
-    "ParentIndex": 0,
+    "ParentIndex": 6,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -20559,7 +20592,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "imgIcon_SortData_1",
-    "ParentIndex": 1,
+    "ParentIndex": 0,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -20887,7 +20920,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "imgIcon_Tags_1",
-    "ParentIndex": 4,
+    "ParentIndex": 3,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {

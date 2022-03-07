@@ -276,8 +276,7 @@
 
             "'co.ActionButton_Edit' As groupContainer.manualLayoutContainer":
                 AlignInContainer: =AlignInContainer.SetByContainer
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =BorderStyle.None
+                BorderThickness: =vargBorderComponent
                 Fill: =vargStyle.OptionsMenu.Background
                 FillPortions: =0
                 Height: =40
@@ -366,8 +365,7 @@
 
             "'co.ActionButton_Details' As groupContainer.manualLayoutContainer":
                 AlignInContainer: =AlignInContainer.SetByContainer
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =BorderStyle.None
+                BorderThickness: =vargBorderComponent
                 Fill: =vargStyle.OptionsMenu.Background
                 FillPortions: =0
                 Height: =40
@@ -456,8 +454,7 @@
 
             "'co.ActionButton_Comments' As groupContainer.manualLayoutContainer":
                 AlignInContainer: =AlignInContainer.SetByContainer
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =BorderStyle.None
+                BorderThickness: =vargBorderComponent
                 Fill: =vargStyle.OptionsMenu.Background
                 FillPortions: =0
                 Height: =40
@@ -546,8 +543,7 @@
 
             "'co.ActionButton_Attachments' As groupContainer.manualLayoutContainer":
                 AlignInContainer: =AlignInContainer.SetByContainer
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =BorderStyle.None
+                BorderThickness: =vargBorderComponent
                 Fill: =vargStyle.OptionsMenu.Background
                 FillPortions: =0
                 Height: =40
@@ -636,8 +632,7 @@
 
             "'co.ActionButton_Contacts' As groupContainer.manualLayoutContainer":
                 AlignInContainer: =AlignInContainer.SetByContainer
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =BorderStyle.None
+                BorderThickness: =vargBorderComponent
                 Fill: =vargStyle.OptionsMenu.Background
                 FillPortions: =0
                 Height: =40
@@ -727,8 +722,7 @@
 
             "'co.ActionButton_IndustrialPlants' As groupContainer.manualLayoutContainer":
                 AlignInContainer: =AlignInContainer.SetByContainer
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =BorderStyle.None
+                BorderThickness: =vargBorderComponent
                 Fill: =vargStyle.OptionsMenu.Background
                 FillPortions: =0
                 Height: =40

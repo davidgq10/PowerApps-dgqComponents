@@ -15,6 +15,7 @@
         ZIndex: =2
 
         "'co.StepsGroup' As groupContainer.horizontalAutoLayoutContainer":
+            BorderThickness: =vargBorderComponent
             Height: =50
             LayoutAlignItems: =LayoutAlignItems.Center
             LayoutGap: =10
