@@ -128,7 +128,7 @@
                     vargStyle.Sidebar.SmallWidth
                 )
             )
-        Y: =200
+        Y: =50
         ZIndex: =9
 
         "'co.DataContainer' As groupContainer.manualLayoutContainer":
